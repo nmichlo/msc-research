@@ -1,67 +1,13 @@
 
-<p align="center">
-    <h1 align="center">🧶 Disent</h1>
-    <p align="center">
-        <i>A modular disentangled representation learning framework built with PyTorch Lightning</i>
-    </p>
-</p>
-
-<p align="center">
-    <a href="https://choosealicense.com/licenses/mit/">
-        <img alt="license" src="https://img.shields.io/github/license/nmichlo/disent?style=flat-square&color=lightgrey"/>
-    </a>
-    <a href="https://pypi.org/project/disent">
-        <img alt="python versions" src="https://img.shields.io/pypi/pyversions/disent?style=flat-square"/>
-    </a>
-    <a href="https://pypi.org/project/disent">
-        <img alt="pypi version" src="https://img.shields.io/pypi/v/disent?style=flat-square&color=blue"/>
-    </a>
-    <a href="https://github.com/nmichlo/disent/actions?query=workflow%3Atest">
-        <img alt="tests status" src="https://img.shields.io/github/workflow/status/nmichlo/disent/test?label=tests&style=flat-square"/>
-    </a>
-<!--     <a href="https://codecov.io/gh/nmichlo/disent/"> -->
-<!--         <img alt="code coverage" src="https://img.shields.io/codecov/c/gh/nmichlo/disent?token=86IZK3J038&style=flat-square"/> -->
-<!--     </a> -->
-<!--     <a href="https://github.com/nmichlo/disent"> -->
-<!--         <img alt="last commit" src="https://img.shields.io/github/last-commit/nmichlo/disent?style=flat-square&color=lightgrey"/> -->
-<!--     </a> -->
-</p>
-
-<p align="center">
-    <p align="center">
-        Visit the <a href="https://disent.dontpanic.sh/">docs</a> for more info, or browse the  <a href="https://github.com/nmichlo/disent/releases">releases</a>.
-    </p>
-    <p align="center">
-        <a href="https://github.com/nmichlo/disent/issues/new/choose">Contributions</a> are welcome!
-    </p>
-</p>
-
-----------------------
-
-## Table Of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-    * [Frameworks](#frameworks)
-    * [Metrics](#metrics)
-    * [Datasets](#datasets)
-    * [Schedules & Annealing](#schedules--annealing)
-- [Examples](#examples)
-    * [Python Example](#python-example)
-    * [Hydra Config Example](#hydra-config-example)
-- [Why?](#why)
+# Submission 12045 - Supplementary Material (CVPR 2022)
 
 ----------------------
 
 ## Overview
 
-Disent is a modular disentangled representation learning framework for auto-encoders,
+This library is a modular disentangled representation learning framework for auto-encoders,
 built upon PyTorch-Lightning. This framework consists of various composable components
 that can be used to build and benchmark various disentanglement vision tasks.
-
-> The name of the framework is derived from both **disent**anglement and scientific **dissent**.
-
-Get started with disent by installing it with $`pip install disent` or cloning this repository.
 
 ### Goals
 
@@ -71,20 +17,6 @@ Disent aims to fill the following criteria:
 3. Use **best practice** eg. `torch.distributions`
 4. Be extremely **flexible** & configurable
 5. Support low memory systems
-
-### Citing Disent
-
-Please use the following citation if you use Disent in your own research:
-
-```bibtex
-@Misc{Michlo2021Disent,
-  author =       {Nathan Juraj Michlo},
-  title =        {Disent - A modular disentangled representation learning framework for pytorch},
-  howpublished = {Github},
-  year =         {2021},
-  url =          {https://github.com/nmichlo/disent}
-}
-```
 
 ----------------------
 
@@ -105,11 +37,6 @@ The disent module structure:
 - `disent.nn`: torch components for building models including layers, transforms, losses and general maths
 - `disent.schedule`: annealing schedules that can be registered to a framework
 - `disent.util`: helper classes, functions, callbacks, anything unrelated to a pytorch system/model/framework.
-
-**Please Note The API Is Still Unstable ⚠️**
-
-Disent is still under active development. Features and APIs are mostly stable but may change! A limited
-set of tests currently exist which will be expanded upon in time.
 
 **Hydra Experiment Directories**
 
@@ -143,17 +70,6 @@ datasets from various papers. Please note that items marked
 - **Supervised**:
   + [TVAE](https://arxiv.org/abs/1802.04403)
 
-Many popular disentanglement frameworks still need to be added, please
-submit an issue if you have a request for an additional framework.
-
-<details><summary><b>todo</b></summary><p>
-
-+ FactorVAE
-+ GroupVAE
-+ MLVAE
-
-</p></details>
-
 ### Metrics
 - **Disentanglement**:
   + [FactorVAE Score](https://arxiv.org/abs/1802.05983)
@@ -161,16 +77,6 @@ submit an issue if you have a request for an additional framework.
   + [MIG](https://arxiv.org/abs/1802.04942)
   + [SAP](https://arxiv.org/abs/1711.00848)
   + [Unsupervised Scores](https://github.com/google-research/disentanglement_lib)
-
-Some popular metrics still need to be added, please submit an issue if you wish to
-add your own, or you have a request.
-
-<details><summary><b>todo</b></summary><p>
-
-+ [DCIMIG](https://arxiv.org/abs/1910.05587)
-+ [Modularity and Explicitness](https://arxiv.org/abs/1802.05312)
-
-</p></details>
 
 ### Datasets
 
@@ -181,18 +87,11 @@ low-memory disk-based access.
 - **Ground Truth**:
   + Cars3D
   + dSprites
-  + MPI3D
   + SmallNORB
   + Shapes3D
 
 - **Ground Truth Synthetic**:
-  + 🧵 XYObject: *A simplistic version of dSprites with a single square.*
-  + 🧵 XYObjectShaded: *Exact same dataset as XYObject, but ground truth factors have a different representation*
-  + 🧵 DSpritesImagenet: *Version of DSprite with foreground or background deterministically masked out with tiny-imagenet data*
-
-  <p align="center">
-    <img width="384" src="docs/img/xy-object-traversal.png" alt="XYObject Dataset Factor Traversals">
-  </p>
+  + 🧵 XYSquares: *Adversarial dataset - Observations have constant pairwise distance along factor traversals using a pixel-wise measure*
 
   #### Input Transforms + Input/Target Augmentations
   
@@ -302,8 +201,8 @@ Visit the [docs](https://disent.dontpanic.sh) for more examples!
 The entrypoint for basic experiments is `experiment/run.py`.
 
 Some configuration will be required, but basic experiments can
-be adjusted by modifying the [Hydra Config 1.0](https://github.com/facebookresearch/hydra)
-files in `experiment/config` (Please note that hydra 1.1 is not yet supported).
+be adjusted by modifying the [Hydra Config 1.1](https://github.com/facebookresearch/hydra)
+files in `experiment/config`.
 
 Modifying the main `experiment/config/config.yaml` is all you
 need for most basic experiments. The main config file contains
@@ -351,17 +250,5 @@ yaml files in the config group folders.
 [Weights and Biases](https://docs.wandb.ai/quickstart) is supported by changing `run_logging: none` to
 `run_logging: wandb`. However, you will need to login from the command line. W&B logging supports
 visualisations of latent traversals.
-
-
-----------------------
-
-### Why?
-  
-- Created as part of my Computer Science MSc scheduled for completion in 2021.
-- I needed custom high quality implementations of various VAE's.
-- A pytorch version of [disentanglement_lib](https://github.com/google-research/disentanglement_lib).
-- I didn't have time to wait for [Weakly-Supervised Disentanglement Without Compromises](https://arxiv.org/abs/2002.02886) to release
-  their code as part of disentanglement_lib. (As of September 2020 it has been released, but has unresolved [discrepencies](https://github.com/google-research/disentanglement_lib/issues/31)).
-- disentanglement_lib still uses outdated Tensorflow 1.0, and the flow of data is unintuitive because of its use of [Gin Config](https://github.com/google/gin-config).
 
 ----------------------

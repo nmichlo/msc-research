@@ -43,3 +43,21 @@ NOTE:
   details. You will also need to login to wandb using their CLI.
 - SLURM experiments need to be run on a specific slurm partition. Partition details can be adjusted by editing or
   adding to the hydra configuration group `experiment/config/run_location/*.yaml`
+
+## Code Stats
+
+```bash
+cloc .
+```
+
+Output:
+```
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Python                         171           3951          10546          11451
+YAML                           190            566            463           3420
+Markdown                         7             91              0            296
+Bourne Shell                     9             93            268            247
+-------------------------------------------------------------------------------
+```

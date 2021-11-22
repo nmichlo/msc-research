@@ -38,12 +38,12 @@ import numpy as np
 import torch
 
 import research.util as H
-from disent.dataset.data import GroundTruthData
-from disent.dataset.sampling import BaseDisentSampler
-from disent.dataset.sampling import GroundTruthPairSampler
-from disent.dataset.sampling import GroundTruthTripleSampler
-from disent.dataset.sampling import RandomSampler
-from disent.util.strings import colors as c
+from s12045.dataset.data import GroundTruthData
+from s12045.dataset.sampling import BaseDisentSampler
+from s12045.dataset.sampling import GroundTruthPairSampler
+from s12045.dataset.sampling import GroundTruthTripleSampler
+from s12045.dataset.sampling import RandomSampler
+from s12045.util.strings import colors as c
 
 
 log = logging.getLogger(__name__)
@@ -429,7 +429,7 @@ def adversarial_loss(
 # if __name__ == '__main__':
 #
 #     def _main():
-#         from disent.dataset.data import XYObjectData
+#         from s12045.dataset.data import XYObjectData
 #
 #         # NB:
 #         # close_p_random_n

@@ -36,18 +36,18 @@ from omegaconf import ListConfig
 from omegaconf import OmegaConf
 from pytorch_lightning.loggers import WandbLogger
 
-from disent import metrics
-from disent.frameworks import DisentConfigurable
-from disent.frameworks import DisentFramework
-from disent.model import AutoEncoder
-from disent.nn.weights import init_model_weights
-from disent.util.seeds import seed
-from disent.util.strings.fmt import make_box_str
-from disent.util.strings import colors as c
-from disent.util.lightning.callbacks import LoggerProgressCallback
-from disent.util.lightning.callbacks import VaeMetricLoggingCallback
-from disent.util.lightning.callbacks import VaeLatentCycleLoggingCallback
-from disent.util.lightning.callbacks import VaeGtDistsLoggingCallback
+from s12045 import metrics
+from s12045.frameworks import DisentConfigurable
+from s12045.frameworks import DisentFramework
+from s12045.model import AutoEncoder
+from s12045.nn.weights import init_model_weights
+from s12045.util.seeds import seed
+from s12045.util.strings.fmt import make_box_str
+from s12045.util.strings import colors as c
+from s12045.util.lightning.callbacks import LoggerProgressCallback
+from s12045.util.lightning.callbacks import VaeMetricLoggingCallback
+from s12045.util.lightning.callbacks import VaeLatentCycleLoggingCallback
+from s12045.util.lightning.callbacks import VaeGtDistsLoggingCallback
 from experiment.util.hydra_data import HydraDataModule
 from experiment.util.run_utils import log_error_and_exit
 from experiment.util.run_utils import safe_unset_debug_logger

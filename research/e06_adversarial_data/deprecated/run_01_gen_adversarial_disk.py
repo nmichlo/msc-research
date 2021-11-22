@@ -50,10 +50,10 @@ import torch
 from tqdm import tqdm
 
 import research.util as H
-from disent.util.deprecate import deprecated
-from disent.util.inout.paths import ensure_parent_dir_exists
-from disent.util.profiling import Timer
-from disent.util.seeds import seed
+from s12045.util.deprecate import deprecated
+from s12045.util.inout.paths import ensure_parent_dir_exists
+from s12045.util.profiling import Timer
+from s12045.util.seeds import seed
 
 
 log = logging.getLogger(__name__)

@@ -26,8 +26,8 @@ from typing import Tuple
 
 import numpy as np
 
-from disent.dataset.data import GroundTruthData
-from disent.dataset.data._raw import Hdf5Dataset
+from s12045.dataset.data import GroundTruthData
+from s12045.dataset.data._raw import Hdf5Dataset
 
 
 # TODO: these classes are old...
@@ -39,7 +39,7 @@ class TransformDataset(GroundTruthData):
 
     # TODO: all data should be datasets
     # TODO: file preparation should be separate from datasets
-    # TODO: disent/data should be datasets, and disent/datasets should be samplers that wrap disent/data
+    # TODO: s12045/data should be datasets, and s12045/datasets should be samplers that wrap s12045/data
 
     def __init__(self, base_data: GroundTruthData, transform=None):
         self.base_data = base_data

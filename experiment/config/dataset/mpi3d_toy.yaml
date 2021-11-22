@@ -4,14 +4,14 @@ defaults:
 name: mpi3d_toy
 
 data:
-  _target_: disent.dataset.data.Mpi3dData
+  _target_: s12045.dataset.data.Mpi3dData
   data_root: ${dsettings.storage.data_root}
   prepare: ${dsettings.dataset.prepare}
   in_memory: ${dsettings.dataset.try_in_memory}
   subset: 'toy'
 
 transform:
-  _target_: disent.dataset.transform.ToImgTensorF32
+  _target_: s12045.dataset.transform.ToImgTensorF32
   mean: ${dataset.meta.vis_mean}
   std: ${dataset.meta.vis_std}
 

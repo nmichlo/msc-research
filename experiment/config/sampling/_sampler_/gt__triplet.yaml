@@ -1,7 +1,7 @@
 name: gt__triplet
 
 sampler_cls:
-  _target_: disent.dataset.sampling.GroundTruthTripleSampler
+  _target_: s12045.dataset.sampling.GroundTruthTripleSampler
   # factor sampling
   p_k_range: ${sampling.k}
   n_k_range: ${sampling.n_k}

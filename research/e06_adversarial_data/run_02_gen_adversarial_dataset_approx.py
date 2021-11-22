@@ -46,26 +46,26 @@ from omegaconf import OmegaConf
 from torch.utils.data import DataLoader
 
 import research.util as H
-from disent import registry
-from disent.dataset import DisentDataset
-from disent.dataset.sampling import BaseDisentSampler
-from disent.dataset.util.hdf5 import H5Builder
-from disent.model import AutoEncoder
-from disent.nn.activations import Swish
-from disent.nn.modules import DisentModule
-from disent.nn.weights import init_model_weights
-from disent.util import to_numpy
-from disent.util.function import wrapped_partial
-from disent.util.inout.paths import ensure_parent_dir_exists
-from disent.util.lightning.callbacks import BaseCallbackPeriodic
-from disent.util.lightning.callbacks import LoggerProgressCallback
-from disent.util.lightning.logger_util import wb_has_logger
-from disent.util.lightning.logger_util import wb_log_metrics
-from disent.util.seeds import seed
-from disent.util.seeds import TempNumpySeed
-from disent.util.strings.fmt import bytes_to_human
-from disent.util.strings.fmt import make_box_str
-from disent.util.visualize.vis_util import make_image_grid
+from s12045 import registry
+from s12045.dataset import DisentDataset
+from s12045.dataset.sampling import BaseDisentSampler
+from s12045.dataset.util.hdf5 import H5Builder
+from s12045.model import AutoEncoder
+from s12045.nn.activations import Swish
+from s12045.nn.modules import DisentModule
+from s12045.nn.weights import init_model_weights
+from s12045.util import to_numpy
+from s12045.util.function import wrapped_partial
+from s12045.util.inout.paths import ensure_parent_dir_exists
+from s12045.util.lightning.callbacks import BaseCallbackPeriodic
+from s12045.util.lightning.callbacks import LoggerProgressCallback
+from s12045.util.lightning.logger_util import wb_has_logger
+from s12045.util.lightning.logger_util import wb_log_metrics
+from s12045.util.seeds import seed
+from s12045.util.seeds import TempNumpySeed
+from s12045.util.strings.fmt import bytes_to_human
+from s12045.util.strings.fmt import make_box_str
+from s12045.util.visualize.vis_util import make_image_grid
 from experiment.run import hydra_get_gpus
 from experiment.run import hydra_get_callbacks
 from experiment.run import hydra_make_logger
@@ -399,7 +399,7 @@ class AdversarialModel(pl.LightningModule):
         # factor distances callback
         class DistsPlotCallback(_BaseDatasetCallback):
             def _do_step(this, trainer: pl.Trainer, system: AdversarialModel):
-                from disent.util.lightning.callbacks._callbacks_vae import compute_factor_distances, plt_factor_distances
+                from s12045.util.lightning.callbacks._callbacks_vae import compute_factor_distances, plt_factor_distances
 
                 # make distances function
                 def dists_fn(xs_a, xs_b):

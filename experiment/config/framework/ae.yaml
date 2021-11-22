@@ -4,7 +4,7 @@ defaults:
 name: ae
 
 cfg:
-  _target_: disent.frameworks.ae.Ae.cfg
+  _target_: s12045.frameworks.ae.Ae.cfg
   # base ae
   recon_loss: ${settings.framework.recon_loss}
   loss_reduction: ${settings.framework.loss_reduction}

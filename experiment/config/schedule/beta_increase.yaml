@@ -2,7 +2,7 @@ name: beta_increase
 
 schedule_items:
   beta:
-    _target_: disent.schedule.Single
+    _target_: s12045.schedule.Single
     start_step: 0
     end_step: ${trainer.max_steps}
     r_start: 0.001

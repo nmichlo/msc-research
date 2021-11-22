@@ -36,22 +36,22 @@ import numpy as np
 import torch
 import torch.utils.data
 
-from disent.dataset import DisentDataset
-from disent.dataset.data import Cars3dData
-from disent.dataset.data import DSpritesData
-from disent.dataset.data import DSpritesImagenetData
-from disent.dataset.data import GroundTruthData
-from disent.dataset.data import Shapes3dData
-from disent.dataset.data import SmallNorbData
-from disent.dataset.data import XColumnsData
-from disent.dataset.data import XYBlocksData
-from disent.dataset.data import XYObjectData
-from disent.dataset.data import XYSquaresData
-from disent.dataset.sampling import BaseDisentSampler
-from disent.dataset.sampling import GroundTruthSingleSampler
-from disent.dataset.transform import Noop
-from disent.dataset.transform import ToImgTensorF32
-from disent.dataset.transform import ToImgTensorU8
+from s12045.dataset import DisentDataset
+from s12045.dataset.data import Cars3dData
+from s12045.dataset.data import DSpritesData
+from s12045.dataset.data import DSpritesImagenetData
+from s12045.dataset.data import GroundTruthData
+from s12045.dataset.data import Shapes3dData
+from s12045.dataset.data import SmallNorbData
+from s12045.dataset.data import XColumnsData
+from s12045.dataset.data import XYBlocksData
+from s12045.dataset.data import XYObjectData
+from s12045.dataset.data import XYSquaresData
+from s12045.dataset.sampling import BaseDisentSampler
+from s12045.dataset.sampling import GroundTruthSingleSampler
+from s12045.dataset.transform import Noop
+from s12045.dataset.transform import ToImgTensorF32
+from s12045.dataset.transform import ToImgTensorU8
 
 
 # ========================================================================= #
@@ -92,10 +92,10 @@ from disent.dataset.transform import ToImgTensorU8
 
 def load_dataset_into_memory(gt_data: GroundTruthData, x_shape: Optional[Tuple[int, ...]] = None, batch_size=64, num_workers=min(os.cpu_count(), 16), dtype=torch.float32, raw_array=False):
     assert dtype in {torch.float16, torch.float32}
-    # TODO: this should be part of disent?
+    # TODO: this should be part of s12045?
     from torch.utils.data import DataLoader
     from tqdm import tqdm
-    from disent.dataset.data import ArrayGroundTruthData
+    from s12045.dataset.data import ArrayGroundTruthData
     # get observation shape
     # - manually specify this if the gt_data has a transform applied that resizes the observations for example!
     if x_shape is None:

@@ -29,19 +29,19 @@ import pytest
 import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 
-from disent.dataset import DisentDataset
-from disent.dataset.data import XYObjectData
-from disent.dataset.sampling import GroundTruthSingleSampler
-from disent.dataset.sampling import GroundTruthPairSampler
-from disent.dataset.sampling import GroundTruthTripleSampler
-from disent.frameworks.ae import *
-from disent.frameworks.ae.experimental import *   # pragma: delete-on-release
-from disent.frameworks.vae import *
-from disent.frameworks.vae.experimental import *  # pragma: delete-on-release
-from disent.model import AutoEncoder
-from disent.model.ae import DecoderLinear
-from disent.model.ae import EncoderLinear
-from disent.dataset.transform import ToImgTensorF32
+from s12045.dataset import DisentDataset
+from s12045.dataset.data import XYObjectData
+from s12045.dataset.sampling import GroundTruthSingleSampler
+from s12045.dataset.sampling import GroundTruthPairSampler
+from s12045.dataset.sampling import GroundTruthTripleSampler
+from s12045.frameworks.ae import *
+from s12045.frameworks.ae.experimental import *   # pragma: delete-on-release
+from s12045.frameworks.vae import *
+from s12045.frameworks.vae.experimental import *  # pragma: delete-on-release
+from s12045.model import AutoEncoder
+from s12045.model.ae import DecoderLinear
+from s12045.model.ae import EncoderLinear
+from s12045.dataset.transform import ToImgTensorF32
 
 
 # ========================================================================= #

@@ -36,7 +36,7 @@ import torch.nn.functional as F
 import torchvision
 import matplotlib.pyplot as plt
 
-from disent.dataset.data import Shapes3dData
+from s12045.dataset.data import Shapes3dData
 from research.util._data import AdversarialOptimizedData
 
 

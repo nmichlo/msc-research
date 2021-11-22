@@ -16,7 +16,7 @@
 ## Experiment                                                                #
 ## ========================================================================= #
 #
-#clog_cudaless_nodes "$PARTITION" 86400 "C-disent" # 24 hours
+#clog_cudaless_nodes "$PARTITION" 86400 "C-s12045" # 24 hours
 #
 ## 1 * (3*2*2*5*2) == 120
 #submit_sweep \

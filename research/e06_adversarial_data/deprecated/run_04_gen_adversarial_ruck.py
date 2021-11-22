@@ -55,12 +55,12 @@ from ruck.external.ray import ray_remote_puts
 from ruck.external.deap import select_nsga2
 
 import research.util as H
-from disent.dataset.wrapper import MaskedDataset
-from disent.util.function import wrapped_partial
-from disent.util.inout.paths import ensure_parent_dir_exists
-from disent.util.profiling import Timer
-from disent.util.seeds import seed
-from disent.util.visualize.vis_util import get_idx_traversal
+from s12045.dataset.wrapper import MaskedDataset
+from s12045.util.function import wrapped_partial
+from s12045.util.inout.paths import ensure_parent_dir_exists
+from s12045.util.profiling import Timer
+from s12045.util.seeds import seed
+from s12045.util.visualize.vis_util import get_idx_traversal
 from research.e01_visual_overlap.util_compute_traversal_dists import cached_compute_all_factor_dist_matrices
 from research.e06_adversarial_data.util_eval_adversarial import eval_individual
 

@@ -4,7 +4,7 @@ defaults:
 name: betavae
 
 cfg:
-  _target_: disent.frameworks.vae.BetaVae.cfg
+  _target_: s12045.frameworks.vae.BetaVae.cfg
   # base ae
   recon_loss: ${settings.framework.recon_loss}
   loss_reduction: ${settings.framework.loss_reduction}

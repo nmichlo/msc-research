@@ -4,7 +4,7 @@ defaults:
 name: do_tvae_aug
 
 cfg:
-  _target_: disent.frameworks.vae.experimental.DataOverlapTripletVae.cfg
+  _target_: s12045.frameworks.vae.experimental.DataOverlapTripletVae.cfg
   # base ae
   recon_loss: ${settings.framework.recon_loss}
   loss_reduction: ${settings.framework.loss_reduction}
@@ -40,16 +40,16 @@ cfg:
   # dotvae -- augment
   overlap_augment_mode: 'augment'
   overlap_augment:
-    _target_: disent.transform.FftKernel
+    _target_: s12045.transform.FftKernel
     kernel: xy1_r47
 
 #  overlap_augment:
-#    _target_: disent.transform.FftBoxBlur
+#    _target_: s12045.transform.FftBoxBlur
 #    p: 1.0
 #    radius: [16, 16]
 #    random_mode: "batch"
 #    random_same_xy: TRUE
-#      - _target_: disent.transform.FftGaussianBlur
+#      - _target_: s12045.transform.FftGaussianBlur
 #        p: 1.0
 #        sigma: [0.1, 10.0]
 #        truncate: 3.0

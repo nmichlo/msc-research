@@ -56,7 +56,7 @@ rm disent/dataset/data/_groundtruth__xysquares.py
 rm disent/dataset/data/_groundtruth__xyblocks.py
 
 # DATA:
-# - disent.framework.helper
+# - s12045.framework.helper
 rm -rf data/adversarial_kernel
 
 # ===================== #

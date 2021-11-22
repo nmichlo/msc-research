@@ -4,7 +4,7 @@ defaults:
 name: dfcvae
 
 cfg:
-  _target_: disent.frameworks.vae.DfcVae.cfg
+  _target_: s12045.frameworks.vae.DfcVae.cfg
   # base ae
   recon_loss: ${settings.framework.recon_loss}
   loss_reduction: ${settings.framework.loss_reduction}

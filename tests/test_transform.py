@@ -24,10 +24,10 @@
 import pytest
 import torch
 
-from disent.dataset.transform import FftGaussianBlur
-from disent.dataset.transform._augment import _expand_to_min_max_tuples
-from disent.nn.functional import torch_gaussian_kernel
-from disent.nn.functional import torch_gaussian_kernel_2d
+from s12045.dataset.transform import FftGaussianBlur
+from s12045.dataset.transform._augment import _expand_to_min_max_tuples
+from s12045.nn.functional import torch_gaussian_kernel
+from s12045.nn.functional import torch_gaussian_kernel_2d
 
 
 # ========================================================================= #

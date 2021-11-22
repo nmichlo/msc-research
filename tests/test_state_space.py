@@ -24,7 +24,7 @@
 
 import numpy as np
 
-from disent.dataset.util.state_space import StateSpace
+from s12045.dataset.util.state_space import StateSpace
 
 
 # ========================================================================= #

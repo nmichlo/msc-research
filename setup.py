@@ -44,7 +44,7 @@ with open('requirements.txt', 'r') as f:
 
 
 setuptools.setup(
-    name="disent",
+    name="s12045",
     author="Nathan Juraj Michlo",
     author_email="NathanJMichlo@gmail.com",
 

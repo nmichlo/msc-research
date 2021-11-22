@@ -36,14 +36,14 @@ from matplotlib.ticker import MultipleLocator
 from tqdm import tqdm
 
 import research.util as H
-from disent.dataset import DisentDataset
-from disent.dataset.data import Cars3dData
-from disent.dataset.data import DSpritesData
-from disent.dataset.data import Shapes3dData
-from disent.dataset.data import XYSquaresData
-from disent.dataset.transform import ToImgTensorF32
-from disent.util import to_numpy
-from disent.util.function import wrapped_partial
+from s12045.dataset import DisentDataset
+from s12045.dataset.data import Cars3dData
+from s12045.dataset.data import DSpritesData
+from s12045.dataset.data import Shapes3dData
+from s12045.dataset.data import XYSquaresData
+from s12045.dataset.transform import ToImgTensorF32
+from s12045.util import to_numpy
+from s12045.util.function import wrapped_partial
 
 
 # ========================================================================= #

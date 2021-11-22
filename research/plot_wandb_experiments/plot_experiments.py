@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 from tqdm import tqdm
 
 import research.util as H
-from disent.util.function import wrapped_partial
+from s12045.util.function import wrapped_partial
 
 
 # ========================================================================= #

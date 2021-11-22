@@ -1,5 +1,5 @@
-from disent.dataset.data import XYObjectData
-from disent.dataset import DisentDataset
+from s12045.dataset.data import XYObjectData
+from s12045.dataset import DisentDataset
 
 # prepare the data
 # - DisentDataset is a generic wrapper around torch Datasets that prepares

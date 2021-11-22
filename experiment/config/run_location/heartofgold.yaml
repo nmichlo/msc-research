@@ -5,7 +5,7 @@ dsettings:
     cuda: TRUE
   storage:
     logs_dir: 'logs'
-    data_root: '${oc.env:HOME}/workspace/research/disent/data/dataset'
+    data_root: '${oc.env:HOME}/workspace/research/s12045/data/dataset'
   dataset:
     gpu_augment: FALSE
     prepare: TRUE
@@ -21,7 +21,7 @@ dataloader:
 
 hydra:
   job:
-    name: 'disent'
+    name: 's12045'
   run:
     dir: '${dsettings.storage.logs_dir}/hydra_run/${now:%Y-%m-%d_%H-%M-%S}_${hydra.job.name}'
   sweep:

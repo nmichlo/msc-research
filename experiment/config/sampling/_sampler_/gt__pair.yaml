@@ -1,7 +1,7 @@
 name: gt__pair
 
 sampler_cls:
-  _target_: disent.dataset.sampling.GroundTruthPairSampler
+  _target_: s12045.dataset.sampling.GroundTruthPairSampler
   # factor sampling
   p_k_range: ${sampling.k}
   # radius sampling

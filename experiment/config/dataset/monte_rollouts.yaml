@@ -4,13 +4,13 @@ defaults:
 name: monte_rollouts
 
 data:
-  _target_: disent.dataset.data.EpisodesDownloadZippedPickledData
+  _target_: s12045.dataset.data.EpisodesDownloadZippedPickledData
   required_file: ${dsettings.storage.data_root}/episodes/monte.pkl
   download_url: 'https://raw.githubusercontent.com/nmichlo/uploads/main/monte_key.tar.xz'
   prepare: ${dsettings.dataset.prepare}
 
 transform:
-  _target_: disent.dataset.transform.ToImgTensorF32
+  _target_: s12045.dataset.transform.ToImgTensorF32
   size: [64, 64]  # slightly squashed?
   mean: ${dataset.meta.vis_mean}
   std: ${dataset.meta.vis_std}

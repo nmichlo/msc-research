@@ -27,7 +27,7 @@ from glob import glob
 
 import pytest
 
-from disent.util import _set_test_run
+from s12045.util import _set_test_run
 from tests.util import no_stdout
 
 

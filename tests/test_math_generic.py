@@ -26,11 +26,11 @@ import numpy as np
 import pytest
 import torch
 
-from disent.nn.functional._util_generic import generic_as_int32
-from disent.nn.functional._util_generic import generic_max
-from disent.nn.functional._util_generic import generic_min
-from disent.nn.functional._util_generic import generic_ndim
-from disent.nn.functional._util_generic import generic_shape
+from s12045.nn.functional._util_generic import generic_as_int32
+from s12045.nn.functional._util_generic import generic_max
+from s12045.nn.functional._util_generic import generic_min
+from s12045.nn.functional._util_generic import generic_ndim
+from s12045.nn.functional._util_generic import generic_shape
 
 
 # ========================================================================= #

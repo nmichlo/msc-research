@@ -1,7 +1,7 @@
 name: norm_conv64
 
 encoder_cls:
-  _target_: disent.model.ae.EncoderConv64Norm
+  _target_: s12045.model.ae.EncoderConv64Norm
   x_shape: ${data.meta.x_shape}
   z_size: ${settings.model.z_size}
   z_multiplier: ${framework.meta.model_z_multiplier}
@@ -10,7 +10,7 @@ encoder_cls:
   norm_pre_act: ${model.norm_pre_act}
 
 decoder_cls:
-  _target_: disent.model.ae.DecoderConv64Norm
+  _target_: s12045.model.ae.DecoderConv64Norm
   x_shape: ${data.meta.x_shape}
   z_size: ${settings.model.z_size}
   activation: ${model.activation}

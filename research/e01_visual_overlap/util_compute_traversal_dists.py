@@ -37,9 +37,9 @@ from matplotlib import pyplot as plt
 from tqdm import tqdm
 
 import research.util as H
-from disent.dataset.data import GroundTruthData
-from disent.dataset.util.state_space import StateSpace
-from disent.util.strings.fmt import bytes_to_human
+from s12045.dataset.data import GroundTruthData
+from s12045.dataset.util.state_space import StateSpace
+from s12045.util.strings.fmt import bytes_to_human
 
 
 log = logging.getLogger(__name__)
@@ -230,7 +230,7 @@ def cached_compute_all_factor_dist_matrices(
     normalize_mode: str = 'all',
 ):
     import os
-    from disent.util.inout.files import AtomicSaveFile
+    from s12045.util.inout.files import AtomicSaveFile
     # load data
     gt_data = H.make_data(dataset_name, transform_mode='float32')
     # check cache

@@ -41,14 +41,14 @@ import torch.nn.functional as F
 from tqdm import tqdm
 
 import research.util as H
-from disent.dataset.data import GroundTruthData
-from disent.dataset.data import SelfContainedHdf5GroundTruthData
-from disent.dataset.util.state_space import NonNormalisedFactors
-from disent.dataset.transform import ToImgTensorF32
-from disent.dataset.util.stats import compute_data_mean_std
-from disent.util.inout.paths import ensure_parent_dir_exists
-from disent.util.profiling import Timer
-from disent.util.seeds import TempNumpySeed
+from s12045.dataset.data import GroundTruthData
+from s12045.dataset.data import SelfContainedHdf5GroundTruthData
+from s12045.dataset.util.state_space import NonNormalisedFactors
+from s12045.dataset.transform import ToImgTensorF32
+from s12045.dataset.util.stats import compute_data_mean_std
+from s12045.util.inout.paths import ensure_parent_dir_exists
+from s12045.util.profiling import Timer
+from s12045.util.seeds import TempNumpySeed
 
 
 # ========================================================================= #
@@ -404,8 +404,8 @@ def plot_traversal_stats(
 
 @torch.no_grad()
 def factor_stats(gt_data: GroundTruthData, f_idxs=None, min_samples: int = 100_000, min_repeats: int = 5000, recon_loss: str = 'mse', sample_mode: str = 'random') -> Tuple[Sequence[int], List[np.ndarray]]:
-    from disent.registry import RECON_LOSSES
-    from disent.frameworks.helper.reconstructions import ReconLossHandler
+    from s12045.registry import RECON_LOSSES
+    from s12045.frameworks.helper.reconstructions import ReconLossHandler
     recon_loss: ReconLossHandler = RECON_LOSSES[recon_loss](reduction='mean')
 
     f_dists = []
@@ -434,8 +434,8 @@ def factor_stats(gt_data: GroundTruthData, f_idxs=None, min_samples: int = 100_0
 
 
 def get_random_dists(gt_data: GroundTruthData, num_samples: int = 100_000, recon_loss: str = 'mse'):
-    from disent.registry import RECON_LOSSES
-    from disent.frameworks.helper.reconstructions import ReconLossHandler
+    from s12045.registry import RECON_LOSSES
+    from s12045.frameworks.helper.reconstructions import ReconLossHandler
     recon_loss: ReconLossHandler = RECON_LOSSES[recon_loss](reduction='mean')
 
     dists = []

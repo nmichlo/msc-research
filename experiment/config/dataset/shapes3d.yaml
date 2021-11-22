@@ -4,13 +4,13 @@ defaults:
 name: 3dshapes
 
 data:
-  _target_: disent.dataset.data.Shapes3dData
+  _target_: s12045.dataset.data.Shapes3dData
   data_root: ${dsettings.storage.data_root}
   prepare: ${dsettings.dataset.prepare}
   in_memory: ${dsettings.dataset.try_in_memory}
 
 transform:
-  _target_: disent.dataset.transform.ToImgTensorF32
+  _target_: s12045.dataset.transform.ToImgTensorF32
   mean: ${dataset.meta.vis_mean}
   std: ${dataset.meta.vis_std}
 

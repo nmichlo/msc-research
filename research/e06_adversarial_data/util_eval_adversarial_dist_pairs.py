@@ -30,7 +30,7 @@ from numba import njit
 # ========================================================================= #
 # Factor Evaluation - SLOW                                                  #
 # ========================================================================= #
-from disent.util.profiling import Timer
+from s12045.util.profiling import Timer
 
 
 def eval_dist_pairs_numpy(

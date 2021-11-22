@@ -24,10 +24,10 @@
 import pytest
 import torch
 
-from disent.model import AutoEncoder
-from disent.model import DisentDecoder
-from disent.model import DisentEncoder
-from disent.model.ae import *
+from s12045.model import AutoEncoder
+from s12045.model import DisentDecoder
+from s12045.model import DisentEncoder
+from s12045.model.ae import *
 
 
 @pytest.mark.parametrize(['encoder_cls', 'decoder_cls'], [

@@ -24,10 +24,10 @@
 
 import numpy as np
 
-from disent.dataset.data import XYObjectData
-from disent.dataset.data import XYObjectShadedData
-from disent.dataset.data import XYSquaresData         # pragma: delete-on-release
-from disent.dataset.data import XYSquaresMinimalData  # pragma: delete-on-release
+from s12045.dataset.data import XYObjectData
+from s12045.dataset.data import XYObjectShadedData
+from s12045.dataset.data import XYSquaresData         # pragma: delete-on-release
+from s12045.dataset.data import XYSquaresMinimalData  # pragma: delete-on-release
 
 
 # ========================================================================= #

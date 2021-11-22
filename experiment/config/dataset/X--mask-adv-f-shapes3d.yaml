@@ -4,21 +4,21 @@ defaults:
 name: mask_adv_f_shapes3d
 
 data:
-  _target_: disent.dataset.wrapper.MaskedDataset
+  _target_: s12045.dataset.wrapper.MaskedDataset
   mask:
     _target_: research.e06_adversarial_data.util_load_adversarial_mask.get_closest_mask
     usage_ratio: ${settings.framework_opt.usage_ratio}
-    # pickle_file: '${oc.env:HOME}/workspace/research/disent/out/adversarial_mask/2021-09-27--21-33-57_EXP_shapes3d_1000x256_all_std_mean/data.pkl.gz'
-    pickle_file: '${oc.env:HOME}/workspace/research/disent/out/adversarial_mask/2021-09-27--23-09-05_EXP_shapes3d_1000x256_all_std_gmean/data.pkl.gz'
+    # pickle_file: '${oc.env:HOME}/workspace/research/s12045/out/adversarial_mask/2021-09-27--21-33-57_EXP_shapes3d_1000x256_all_std_mean/data.pkl.gz'
+    pickle_file: '${oc.env:HOME}/workspace/research/s12045/out/adversarial_mask/2021-09-27--23-09-05_EXP_shapes3d_1000x256_all_std_gmean/data.pkl.gz'
   randomize: FALSE
   data:
-    _target_: disent.dataset.data.Shapes3dData
+    _target_: s12045.dataset.data.Shapes3dData
     data_root: ${dsettings.storage.data_root}
     prepare: ${dsettings.dataset.prepare}
     in_memory: ${dsettings.dataset.try_in_memory}
 
 transform:
-  _target_: disent.dataset.transform.ToImgTensorF32
+  _target_: s12045.dataset.transform.ToImgTensorF32
   mean: ${dataset.meta.vis_mean}
   std: ${dataset.meta.vis_std}
 

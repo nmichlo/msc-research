@@ -29,20 +29,20 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 import research.util as H
-from disent.dataset import DisentDataset
-from disent.dataset.data import Cars3dData
-from disent.dataset.data import DSpritesData
-from disent.dataset.data import DSpritesImagenetData
-from disent.dataset.data import GroundTruthData
-from disent.dataset.data import SelfContainedHdf5GroundTruthData
-from disent.dataset.data import Shapes3dData
-from disent.dataset.data import SmallNorbData
-from disent.dataset.data import XYBlocksData
-from disent.dataset.data import XYObjectData
-from disent.dataset.data import XYObjectShadedData
-from disent.dataset.data import XYSquaresData
-from disent.util.function import wrapped_partial
-from disent.util.seeds import TempNumpySeed
+from s12045.dataset import DisentDataset
+from s12045.dataset.data import Cars3dData
+from s12045.dataset.data import DSpritesData
+from s12045.dataset.data import DSpritesImagenetData
+from s12045.dataset.data import GroundTruthData
+from s12045.dataset.data import SelfContainedHdf5GroundTruthData
+from s12045.dataset.data import Shapes3dData
+from s12045.dataset.data import SmallNorbData
+from s12045.dataset.data import XYBlocksData
+from s12045.dataset.data import XYObjectData
+from s12045.dataset.data import XYObjectShadedData
+from s12045.dataset.data import XYSquaresData
+from s12045.util.function import wrapped_partial
+from s12045.util.seeds import TempNumpySeed
 
 
 # ========================================================================= #

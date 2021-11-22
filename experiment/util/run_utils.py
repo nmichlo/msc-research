@@ -32,7 +32,7 @@ import logging
 from pytorch_lightning import Trainer
 from pytorch_lightning.loggers import LoggerCollection
 
-from disent.util.lightning.logger_util import wb_yield_loggers
+from s12045.util.lightning.logger_util import wb_yield_loggers
 
 log = logging.getLogger(__name__)
 

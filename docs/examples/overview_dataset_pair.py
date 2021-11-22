@@ -1,7 +1,7 @@
-from disent.dataset import DisentDataset
-from disent.dataset.data import XYObjectData
-from disent.dataset.sampling import GroundTruthPairOrigSampler
-from disent.dataset.transform import ToImgTensorF32
+from s12045.dataset import DisentDataset
+from s12045.dataset.data import XYObjectData
+from s12045.dataset.sampling import GroundTruthPairOrigSampler
+from s12045.dataset.transform import ToImgTensorF32
 
 
 # prepare the data

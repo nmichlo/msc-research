@@ -4,7 +4,7 @@ defaults:
 name: augpos_tvae_os
 
 cfg:
-  _target_: disent.frameworks.vae.experimental.AugPosTripletVae.cfg
+  _target_: s12045.frameworks.vae.experimental.AugPosTripletVae.cfg
   # base ae
   recon_loss: ${settings.framework.recon_loss}
   loss_reduction: ${settings.framework.loss_reduction}
@@ -26,7 +26,7 @@ cfg:
   triplet_p: 1
   # overlap
   overlap_augment:
-    _target_: disent.transform.FftBoxBlur
+    _target_: s12045.transform.FftBoxBlur
     p: 1.0
     radius: [ 16, 16 ]
     random_mode: "batch"

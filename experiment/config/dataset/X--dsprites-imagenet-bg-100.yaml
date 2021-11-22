@@ -4,7 +4,7 @@ defaults:
 name: dsprites_imagenet_bg_100
 
 data:
-  _target_: disent.dataset.data.DSpritesImagenetData
+  _target_: s12045.dataset.data.DSpritesImagenetData
   visibility: 100
   mode: bg
   data_root: ${dsettings.storage.data_root}
@@ -12,7 +12,7 @@ data:
   in_memory: ${dsettings.dataset.try_in_memory}
 
 transform:
-  _target_: disent.dataset.transform.ToImgTensorF32
+  _target_: s12045.dataset.transform.ToImgTensorF32
   mean: ${data.meta.vis_mean}
   std: ${data.meta.vis_std}
 

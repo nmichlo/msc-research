@@ -1,12 +1,12 @@
 name: vae_fc
 
 encoder_cls:
-  _target_: disent.model.ae.EncoderFC
+  _target_: s12045.model.ae.EncoderFC
   x_shape: ${dataset.meta.x_shape}
   z_size: ${settings.model.z_size}
   z_multiplier: ${framework.meta.model_z_multiplier}
 
 decoder_cls:
-  _target_: disent.model.ae.DecoderFC
+  _target_: s12045.model.ae.DecoderFC
   x_shape: ${dataset.meta.x_shape}
   z_size: ${settings.model.z_size}

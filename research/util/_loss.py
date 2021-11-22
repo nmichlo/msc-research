@@ -31,8 +31,8 @@ import numpy as np
 import torch
 from torch.nn import functional as F
 
-from disent import registry
-from disent.nn.loss.reduction import batch_loss_reduction
+from s12045 import registry
+from s12045.nn.loss.reduction import batch_loss_reduction
 
 
 # ========================================================================= #

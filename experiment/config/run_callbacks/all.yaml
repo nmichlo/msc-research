@@ -18,7 +18,7 @@ callbacks:
 #    every_n_steps: 7200
 
 #  latent_cycle:
-#    _target_: disent.util.lightning.callbacks.VaeLatentCycleLoggingCallback
+#    _target_: s12045.util.lightning.callbacks.VaeLatentCycleLoggingCallback
 #    seed: 7777
 #    every_n_steps: 7200
 #    begin_first_step: FALSE
@@ -29,7 +29,7 @@ callbacks:
 #    recon_std: ${dataset.vis_std}
 #
 #  gt_dists:
-#    _target_: disent.util.lightning.callbacks.VaeGtDistsLoggingCallback
+#    _target_: s12045.util.lightning.callbacks.VaeGtDistsLoggingCallback
 #    seed: 7777
 #    every_n_steps: 7200
 #    begin_first_step: TRUE

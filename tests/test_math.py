@@ -28,21 +28,21 @@ import torch
 from scipy.stats import gmean
 from scipy.stats import hmean
 
-from disent.dataset import DisentDataset
-from disent.dataset.data import XYObjectData
-from disent.dataset.sampling import RandomSampler
-from disent.nn.functional import torch_conv2d_channel_wise
-from disent.nn.functional import torch_conv2d_channel_wise_fft
-from disent.nn.functional import torch_corr_matrix
-from disent.nn.functional import torch_cov_matrix
-from disent.nn.functional import torch_dct
-from disent.nn.functional import torch_dct2
-from disent.nn.functional import torch_gaussian_kernel_2d
-from disent.nn.functional import torch_idct
-from disent.nn.functional import torch_idct2
-from disent.nn.functional import torch_mean_generalized
-from disent.dataset.transform import ToImgTensorF32
-from disent.util import to_numpy
+from s12045.dataset import DisentDataset
+from s12045.dataset.data import XYObjectData
+from s12045.dataset.sampling import RandomSampler
+from s12045.nn.functional import torch_conv2d_channel_wise
+from s12045.nn.functional import torch_conv2d_channel_wise_fft
+from s12045.nn.functional import torch_corr_matrix
+from s12045.nn.functional import torch_cov_matrix
+from s12045.nn.functional import torch_dct
+from s12045.nn.functional import torch_dct2
+from s12045.nn.functional import torch_gaussian_kernel_2d
+from s12045.nn.functional import torch_idct
+from s12045.nn.functional import torch_idct2
+from s12045.nn.functional import torch_mean_generalized
+from s12045.dataset.transform import ToImgTensorF32
+from s12045.util import to_numpy
 
 
 # ========================================================================= #

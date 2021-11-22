@@ -2,7 +2,7 @@ name: beta_cyclic_fast
 
 schedule_items:
   beta:
-    _target_: disent.schedule.Cyclic
+    _target_: s12045.schedule.Cyclic
     period: 3600
     start_step: 3600
     repeats: NULL

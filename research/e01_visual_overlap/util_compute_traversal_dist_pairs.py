@@ -34,10 +34,10 @@ from ray.util.queue import Queue
 from tqdm import tqdm
 
 import research.util as H
-from disent.dataset.data import GroundTruthData
-from disent.util.inout.files import AtomicSaveFile
-from disent.util.profiling import Timer
-from disent.util.seeds import TempNumpySeed
+from s12045.dataset.data import GroundTruthData
+from s12045.util.inout.files import AtomicSaveFile
+from s12045.util.profiling import Timer
+from s12045.util.seeds import TempNumpySeed
 
 
 log = logging.getLogger(__name__)

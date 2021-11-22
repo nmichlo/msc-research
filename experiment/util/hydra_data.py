@@ -30,8 +30,8 @@ import torch.utils.data
 import pytorch_lightning as pl
 from omegaconf import DictConfig
 
-from disent.dataset import DisentDataset
-from disent.dataset.transform import DisentDatasetTransform
+from s12045.dataset import DisentDataset
+from s12045.dataset.transform import DisentDatasetTransform
 
 
 log = logging.getLogger(__name__)
@@ -39,7 +39,7 @@ log = logging.getLogger(__name__)
 
 # ========================================================================= #
 # DISENT DATASET MODULE                                                     #
-# TODO: possible implementation outline for disent                          #
+# TODO: possible implementation outline for s12045                          #
 # ========================================================================= #
 
 

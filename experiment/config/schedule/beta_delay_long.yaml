@@ -2,7 +2,7 @@ name: beta_increase
 
 schedule_items:
   beta:
-    _target_: disent.schedule.Single
+    _target_: s12045.schedule.Single
     start_step: 7200
     end_step: 14400
     r_start: 0.001

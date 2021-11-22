@@ -58,12 +58,12 @@ from ruck.external.deap import select_nsga2 as select_nsga2_deap
 # from ruck.functional import select_nsga2 as select_nsga2_ruck  # should rather use this!
 
 import research.util as H
-from disent.dataset.wrapper import MaskedDataset
-from disent.util.function import wrapped_partial
-from disent.util.inout.paths import ensure_parent_dir_exists
-from disent.util.profiling import Timer
-from disent.util.seeds import seed
-from disent.util.visualize.vis_util import get_idx_traversal
+from s12045.dataset.wrapper import MaskedDataset
+from s12045.util.function import wrapped_partial
+from s12045.util.inout.paths import ensure_parent_dir_exists
+from s12045.util.profiling import Timer
+from s12045.util.seeds import seed
+from s12045.util.visualize.vis_util import get_idx_traversal
 from research.e01_visual_overlap.util_compute_traversal_dist_pairs import cached_compute_dataset_pair_dists
 from research.e06_adversarial_data.util_eval_adversarial_dist_pairs import eval_masked_dist_pairs
 

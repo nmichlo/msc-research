@@ -3,17 +3,17 @@ import pytorch_lightning as pl
 import torch
 from torch.utils.data import DataLoader
 
-from disent.dataset import DisentDataset
-from disent.dataset.data import XYObjectData
-from disent.dataset.sampling import SingleSampler
-from disent.dataset.transform import ToImgTensorF32
-from disent.frameworks.vae import BetaVae
-from disent.metrics import metric_dci
-from disent.metrics import metric_mig
-from disent.model import AutoEncoder
-from disent.model.ae import DecoderConv64
-from disent.model.ae import EncoderConv64
-from disent.schedule import CyclicSchedule
+from s12045.dataset import DisentDataset
+from s12045.dataset.data import XYObjectData
+from s12045.dataset.sampling import SingleSampler
+from s12045.dataset.transform import ToImgTensorF32
+from s12045.frameworks.vae import BetaVae
+from s12045.metrics import metric_dci
+from s12045.metrics import metric_mig
+from s12045.model import AutoEncoder
+from s12045.model.ae import DecoderConv64
+from s12045.model.ae import EncoderConv64
+from s12045.schedule import CyclicSchedule
 
 # create the dataset & dataloaders
 # - ToImgTensorF32 transforms images from numpy arrays to tensors and performs checks

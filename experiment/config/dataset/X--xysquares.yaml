@@ -4,10 +4,10 @@ defaults:
 name: xysquares_minimal
 
 data:
-  _target_: disent.dataset.data.XYSquaresMinimalData
+  _target_: s12045.dataset.data.XYSquaresMinimalData
 
 transform:
-  _target_: disent.dataset.transform.ToImgTensorF32
+  _target_: s12045.dataset.transform.ToImgTensorF32
   mean: ${dataset.meta.vis_mean}
   std: ${dataset.meta.vis_std}
 

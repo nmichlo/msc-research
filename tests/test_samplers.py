@@ -29,10 +29,10 @@ from typing import Union
 import numpy as np
 import pytest
 
-from disent.dataset import DisentDataset
-from disent.dataset.data import BaseEpisodesData
-from disent.dataset.sampling import *
-from disent.dataset.data import XYObjectData
+from s12045.dataset import DisentDataset
+from s12045.dataset.data import BaseEpisodesData
+from s12045.dataset.sampling import *
+from s12045.dataset.data import XYObjectData
 
 
 class TestEpisodesData(BaseEpisodesData):

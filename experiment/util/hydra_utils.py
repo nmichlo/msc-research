@@ -32,7 +32,7 @@ from omegaconf import DictConfig
 from omegaconf import ListConfig
 from omegaconf import OmegaConf
 
-from disent.util.deprecate import deprecated
+from s12045.util.deprecate import deprecated
 
 
 log = logging.getLogger(__name__)

@@ -31,12 +31,12 @@ import h5py
 import numpy as np
 import pytest
 
-from disent.dataset.data import Hdf5Dataset
-from disent.dataset.data import XYObjectData
-from disent.dataset.util.hdf5 import hdf5_resave_file
-from disent.dataset.util.hdf5 import hdf5_test_speed
-from disent.util.inout.hashing import hash_file
-from disent.util.function import wrapped_partial
+from s12045.dataset.data import Hdf5Dataset
+from s12045.dataset.data import XYObjectData
+from s12045.dataset.util.hdf5 import hdf5_resave_file
+from s12045.dataset.util.hdf5 import hdf5_test_speed
+from s12045.util.inout.hashing import hash_file
+from s12045.util.function import wrapped_partial
 
 from tests.util import no_stderr
 from tests.util import no_stdout

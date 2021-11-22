@@ -30,9 +30,9 @@ from matplotlib import pyplot as plt
 from tqdm import tqdm
 
 import research.util as H
-from disent.nn.functional import torch_box_kernel_2d
-from disent.nn.functional import torch_conv2d_channel_wise_fft
-from disent.nn.functional import torch_gaussian_kernel_2d
+from s12045.nn.functional import torch_box_kernel_2d
+from s12045.nn.functional import torch_conv2d_channel_wise_fft
+from s12045.nn.functional import torch_gaussian_kernel_2d
 
 
 # ========================================================================= #

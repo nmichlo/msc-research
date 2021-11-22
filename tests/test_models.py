@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -25,8 +25,8 @@ import pytest
 import torch
 
 from s12045.model import AutoEncoder
-from s12045.model import DisentDecoder
-from s12045.model import DisentEncoder
+from s12045.model import S12045Decoder
+from s12045.model import S12045Encoder
 from s12045.model.ae import *
 
 
@@ -36,7 +36,7 @@ from s12045.model.ae import *
     [EncoderFC,         DecoderFC],
     [EncoderLinear, DecoderLinear],
 ])
-def test_ae_models(encoder_cls: DisentEncoder, decoder_cls: DisentDecoder):
+def test_ae_models(encoder_cls: S12045Encoder, decoder_cls: S12045Decoder):
     x_shape, z_size = (3, 64, 64), 8
     # create model
     vae = AutoEncoder(

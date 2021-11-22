@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import numpy as np
 import torch
 import logging
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.util.state_space import NonNormalisedFactors
 from s12045.util.seeds import TempNumpySeed
 from s12045.util.visualize.vis_util import make_animated_image_grid
@@ -258,7 +258,7 @@ def plt_hide_axis(ax, hide_xaxis=True, hide_yaxis=True, hide_border=True, hide_a
 
 
 def visualize_dataset_traversal(
-    dataset: DisentDataset,
+    dataset: S12045Dataset,
     # inputs
     factor_names: Optional[NonNormalisedFactors] = None,
     num_frames: int = 9,

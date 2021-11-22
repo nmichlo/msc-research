@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -372,7 +372,7 @@ class H5Builder(object):
 
     def add_dataset_from_gt_data(
         self,
-        data: Union['DisentDataset', 'GroundTruthData'],
+        data: Union['S12045Dataset', 'GroundTruthData'],
         mutator: Optional[Callable[[Any], np.ndarray]] = None,
         img_shape: Tuple[Optional[int], ...] = (None, None, None),  # None items are automatically found
         batch_size: int = 32,
@@ -382,12 +382,12 @@ class H5Builder(object):
         dtype: str = 'uint8',
         attrs: Optional[dict] = None
     ):
-        from s12045.dataset import DisentDataset
+        from s12045.dataset import S12045Dataset
         from s12045.dataset.data import GroundTruthData
         # get dataset
-        if isinstance(data, DisentDataset): gt_data = data.gt_data
+        if isinstance(data, S12045Dataset): gt_data = data.gt_data
         elif isinstance(data, GroundTruthData): gt_data = data
-        else: raise TypeError(f'invalid data type: {type(data)}, must be {DisentDataset} or {GroundTruthData}')
+        else: raise TypeError(f'invalid data type: {type(data)}, must be {S12045Dataset} or {GroundTruthData}')
         # magic vars
         name = 'data'
         # process image shape

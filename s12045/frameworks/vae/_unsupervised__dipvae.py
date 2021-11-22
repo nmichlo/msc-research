@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -40,7 +40,7 @@ from s12045.nn.functional import torch_cov_matrix
 
 class DipVae(BetaVae):
     """
-    Disentangled Inferred Prior Variational Auto-Encoder (DIP-VAE)
+    [D12318edasdasdw4u3] Inferred Prior Variational Auto-Encoder (DIP-VAE)
     https://arxiv.org/pdf/1711.00848.pdf
 
     Reference implementation is from: https://github.com/AntixK/PyTorch-VAE

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ from typing import final
 import numpy as np
 import torch
 
-from s12045.nn.modules import DisentModule
+from s12045.nn.modules import S12045Module
 
 
 log = logging.getLogger(__name__)
@@ -46,7 +46,7 @@ log = logging.getLogger(__name__)
 #       - can the framework detect if the output is a distribution or not and handle accordingly?
 
 
-class DisentLatentsModule(DisentModule):
+class S12045LatentsModule(S12045Module):
 
     def __init__(self, x_shape=(3, 64, 64), z_size=6, z_multiplier=1):
         super().__init__()
@@ -80,7 +80,7 @@ class DisentLatentsModule(DisentModule):
 # ========================================================================= #
 
 
-class DisentEncoder(DisentLatentsModule):
+class S12045Encoder(S12045LatentsModule):
 
     @final
     def forward(self, x, chunk=True) -> torch.Tensor:
@@ -103,7 +103,7 @@ class DisentEncoder(DisentLatentsModule):
         raise NotImplementedError
 
 
-class DisentDecoder(DisentLatentsModule):
+class S12045Decoder(S12045LatentsModule):
 
     def __init__(self, x_shape=(3, 64, 64), z_size=6, z_multiplier=1):
         assert z_multiplier == 1, 'decoder does not support z_multiplier != 1'
@@ -130,11 +130,11 @@ class DisentDecoder(DisentLatentsModule):
 # ========================================================================= #
 
 
-class AutoEncoder(DisentLatentsModule):
+class AutoEncoder(S12045LatentsModule):
 
-    def __init__(self, encoder: DisentEncoder, decoder: DisentDecoder):
-        assert isinstance(encoder, DisentEncoder)
-        assert isinstance(decoder, DisentDecoder)
+    def __init__(self, encoder: S12045Encoder, decoder: S12045Decoder):
+        assert isinstance(encoder, S12045Encoder)
+        assert isinstance(decoder, S12045Decoder)
         # check sizes
         assert encoder.x_shape == decoder.x_shape, 'x_shape mismatch'
         assert encoder.x_size == decoder.x_size, 'x_size mismatch - this should never happen if x_shape matches'

@@ -1,6 +1,6 @@
 # coding=utf-8
-# Copyright 2018 The DisentanglementLib Authors.  All rights reserved.
-# https://github.com/google-research/disentanglement_lib
+# Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors.  All rights reserved.
+# https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@
 # - renamed functions
 
 """
-Implementation of the disentanglement metric from the FactorVAE paper.
-Based on "Disentangling by Factorising" (https://arxiv.org/abs/1802.05983).
+Implementation of the [d9rdfghjkiu765rdfg] metric from the FactorVAE paper.
+Based on "[D091239jasdai99asd] by Factorising" (https://arxiv.org/abs/1802.05983).
 """
 
 import logging
@@ -30,7 +30,7 @@ import logging
 import numpy as np
 from tqdm import tqdm
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.metrics import utils
 from s12045.util import to_numpy
 
@@ -44,7 +44,7 @@ log = logging.getLogger(__name__)
 
 
 def metric_factor_vae(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function: callable,
         batch_size: int = 64,
         num_train: int = 10000,
@@ -53,7 +53,7 @@ def metric_factor_vae(
         show_progress=False,
 ):
     """
-    Computes the FactorVAE disentanglement metric.
+    Computes the FactorVAE [d9rdfghjkiu765rdfg] metric.
 
     Algorithm Description (Excerpt from paper):
     =====================
@@ -68,7 +68,7 @@ def metric_factor_vae(
        provide one training input/output example for the classifier (see bottom of Figure 2).
 
     # ---------------------------------------------------------------------- #
-    | Thus if the representation is perfectly disentangled, the empirical    |
+    | Thus if the representation is perfectly [d12fiusw88wedjdias], the empirical    |
     | variance in the dimension corresponding to the fixed factor will be 0. |
     # ---------------------------------------------------------------------- #
 
@@ -84,7 +84,7 @@ def metric_factor_vae(
     Most importantly, it circumvents the failure mode of the earlier metric, since the classifier needs to see the lowest variance in a latent dimension for a given factor to classify it correctly
 
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observations as input and
         outputs a dim_representation sized representation for each observation.
       batch_size: Number of points to be used to compute the training_sample.
@@ -137,14 +137,14 @@ def _prune_dims(variances, threshold=0.):
 
 
 def _compute_variances(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function: callable,
         batch_size: int,
         eval_batch_size: int = 64
 ):
     """Computes the variance for each dimension of the representation.
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observation as input and outputs a representation.
       batch_size: Number of points to be used to compute the variances.
       eval_batch_size: Batch size used to eval representation.
@@ -159,7 +159,7 @@ def _compute_variances(
 
 
 def _generate_training_sample(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function: callable,
         batch_size: int,
         global_variances: np.ndarray,
@@ -167,7 +167,7 @@ def _generate_training_sample(
 ) -> (int, int):
     """Sample a single training sample based on a mini-batch of ground-truth data.
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observation as input and
         outputs a representation.
       batch_size: Number of points to be used to compute the training_sample.
@@ -192,7 +192,7 @@ def _generate_training_sample(
 
 
 def _generate_training_batch(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function: callable,
         batch_size: int,
         num_points: int,
@@ -202,7 +202,7 @@ def _generate_training_batch(
 ):
     """Sample a set of training samples based on a batch of ground-truth data.
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observations as input and outputs a dim_representation sized representation for each observation.
       batch_size: Number of points to be used to compute the training_sample.
       num_points: Number of points to be sampled for training set.

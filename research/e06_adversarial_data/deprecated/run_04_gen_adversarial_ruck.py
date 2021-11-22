@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -358,7 +358,7 @@ def run(
     wandb_enabled: bool = True,
     wandb_init: bool = True,
     wandb_project: str = 'exp-adversarial-mask',
-    wandb_user: str = 'n_michlo',
+    wandb_user: str = 'author_12045',
     wandb_job_name: str = None,
     wandb_tags: Optional[List[str]] = None,
     wandb_finish: bool = True,

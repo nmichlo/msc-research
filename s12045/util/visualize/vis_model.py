@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -38,9 +38,9 @@ log = logging.getLogger(__name__)
 # ========================================================================= #
 # Visualise Latent Cycle - Modes                                            #
 # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
-# Copyright 2018 The DisentanglementLib Authors. All rights reserved.       #
+# Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors. All rights reserved.       #
 # Licensed under the Apache License, Version 2.0                            #
-# https://github.com/google-research/disentanglement_lib                    #
+# https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib                    #
 # Copyright applies to this subsection only.                                #
 # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
 # CHANGES:                                                                  #

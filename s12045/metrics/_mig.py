@@ -1,6 +1,6 @@
 # coding=utf-8
-# Copyright 2018 The DisentanglementLib Authors.  All rights reserved.
-# https://github.com/google-research/disentanglement_lib
+# Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors.  All rights reserved.
+# https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
 
 """
 Mutual Information Gap from the beta-TC-VAE paper.
-Based on "Isolating Sources of Disentanglement in Variational Autoencoders"
+Based on "Isolating Sources of [D07ykdd2378r8hasd3] in Variational Autoencoders"
 (https://arxiv.org/pdf/1802.04942.pdf).
 """
 
@@ -30,7 +30,7 @@ import logging
 
 import numpy as np
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.metrics import utils
 
 
@@ -43,14 +43,14 @@ log = logging.getLogger(__name__)
 
 
 def metric_mig(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function,
         num_train=10000,
         batch_size=16,
 ):
     """Computes the mutual information gap.
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observations as input and
         outputs a dim_representation sized representation for each observation.
       num_train: Number of points used for training.

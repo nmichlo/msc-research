@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -48,8 +48,8 @@ from torch.utils.data import IterableDataset
 from torch.utils.data.dataset import T_co
 
 import research.util as H
-from s12045.dataset import DisentDataset
-from s12045.dataset.sampling import BaseDisentSampler
+from s12045.dataset import S12045Dataset
+from s12045.dataset.sampling import BaseS12045Sampler
 from s12045.dataset.util.hdf5 import H5Builder
 from s12045.util import to_numpy
 from s12045.util.deprecate import deprecated
@@ -127,9 +127,9 @@ class AdversarialModel(pl.LightningModule):
         # save hparams
         self.save_hyperparameters()
         # variables
-        self.dataset: DisentDataset = None
+        self.dataset: S12045Dataset = None
         self.array: torch.Tensor = None
-        self.sampler: BaseDisentSampler = None
+        self.sampler: BaseS12045Sampler = None
 
     # ================================== #
     # setup                              #

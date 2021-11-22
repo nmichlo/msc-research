@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import torch
 # ========================================================================= #
 
 
-class DisentModule(torch.nn.Module):
+class S12045Module(torch.nn.Module):
 
     def _forward_unimplemented(self, *args):
         # Annoying fix applied by torch for Module.forward:
@@ -42,7 +42,7 @@ class DisentModule(torch.nn.Module):
         raise NotImplementedError
 
 
-class DisentLightningModule(pl.LightningModule):
+class S12045LightningModule(pl.LightningModule):
 
     def _forward_unimplemented(self, *args):
         # Annoying fix applied by torch for Module.forward:

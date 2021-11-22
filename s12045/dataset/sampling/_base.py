@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -31,9 +31,9 @@ from typing import Tuple
 # ========================================================================= #
 
 
-class BaseDisentSampler(object):
+class BaseS12045Sampler(object):
 
-    def uninit_copy(self) -> 'BaseDisentSampler':
+    def uninit_copy(self) -> 'BaseS12045Sampler':
         raise NotImplementedError
 
     def __init__(self, num_samples: int):
@@ -46,7 +46,7 @@ class BaseDisentSampler(object):
     __initialized = False
 
     @final
-    def init(self, dataset) -> 'BaseDisentSampler':
+    def init(self, dataset) -> 'BaseS12045Sampler':
         if self.__initialized:
             raise RuntimeError(f'Sampler: {repr(self.__class__.__name__)} has already been initialized, are you sure it is not being reused?')
         # initialize

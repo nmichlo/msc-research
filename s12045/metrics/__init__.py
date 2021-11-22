@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,7 @@ from ._factor_vae import metric_factor_vae
 from ._mig import metric_mig
 from ._sap import metric_sap
 from ._unsupervised import metric_unsupervised
-# Nathan Michlo et. al                                        # pragma: delete-on-release
+# CVPR-2022 Submission 12045 Authors                          # pragma: delete-on-release
 from ._flatness import metric_flatness                        # pragma: delete-on-release
 from ._flatness_components import metric_flatness_components  # pragma: delete-on-release
 

@@ -3,7 +3,7 @@ import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 from torchvision import datasets
 from tqdm import tqdm
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.sampling import RandomSampler
 from s12045.frameworks.vae import AdaVae
 from s12045.model import AutoEncoder
@@ -20,7 +20,7 @@ class MNIST(datasets.MNIST):
 
 # make mnist dataset -- adjust num_samples here to match framework. TODO: add tests that can fail with a warning -- dataset downloading is not always reliable
 data_folder   = os.path.abspath(os.path.join(__file__, '../data/dataset'))
-dataset_train = DisentDataset(MNIST(data_folder, train=True,  download=True, transform=ToImgTensorF32()), sampler=RandomSampler(num_samples=2))
+dataset_train = S12045Dataset(MNIST(data_folder, train=True,  download=True, transform=ToImgTensorF32()), sampler=RandomSampler(num_samples=2))
 dataset_test  =               MNIST(data_folder, train=False, download=True, transform=ToImgTensorF32())
 
 # create the dataloaders

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 
 from s12045.dataset.data import BaseEpisodesData
-from s12045.dataset.sampling._base import BaseDisentSampler
+from s12045.dataset.sampling._base import BaseS12045Sampler
 from s12045.util.math.random import sample_radius as sample_radius_fn
 
 
@@ -32,7 +32,7 @@ from s12045.util.math.random import sample_radius as sample_radius_fn
 # ========================================================================= #
 
 
-class RandomEpisodeSampler(BaseDisentSampler):
+class RandomEpisodeSampler(BaseS12045Sampler):
 
     def uninit_copy(self) -> 'RandomEpisodeSampler':
         return RandomEpisodeSampler(

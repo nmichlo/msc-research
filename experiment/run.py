@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -37,8 +37,8 @@ from omegaconf import OmegaConf
 from pytorch_lightning.loggers import WandbLogger
 
 from s12045 import metrics
-from s12045.frameworks import DisentConfigurable
-from s12045.frameworks import DisentFramework
+from s12045.frameworks import S12045Configurable
+from s12045.frameworks import S12045Framework
 from s12045.model import AutoEncoder
 from s12045.nn.weights import init_model_weights
 from s12045.util.seeds import seed
@@ -224,7 +224,7 @@ def hydra_get_metric_callbacks(cfg) -> list:
     return callbacks
 
 
-def hydra_register_schedules(module: DisentFramework, cfg):
+def hydra_register_schedules(module: S12045Framework, cfg):
     # check the type
     schedule_items = cfg.schedule.schedule_items
     assert isinstance(schedule_items, (dict, DictConfig)), f'`schedule.schedule_items` must be a dictionary, got type: {type(schedule_items)} with value: {repr(schedule_items)}'
@@ -235,11 +235,11 @@ def hydra_register_schedules(module: DisentFramework, cfg):
             module.register_schedule(target, hydra.utils.instantiate(schedule), logging=True)
 
 
-def hydra_create_and_update_framework_config(cfg) -> DisentConfigurable.cfg:
+def hydra_create_and_update_framework_config(cfg) -> S12045Configurable.cfg:
     # create framework config - this is also kinda hacky
     # - we need instantiate_recursive because of optimizer_kwargs,
     #   otherwise the dictionary is left as an OmegaConf dict
-    framework_cfg: DisentConfigurable.cfg = hydra.utils.instantiate(cfg.framework.cfg)
+    framework_cfg: S12045Configurable.cfg = hydra.utils.instantiate(cfg.framework.cfg)
     # warn if some of the cfg variables were not overridden
     missing_keys = sorted(set(framework_cfg.get_keys()) - (set(cfg.framework.cfg.keys())))
     if missing_keys:
@@ -250,7 +250,7 @@ def hydra_create_and_update_framework_config(cfg) -> DisentConfigurable.cfg:
     return framework_cfg
 
 
-def hydra_create_framework(framework_cfg: DisentConfigurable.cfg, datamodule, cfg):
+def hydra_create_framework(framework_cfg: S12045Configurable.cfg, datamodule, cfg):
     # specific handling for experiment, this is HACKY!
     # - not supported normally, we need to instantiate to get the class (is there hydra support for this?)
     framework_cfg.optimizer        = hydra.utils.get_class(framework_cfg.optimizer)

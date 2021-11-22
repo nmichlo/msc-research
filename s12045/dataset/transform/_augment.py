@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@ import numpy as np
 import torch
 
 import s12045
-from s12045.nn.modules import DisentModule
+from s12045.nn.modules import S12045Module
 from s12045.nn.functional import torch_box_kernel_2d
 from s12045.nn.functional import torch_conv2d_channel_wise_fft
 from s12045.nn.functional import torch_gaussian_kernel_2d
@@ -55,7 +55,7 @@ def _expand_to_min_max_tuples(input: MmTuple) -> Tuple[Tuple[Number, Number], Tu
     return (xm, xM), (ym, yM)
 
 
-class _BaseFftBlur(DisentModule):
+class _BaseFftBlur(S12045Module):
     """
     randomly gaussian blur the input images.
     - similar api to kornia
@@ -178,7 +178,7 @@ class FftBoxBlur(_BaseFftBlur):
 # ========================================================================= #
 
 
-class FftKernel(DisentModule):
+class FftKernel(S12045Module):
     """
     2D Convolve an image
     """

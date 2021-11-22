@@ -4,7 +4,7 @@
 ## Settings                                                                  #
 ## ========================================================================= #
 #
-#export USERNAME="n_michlo"
+#export USERNAME="author_12045"
 #export PROJECT="final-04__data-overlap-triplet"
 #export PARTITION="stampede"
 #export PARALLELISM=32

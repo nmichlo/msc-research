@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -32,7 +32,7 @@ import numpy as np
 from torch.utils.data import Dataset
 from torch.utils.data.dataloader import default_collate
 
-from s12045.dataset.sampling import BaseDisentSampler
+from s12045.dataset.sampling import BaseS12045Sampler
 from s12045.dataset.data import GroundTruthData
 from s12045.dataset.sampling import SingleSampler
 from s12045.dataset.wrapper import WrappedDataset
@@ -45,7 +45,7 @@ from s12045.util.math.random import random_choice_prng
 # Helper                                                                    #
 # -- Checking if the wrapped data is an instance of GroundTruthData adds    #
 #    complexity, but it means the user doesn't have to worry about handling #
-#    potentially different instances of the DisentDataset class             #
+#    potentially different instances of the S12045Dataset class             #
 # ========================================================================= #
 
 
@@ -60,7 +60,7 @@ T = TypeVar('T')
 
 def groundtruth_only(func: T) -> T:
     @wraps(func)
-    def wrapper(self: 'DisentDataset', *args, **kwargs):
+    def wrapper(self: 'S12045Dataset', *args, **kwargs):
         if not self.is_ground_truth:
             raise NotGroundTruthDataError(f'Check `is_ground_truth` first before calling `{func.__name__}`, the dataset wrapped by {repr(self.__class__.__name__)} is not a {repr(GroundTruthData.__name__)}, instead got: {repr(self._dataset)}.')
         return func(self, *args, **kwargs)
@@ -69,7 +69,7 @@ def groundtruth_only(func: T) -> T:
 
 def wrapped_only(func):
     @wraps(func)
-    def wrapper(self: 'DisentDataset', *args, **kwargs):
+    def wrapper(self: 'S12045Dataset', *args, **kwargs):
         if not self.is_wrapped_data:
             raise NotGroundTruthDataError(f'Check `is_data_wrapped` first before calling `{func.__name__}`, the dataset wrapped by {repr(self.__class__.__name__)} is not a {repr(WrappedDataset.__name__)}, instead got: {repr(self._dataset)}.')
         return func(self, *args, **kwargs)
@@ -84,13 +84,13 @@ def wrapped_only(func):
 _DO_COPY = object()
 
 
-class DisentDataset(Dataset, LengthIter):
+class S12045Dataset(Dataset, LengthIter):
 
 
     def __init__(
         self,
         dataset: Union[Dataset, GroundTruthData],
-        sampler: Optional[BaseDisentSampler] = None,
+        sampler: Optional[BaseS12045Sampler] = None,
         transform=None,
         augment=None,
         return_indices: bool = False,
@@ -111,8 +111,8 @@ class DisentDataset(Dataset, LengthIter):
         transform=_DO_COPY,
         augment=_DO_COPY,
         return_indices=_DO_COPY,
-    ) -> 'DisentDataset':
-        return DisentDataset(
+    ) -> 'S12045Dataset':
+        return S12045Dataset(
             dataset=self._dataset,
             sampler=self._sampler,
             transform=self._transform if (transform is _DO_COPY) else transform,
@@ -151,7 +151,7 @@ class DisentDataset(Dataset, LengthIter):
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
     # Wrapped Dataset                                                       #
     # -- TODO: this is a bit hacky                                          #
-    # -- Allows us to compute disentanglement metrics over datasets         #
+    # -- Allows us to compute [d9rdfghjkiu765rdfg] metrics over datasets         #
     #    derived from ground truth data                                     #
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
@@ -176,10 +176,10 @@ class DisentDataset(Dataset, LengthIter):
         return self._dataset.gt_data
 
     @wrapped_only
-    def unwrapped_disent_dataset(self) -> 'DisentDataset':
+    def unwrapped_s12045_dataset(self) -> 'S12045Dataset':
         sampler = self._sampler.uninit_copy()
         assert type(sampler) is type(self._sampler)
-        return DisentDataset(
+        return S12045Dataset(
             dataset=self.wrapped_data,
             sampler=sampler,
             transform=self._transform,

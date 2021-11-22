@@ -1,12 +1,12 @@
 from torch.utils.data import DataLoader
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import XYObjectData
 from s12045.dataset.sampling import GroundTruthPairOrigSampler
 from s12045.dataset.transform import ToImgTensorF32
 
 # prepare the data
 data = XYObjectData(grid_size=4, min_square_size=1, max_square_size=2, square_size_spacing=1, palette='rgb_1')
-dataset = DisentDataset(data, sampler=GroundTruthPairOrigSampler(), transform=ToImgTensorF32())
+dataset = S12045Dataset(data, sampler=GroundTruthPairOrigSampler(), transform=ToImgTensorF32())
 dataloader = DataLoader(dataset=dataset, batch_size=4, shuffle=True)
 
 # iterate over single epoch

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@ import torch
 
 import research.util as H
 from s12045.dataset.data import GroundTruthData
-from s12045.dataset.sampling import BaseDisentSampler
+from s12045.dataset.sampling import BaseS12045Sampler
 from s12045.dataset.sampling import GroundTruthPairSampler
 from s12045.dataset.sampling import GroundTruthTripleSampler
 from s12045.dataset.sampling import RandomSampler
@@ -54,7 +54,7 @@ log = logging.getLogger(__name__)
 # ========================================================================= #
 
 
-class AdversarialSampler_SwappedRandom(BaseDisentSampler):
+class AdversarialSampler_SwappedRandom(BaseS12045Sampler):
 
     def uninit_copy(self) -> 'AdversarialSampler_SwappedRandom':
         return AdversarialSampler_SwappedRandom(swap_metric=self._swap_metric)
@@ -81,7 +81,7 @@ class AdversarialSampler_SwappedRandom(BaseDisentSampler):
         return tuple(self._gt_data.pos_to_idx([anchor, pos, neg]))
 
 
-class AdversarialSampler_CloseFar(BaseDisentSampler):
+class AdversarialSampler_CloseFar(BaseS12045Sampler):
 
     def uninit_copy(self) -> 'AdversarialSampler_CloseFar':
         return AdversarialSampler_CloseFar(
@@ -119,7 +119,7 @@ class AdversarialSampler_CloseFar(BaseDisentSampler):
         return anchor, pos, neg
 
 
-class AdversarialSampler_SameK(BaseDisentSampler):
+class AdversarialSampler_SameK(BaseS12045Sampler):
 
     def uninit_copy(self) -> 'AdversarialSampler_SameK':
         return AdversarialSampler_SameK(
@@ -188,7 +188,7 @@ class AdversarialSampler_SameK(BaseDisentSampler):
         raise RuntimeError('could not generate factors: {}')
 
 
-def sampler_print_test(sampler: Union[str, BaseDisentSampler], gt_data: GroundTruthData = None, steps=100):
+def sampler_print_test(sampler: Union[str, BaseS12045Sampler], gt_data: GroundTruthData = None, steps=100):
     # make data
     if gt_data is None:
         gt_data = H.make_dataset('xysquares_8x8_mini').gt_data

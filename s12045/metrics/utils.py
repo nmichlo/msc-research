@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2018 The DisentanglementLib Authors.  All rights reserved.
+# Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import numpy as np
 import sklearn
 from tqdm import tqdm
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.util import to_numpy
 
 
@@ -37,7 +37,7 @@ from s12045.util import to_numpy
 
 
 def generate_batch_factor_code(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function,
         num_points: int,
         batch_size: int,
@@ -45,7 +45,7 @@ def generate_batch_factor_code(
 ):
     """Sample a single training sample based on a mini-batch of ground-truth data.
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observation as input and outputs a representation.
       num_points: Number of points to sample.
       batch_size: Batchsize to sample points.

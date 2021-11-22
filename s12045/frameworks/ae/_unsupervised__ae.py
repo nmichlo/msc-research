@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,7 @@ from typing import Union
 
 import torch
 
-from s12045.frameworks import DisentFramework
+from s12045.frameworks import S12045Framework
 from s12045.frameworks.helper.reconstructions import make_reconstruction_loss
 from s12045.frameworks.helper.reconstructions import ReconLossHandler
 from s12045.frameworks.helper.util import detach_all
@@ -51,7 +51,7 @@ log = logging.getLogger(__name__)
 # ========================================================================= #
 
 
-class Ae(DisentFramework):
+class Ae(S12045Framework):
     """
     Basic Auto Encoder
     ------------------
@@ -77,7 +77,7 @@ class Ae(DisentFramework):
     REQUIRED_OBS = 1
 
     @dataclass
-    class cfg(DisentFramework.cfg):
+    class cfg(S12045Framework.cfg):
         recon_loss: str = 'mse'
         # multiple reduction modes exist for the various loss components.
         # - 'sum': sum over the entire batch

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -25,10 +25,10 @@
 import numpy as np
 
 from s12045.dataset.data import GroundTruthData
-from s12045.dataset.sampling._base import BaseDisentSampler
+from s12045.dataset.sampling._base import BaseS12045Sampler
 
 
-class GroundTruthDistSampler(BaseDisentSampler):
+class GroundTruthDistSampler(BaseS12045Sampler):
 
     def uninit_copy(self) -> 'GroundTruthDistSampler':
         return GroundTruthDistSampler(

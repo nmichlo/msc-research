@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -26,16 +26,16 @@ import numpy as np
 from torch import nn
 from torch import Tensor
 
-from s12045.model import DisentDecoder
-from s12045.model import DisentEncoder
+from s12045.model import S12045Decoder
+from s12045.model import S12045Encoder
 
 
 # ========================================================================= #
-# disentanglement_lib FC models                                             #
+# [d9rdfghjkiu765rdfg]_lib FC models                                             #
 # ========================================================================= #
 
 
-class EncoderFC(DisentEncoder):
+class EncoderFC(S12045Encoder):
     """
     Fully connected encoder used in beta-VAE paper for the dSprites data.
     Based on row 1 of Table 1 on page 13 of "beta-VAE: Learning Basic Visual
@@ -43,7 +43,7 @@ class EncoderFC(DisentEncoder):
     (https://openreview.net/forum?id=Sy2fzU9gl)
 
     Reference Implementation:
-        - https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/shared/architectures.py
+        - https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/methods/shared/architectures.py
         >>> def fc_encoder(input_tensor, num_latent):
         >>>     flattened = tf.layers.flatten(input_tensor)
         >>>     e1 = tf.layers.dense(flattened, 1200, activation=tf.nn.relu, name="e1")
@@ -67,7 +67,7 @@ class EncoderFC(DisentEncoder):
         return self.model(x)
 
 
-class DecoderFC(DisentDecoder):
+class DecoderFC(S12045Decoder):
     """
     Fully connected encoder used in beta-VAE paper for the dSprites data.
     Based on row 1 of Table 1 on page 13 of "beta-VAE: Learning Basic Visual
@@ -75,7 +75,7 @@ class DecoderFC(DisentDecoder):
     (https://openreview.net/forum?id=Sy2fzU9gl)
 
     Reference Implementation:
-        - https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/shared/architectures.py
+        - https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/methods/shared/architectures.py
         >>> def fc_decoder(latent_tensor, output_shape):
         >>>     d1 = tf.layers.dense(latent_tensor, 1200, activation=tf.nn.tanh)
         >>>     d2 = tf.layers.dense(d1,            1200, activation=tf.nn.tanh)

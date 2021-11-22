@@ -4,7 +4,7 @@
 # Settings                                                                  #
 # ========================================================================= #
 
-export USERNAME="n_michlo"
+export USERNAME="author_12045"
 export PROJECT="final-03__axis-triplet-3.0"
 export PARTITION="batch"
 export PARALLELISM=24
@@ -16,7 +16,7 @@ source "$(dirname "$(dirname "$(realpath -s "$0")")")/helper.sh"
 # Experiment                                                                #
 # ========================================================================= #
 
-clog_cudaless_nodes "$PARTITION" 43200 "C-disent" # 12 hours
+clog_cudaless_nodes "$PARTITION" 43200 "C-s12045" # 12 hours
 
 # TODO: update this script
 echo UPDATE THIS SCRIPT
@@ -53,7 +53,7 @@ submit_sweep \
 # [X] triplet
 #
 # [-] triplet_soft_ave [NOTE: OK, but just worse than, triplet_all_soft_ave]
-# triplet_soft_neg_ave [NOTE: better disentanglement than triplet_all_soft_ave, but worse axis align]
+# triplet_soft_neg_ave [NOTE: better [d9rdfghjkiu765rdfg] than triplet_all_soft_ave, but worse axis align]
 # triplet_all_soft_ave
 #
 # triplet_hard_neg_ave

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 
 import logging
 from s12045.dataset.data import GroundTruthData
-from s12045.dataset.sampling._base import BaseDisentSampler
+from s12045.dataset.sampling._base import BaseS12045Sampler
 
 
 log = logging.getLogger(__name__)
@@ -35,7 +35,7 @@ log = logging.getLogger(__name__)
 # ========================================================================= #
 
 
-class GroundTruthSingleSampler(BaseDisentSampler):
+class GroundTruthSingleSampler(BaseS12045Sampler):
 
     def uninit_copy(self) -> 'GroundTruthSingleSampler':
         return GroundTruthSingleSampler()

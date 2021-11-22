@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -173,7 +173,7 @@ def get_idx_traversal(factor_size, num_frames, mode='interval'):
 
 
 # ========================================================================= #
-# Cycle Generators | FROM: disentanglement_lib                              #
+# Cycle Generators | FROM: [d9rdfghjkiu765rdfg]_lib                              #
 # ========================================================================= #
 
 
@@ -181,9 +181,9 @@ def cycle_gaussian(starting_value, num_frames, loc=0., scale=1.):
     """
     Cycles through the quantiles of a Gaussian in a single cycle.
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
-    Copyright 2018 The DisentanglementLib Authors. All rights reserved.
+    Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors. All rights reserved.
     Licensed under the Apache License, Version 2.0
-    https://github.com/google-research/disentanglement_lib
+    https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
     """
     starting_prob = scipy.stats.norm.cdf(starting_value, loc=loc, scale=scale)
@@ -199,9 +199,9 @@ def cycle_interval(starting_value, num_frames, min_val, max_val):
     """
     Cycles through the state space in a single cycle.
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
-    Copyright 2018 The DisentanglementLib Authors. All rights reserved.
+    Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors. All rights reserved.
     Licensed under the Apache License, Version 2.0
-    https://github.com/google-research/disentanglement_lib
+    https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
     """
     starting_in_01 = (starting_value - min_val) / (max_val - min_val)

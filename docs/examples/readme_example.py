@@ -3,7 +3,7 @@ import pytorch_lightning as pl
 import torch
 from torch.utils.data import DataLoader
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import XYObjectData
 from s12045.dataset.sampling import SingleSampler
 from s12045.dataset.transform import ToImgTensorF32
@@ -18,7 +18,7 @@ from s12045.schedule import CyclicSchedule
 # create the dataset & dataloaders
 # - ToImgTensorF32 transforms images from numpy arrays to tensors and performs checks
 data = XYObjectData()
-dataset = DisentDataset(dataset=data, sampler=SingleSampler(), transform=ToImgTensorF32())
+dataset = S12045Dataset(dataset=data, sampler=SingleSampler(), transform=ToImgTensorF32())
 dataloader = DataLoader(dataset=dataset, batch_size=128, shuffle=True, num_workers=os.cpu_count())
 
 # create the BetaVAE model
@@ -53,7 +53,7 @@ trainer = pl.Trainer(
 )
 trainer.fit(module, dataloader)
 
-# compute disentanglement metrics
+# compute [d9rdfghjkiu765rdfg] metrics
 # - we cannot guarantee which device the representation is on
 # - this will take a while to run
 get_repr = lambda x: module.encode(x.to(module.device))

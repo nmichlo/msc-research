@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,10 @@
 
 import numpy as np
 from s12045.dataset.data import GroundTruthData
-from s12045.dataset.sampling._base import BaseDisentSampler
+from s12045.dataset.sampling._base import BaseS12045Sampler
 
 
-class GroundTruthPairOrigSampler(BaseDisentSampler):
+class GroundTruthPairOrigSampler(BaseS12045Sampler):
 
     def uninit_copy(self) -> 'GroundTruthPairOrigSampler':
         return GroundTruthPairOrigSampler(
@@ -41,7 +41,7 @@ class GroundTruthPairOrigSampler(BaseDisentSampler):
     ):
         """
         Sampler that emulates choosing factors like:
-        https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/weak/train_weak_lib.py
+        https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/methods/weak/train_weak_lib.py
         """
         super().__init__(num_samples=2)
         # DIFFERING FACTORS
@@ -81,7 +81,7 @@ def _sample_k_differing(factors, ground_truth_data: GroundTruthData, k=1):
     """
     Resample the factors used for the corresponding item in a pair.
       - Based on simple_dynamics() from:
-        https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/weak/train_weak_lib.py
+        https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/methods/weak/train_weak_lib.py
     """
     # checks for factors
     factors = np.array(factors)
@@ -90,9 +90,8 @@ def _sample_k_differing(factors, ground_truth_data: GroundTruthData, k=1):
     if k <= 0:
         k = np.random.randint(1, ground_truth_data.num_factors)
     # randomly choose 1 or k
-    # TODO: This is in disentanglement lib, HOWEVER is this not a mistake?
-    #       A bug report has been submitted to disentanglement_lib for clarity:
-    #       https://github.com/google-research/disentanglement_lib/issues/31
+    # TODO: This is in [d9rdfghjkiu765rdfg] lib, HOWEVER is this not a mistake?
+    #       A bug report has been submitted to [d9rdfghjkiu765rdfg]_lib for clarity
     k = np.random.choice([1, k])
     # generate list of differing indices
     index_list = np.random.choice(len(factors), k, replace=False)
@@ -107,7 +106,7 @@ def _sample_weak_pair_factors(gt_data: GroundTruthData):  # pragma: no cover
     """
     Sample a weakly supervised pair from the given GroundTruthData.
       - Based on weak_dataset_generator() from:
-        https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/weak/train_weak_lib.py
+        https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/methods/weak/train_weak_lib.py
     """
     # randomly sample the first observation
     sampled_factors = gt_data.sample_factors(1)

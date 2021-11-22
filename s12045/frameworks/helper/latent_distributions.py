@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -116,7 +116,7 @@ class LatentDistsHandlerNormal(LatentDistsHandler):
         - Gaussian Encoder Model Distribution: pg. 25 in Variational Auto Encoders
 
         (✓) Visual inspection against reference implementations:
-            https://github.com/google-research/disentanglement_lib (sample_from_latent_distribution)
+            https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib (sample_from_latent_distribution)
             https://github.com/PyTorchLightning/pytorch-lightning-bolts/blob/master/pl_bolts/models/autoencoders/basic_vae/basic_vae_module.py
         """
         z_mean, z_logvar = raw_z

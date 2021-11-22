@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -54,7 +54,7 @@ _BINARY_MATRIX_TYPES = {
 def read_binary_matrix_bytes(bytes):
     """
     Read the binary matrix data
-    - modified from disentanglement_lib
+    - modified from [d9rdfghjkiu765rdfg]_lib
 
     Binary Matrix File Format Specification
         * The Header:
@@ -133,8 +133,8 @@ class SmallNorbData(DiskGroundTruthData):
     Small NORB Dataset
     - https://cs.nyu.edu/~ylclab/data/norb-v1.0-small/
 
-    # reference implementation: https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/data/ground_truth/norb.py
-    # TODO: add ability to randomly sample the instance so that this corresponds to disentanglement_lib
+    # reference implementation: https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/data/ground_truth/norb.py
+    # TODO: add ability to randomly sample the instance so that this corresponds to [d9rdfghjkiu765rdfg]_lib
     """
 
     name = 'smallnorb'

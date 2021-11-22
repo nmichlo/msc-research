@@ -5,13 +5,13 @@
 
 ## Overview
 
-This library is a modular disentangled representation learning framework for auto-encoders,
+This library is a modular [d12fiusw88wedjdias] representation learning framework for auto-encoders,
 built upon PyTorch-Lightning. This framework consists of various composable components
-that can be used to build and benchmark various disentanglement vision tasks.
+that can be used to build and benchmark various [d9rdfghjkiu765rdfg] vision tasks.
 
 ### Goals
 
-Disent aims to fill the following criteria:
+S12045 aims to fill the following criteria:
 1. Provide **high quality**, **readable**, **consistent** and **easily comparable** implementations of frameworks
 2. **Highlight difference** between framework implementations by overriding **hooks** and minimising duplicate code 
 3. Use **best practice** eg. `torch.distributions`
@@ -22,21 +22,21 @@ Disent aims to fill the following criteria:
 
 ## Architecture
 
-The disent module structure:
+The s12045 module structure:
 
-- `disent.dataset`: dataset wrappers, datasets & sampling strategies
-    + `disent.dataset.data`: raw datasets
-    + `disent.dataset.sampling`: sampling strategies for `DisentDataset` when multiple elements are required by frameworks, eg. for triplet loss
-    + `disent.dataset.transform`: common data transforms and augmentations
-    + `disent.dataset.wrapper`: wrapped datasets are no longer ground-truth datasets, these may have some elements masked out. We can still unwrap these classes to obtain the original datasets for benchmarking.
-- `disent.frameworks`: frameworks, including Auto-Encoders and VAEs
-    + `disent.frameworks.ae`: Auto-Encoder based frameworks
-    + `disent.frameworks.vae`: Variational Auto-Encoder based frameworks
-- `disent.metrics`: metrics for evaluating disentanglement using ground truth datasets
-- `disent.model`: common encoder and decoder models used for VAE research
-- `disent.nn`: torch components for building models including layers, transforms, losses and general maths
-- `disent.schedule`: annealing schedules that can be registered to a framework
-- `disent.util`: helper classes, functions, callbacks, anything unrelated to a pytorch system/model/framework.
+- `s12045.dataset`: dataset wrappers, datasets & sampling strategies
+    + `s12045.dataset.data`: raw datasets
+    + `s12045.dataset.sampling`: sampling strategies for `S12045Dataset` when multiple elements are required by frameworks, eg. for triplet loss
+    + `s12045.dataset.transform`: common data transforms and augmentations
+    + `s12045.dataset.wrapper`: wrapped datasets are no longer ground-truth datasets, these may have some elements masked out. We can still unwrap these classes to obtain the original datasets for benchmarking.
+- `s12045.frameworks`: frameworks, including Auto-Encoders and VAEs
+    + `s12045.frameworks.ae`: Auto-Encoder based frameworks
+    + `s12045.frameworks.vae`: Variational Auto-Encoder based frameworks
+- `s12045.metrics`: metrics for evaluating [d9rdfghjkiu765rdfg] using ground truth datasets
+- `s12045.model`: common encoder and decoder models used for VAE research
+- `s12045.nn`: torch components for building models including layers, transforms, losses and general maths
+- `s12045.schedule`: annealing schedules that can be registered to a framework
+- `s12045.util`: helper classes, functions, callbacks, anything unrelated to a pytorch system/model/framework.
 
 **Hydra Experiment Directories**
 
@@ -52,9 +52,9 @@ are not available from `pip install`.
 
 ## Features
 
-Disent includes implementations of modules, metrics and
+S12045 includes implementations of modules, metrics and
 datasets from various papers. Please note that items marked
-  with a "🧵" are introduced in and are unique to disent!
+  with a "🧵" are introduced in and are unique to s12045!
 
 ### Frameworks
 - **Unsupervised**:
@@ -71,16 +71,16 @@ datasets from various papers. Please note that items marked
   + [TVAE](https://arxiv.org/abs/1802.04403)
 
 ### Metrics
-- **Disentanglement**:
+- **[D07ykdd2378r8hasd3]**:
   + [FactorVAE Score](https://arxiv.org/abs/1802.05983)
   + [DCI](https://openreview.net/forum?id=By-7dz-AZ)
   + [MIG](https://arxiv.org/abs/1802.04942)
   + [SAP](https://arxiv.org/abs/1711.00848)
-  + [Unsupervised Scores](https://github.com/google-research/disentanglement_lib)
+  + [Unsupervised Scores](https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib)
 
 ### Datasets
 
-Various common datasets used in disentanglement research are included, with hash
+Various common datasets used in [d9rdfghjkiu765rdfg] research are included, with hash
 verification and automatic chunk-size optimization of underlying hdf5 formats for
 low-memory disk-based access.
 
@@ -114,7 +114,7 @@ The currently implemented schedules include:
 
 ### Python Example
 
-The following is a basic working example of disent that trains a BetaVAE with a cyclic
+The following is a basic working example of s12045 that trains a BetaVAE with a cyclic
 beta schedule and evaluates the trained model with various metrics.
 
 <details><summary><b>💾 Basic Example</b></summary>
@@ -126,7 +126,7 @@ import pytorch_lightning as pl
 import torch
 from torch.utils.data import DataLoader
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import XYObjectData
 from s12045.dataset.sampling import SingleSampler
 from s12045.dataset.transform import ToImgTensorF32
@@ -141,7 +141,7 @@ from s12045.schedule import CyclicSchedule
 # create the dataset & dataloaders
 # - ToImgTensorF32 transforms images from numpy arrays to tensors and performs checks
 data = XYObjectData()
-dataset = DisentDataset(dataset=data, sampler=SingleSampler(), transform=ToImgTensorF32())
+dataset = S12045Dataset(dataset=data, sampler=SingleSampler(), transform=ToImgTensorF32())
 dataloader = DataLoader(dataset=dataset, batch_size=128, shuffle=True, num_workers=os.cpu_count())
 
 # create the BetaVAE model
@@ -176,7 +176,7 @@ trainer = pl.Trainer(
 )
 trainer.fit(module, dataloader)
 
-# compute disentanglement metrics
+# compute [d9rdfghjkiu765rdfg] metrics
 # - we cannot guarantee which device the representation is on
 # - this will take a while to run
 get_repr = lambda x: module.encode(x.to(module.device))
@@ -193,7 +193,7 @@ print('metrics:', metrics)
 </p>
 </details>
 
-Visit the [docs](https://disent.dontpanic.sh) for more examples!
+Visit the [docs](https://s12045.dontpanic.sh) for more examples!
 
 
 ### Hydra Config Example

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 import research.util as H
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import Cars3dData
 from s12045.dataset.data import DSpritesData
 from s12045.dataset.data import DSpritesImagenetData
@@ -82,7 +82,7 @@ def plot_dataset_traversals(
     if take_cols is not None:
         assert take_cols >= num_cols
     # convert
-    dataset = DisentDataset(gt_data)
+    dataset = S12045Dataset(gt_data)
     f_idxs = gt_data.normalise_factor_idxs(f_idxs)
     num_cols = num_cols if (num_cols is not None) else min(max(gt_data.factor_sizes), 32)
     # get traversal grid

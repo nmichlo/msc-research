@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 
 """
 Flatness Metric Components
-- Nathan Michlo 2021 (Unpublished)
+- CVPR-2022 Submission 12045 Authors (Unpublished)
 - Cite s12045
 """
 
@@ -34,7 +34,7 @@ import numpy as np
 import torch
 from torch.utils.data.dataloader import default_collate
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.metrics._flatness import encode_all_along_factor
 from s12045.metrics._flatness import encode_all_factors
 from s12045.metrics._flatness import filter_inactive_factors
@@ -53,7 +53,7 @@ log = logging.getLogger(__name__)
 
 
 def metric_flatness_components(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function: callable,
         factor_repeats: int = 1024,
         batch_size: int = 64,
@@ -71,7 +71,7 @@ def metric_flatness_components(
         ave_axis_alignment:     axis ratio is bounded by linear ratio - compute: axis / linear
 
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observations as input and outputs a dim_representation sized representation for each observation.
       factor_repeats: how many times to repeat a traversal along each factors, these are then averaged together.
       batch_size: Batch size to process at any time while generating representations, should not effect metric results.
@@ -104,7 +104,7 @@ def filtered_mean(values, p, factor_sizes):
 
 
 def aggregate_measure_distances_along_all_factors(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function,
         repeats: int,
         batch_size: int,
@@ -232,7 +232,7 @@ def compute_linear_score(zs_traversal: torch.Tensor, use_std: bool = True, use_m
 
 
 def aggregate_measure_distances_along_factor(
-        ground_truth_dataset: DisentDataset,
+        ground_truth_dataset: S12045Dataset,
         representation_function,
         f_idx: int,
         repeats: int,

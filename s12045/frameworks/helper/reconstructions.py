@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -37,7 +37,7 @@ from s12045 import registry
 from s12045.frameworks.helper.util import compute_ave_loss
 from s12045.nn.loss.reduction import batch_loss_reduction
 from s12045.nn.loss.reduction import loss_reduction
-from s12045.nn.modules import DisentModule
+from s12045.nn.modules import S12045Module
 from s12045.dataset.transform import FftKernel
 
 
@@ -46,7 +46,7 @@ from s12045.dataset.transform import FftKernel
 # ========================================================================= #
 
 
-class ReconLossHandler(DisentModule):
+class ReconLossHandler(S12045Module):
 
     def __init__(self, reduction: str = 'mean'):
         super().__init__()
@@ -181,10 +181,10 @@ class ReconLossHandlerBce(ReconLossHandler):
         """
         Computes the Bernoulli loss for the sigmoid activation function
         REFERENCE:
-            https://github.com/google-research/disentanglement_lib/blob/76f41e39cdeff8517f7fba9d57b09f35703efca9/disentanglement_lib/methods/shared/losses.py
+            https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/76f41e39cdeff8517f7fba9d57b09f35703efca9/[d9rdfghjkiu765rdfg]_lib/methods/shared/losses.py
             - the same when reduction=='mean_sum' for super().training_compute_loss()
         REFERENCE ALT:
-            https://github.com/YannDubs/disentangling-vae/blob/master/disvae/models/losses.py
+            https://github.com/YannDubs/[d09asdaweqw8a8jsaa]-vae/blob/master/disvae/models/losses.py
         """
         return F.binary_cross_entropy_with_logits(x_partial_recon, x_targ, reduction='none')
 

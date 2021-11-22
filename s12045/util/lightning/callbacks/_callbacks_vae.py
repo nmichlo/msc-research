@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,7 @@ from tqdm import tqdm
 
 import s12045.metrics
 import s12045.util.strings.colors as c
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import GroundTruthData
 from s12045.frameworks.ae import Ae
 from s12045.frameworks.helper.reconstructions import make_reconstruction_loss
@@ -73,7 +73,7 @@ log = logging.getLogger(__name__)
 # ========================================================================= #
 
 
-def _get_dataset_and_vae(trainer: pl.Trainer, pl_module: pl.LightningModule, unwrap_groundtruth: bool = False) -> (DisentDataset, Ae):
+def _get_dataset_and_vae(trainer: pl.Trainer, pl_module: pl.LightningModule, unwrap_groundtruth: bool = False) -> (S12045Dataset, Ae):
     # TODO: improve handling!
     assert isinstance(pl_module, Ae), f'{pl_module.__class__} is not an instance of {Ae}'
     # get dataset
@@ -88,11 +88,11 @@ def _get_dataset_and_vae(trainer: pl.Trainer, pl_module: pl.LightningModule, unw
     else:
         raise RuntimeError('could not retrieve dataset! please report this...')
     # check dataset
-    assert isinstance(dataset, DisentDataset), f'retrieved dataset is not an {DisentDataset.__name__}'
+    assert isinstance(dataset, S12045Dataset), f'retrieved dataset is not an {S12045Dataset.__name__}'
     # unwarp dataset
     if unwrap_groundtruth:
         if dataset.is_wrapped_gt_data:
-            old_dataset, dataset = dataset, dataset.unwrapped_disent_dataset()
+            old_dataset, dataset = dataset, dataset.unwrapped_s12045_dataset()
             warnings.warn(f'Unwrapped ground truth dataset returned! {type(old_dataset.data).__name__} -> {type(dataset.data).__name__}')
     # done checks
     return dataset, pl_module
@@ -182,7 +182,7 @@ def _collect_dists_subbatches(dists_fn: Callable[[object, object], Sequence[Sequ
 
 
 def _compute_and_collect_dists(
-    dataset: DisentDataset,
+    dataset: S12045Dataset,
     dists_fn,
     dists_names: Sequence[str],
     traversal_repeats: int = 100,
@@ -234,7 +234,7 @@ def _compute_and_collect_dists(
 
 
 def compute_factor_distances(
-    dataset: DisentDataset,
+    dataset: S12045Dataset,
     dists_fn,
     dists_names: Sequence[str],
     traversal_repeats: int = 100,

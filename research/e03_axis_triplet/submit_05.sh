@@ -4,7 +4,7 @@
 # Settings                                                                  #
 # ========================================================================= #
 
-export USERNAME="n_michlo"
+export USERNAME="author_12045"
 export PROJECT="final-03__axis-triplet-5.0"
 export PARTITION="stampede"
 export PARALLELISM=16
@@ -16,7 +16,7 @@ source "$(dirname "$(dirname "$(realpath -s "$0")")")/helper.sh"
 # Experiment                                                                #
 # ========================================================================= #
 
-clog_cudaless_nodes "$PARTITION" 86400 "C-disent" # 24 hours
+clog_cudaless_nodes "$PARTITION" 86400 "C-s12045" # 24 hours
 
 # TODO: update this script
 echo UPDATE THIS SCRIPT

@@ -1,6 +1,6 @@
 import pytorch_lightning as pl
 from torch.utils.data import DataLoader
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import XYObjectData
 from s12045.dataset.sampling import GroundTruthPairOrigSampler
 from s12045.frameworks.vae import AdaVae
@@ -12,7 +12,7 @@ from s12045.util import is_test_run  # you can ignore and remove this
 
 # prepare the data
 data = XYObjectData()
-dataset = DisentDataset(data, GroundTruthPairOrigSampler(), transform=ToImgTensorF32())
+dataset = S12045Dataset(data, GroundTruthPairOrigSampler(), transform=ToImgTensorF32())
 dataloader = DataLoader(dataset=dataset, batch_size=4, shuffle=True)
 
 # create the pytorch lightning system

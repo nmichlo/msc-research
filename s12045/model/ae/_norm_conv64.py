@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -28,17 +28,17 @@ from typing import Tuple
 from torch import nn
 from torch import Tensor
 
-from s12045.model import DisentDecoder
-from s12045.model import DisentEncoder
+from s12045.model import S12045Decoder
+from s12045.model import S12045Encoder
 from s12045.nn.activations import Swish
 
 
 # ========================================================================= #
-# disentanglement_lib Conv models                                           #
+# [d9rdfghjkiu765rdfg]_lib Conv models                                           #
 # ========================================================================= #
 
 
-class EncoderConv64Norm(DisentEncoder):
+class EncoderConv64Norm(S12045Encoder):
     """
     Modified version of `EncoderConv64` with
     selectable activations and norm layers
@@ -67,7 +67,7 @@ class EncoderConv64Norm(DisentEncoder):
         return self.model(x)
 
 
-class DecoderConv64Norm(DisentDecoder):
+class DecoderConv64Norm(S12045Decoder):
     """
     Modified version of `DecoderConv64` with
     selectable activations and norm layers

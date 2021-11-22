@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ import pytest
 import torch
 
 from s12045.dataset.data import XYObjectData
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.metrics import *
 from s12045.dataset.transform import ToImgTensorF32
 from s12045.util.function import wrapped_partial
@@ -49,8 +49,8 @@ from s12045.util.function import wrapped_partial
 def test_metrics(metric_fn):
     z_size = 8
     # ground truth data
-    # TODO: DisentDataset should not be needed to compute metrics!
-    dataset = DisentDataset(XYObjectData(), transform=ToImgTensorF32())
+    # TODO: S12045Dataset should not be needed to compute metrics!
+    dataset = S12045Dataset(XYObjectData(), transform=ToImgTensorF32())
     # randomly sampled representation
     get_repr = lambda x: torch.randn(len(x), z_size)
     # evaluate

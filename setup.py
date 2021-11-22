@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,8 @@ with open('requirements.txt', 'r') as f:
 
 setuptools.setup(
     name="s12045",
-    author="Nathan Juraj Michlo",
-    author_email="NathanJMichlo@gmail.com",
+    author="CVPR-2022 Submission 12045 Authors",
+    author_email="REDACTED@REDACTED.EMAIL",
 
     version="0.3.2",
     python_requires=">=3.8",  # we make use of standard library features only in 3.8
@@ -54,8 +54,8 @@ setuptools.setup(
 
     install_requires=install_requires,
 
-    url="https://github.com/nmichlo/disent",
-    description="Vae disentanglement framework built with pytorch lightning.",
+    url="https://github.com/REDACTED/REDACTED",
+    description="Vae [d9rdfghjkiu765rdfg] framework built with pytorch lightning.",
     long_description=long_description,
     long_description_content_type="text/markdown",
 

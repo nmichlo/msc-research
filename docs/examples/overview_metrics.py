@@ -1,6 +1,6 @@
 import pytorch_lightning as pl
 from torch.utils.data import DataLoader
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import XYObjectData
 from s12045.frameworks.vae import BetaVae
 from s12045.model import AutoEncoder
@@ -10,7 +10,7 @@ from s12045.metrics import metric_dci, metric_mig
 from s12045.util import is_test_run
 
 data = XYObjectData()
-dataset = DisentDataset(data, transform=ToImgTensorF32(), augment=None)
+dataset = S12045Dataset(data, transform=ToImgTensorF32(), augment=None)
 dataloader = DataLoader(dataset=dataset, batch_size=32, shuffle=True)
 
 def make_vae(beta):

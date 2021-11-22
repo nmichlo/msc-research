@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ from typing import Union
 import numpy as np
 import pytest
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import BaseEpisodesData
 from s12045.dataset.sampling import *
 from s12045.dataset.data import XYObjectData
@@ -92,9 +92,9 @@ class TestEpisodesData(BaseEpisodesData):
     [TestEpisodesData(), 3, 'any', RandomEpisodeSampler(num_samples=3, sample_radius=4)],
     [TestEpisodesData(), 3, 'any', RandomEpisodeSampler(num_samples=3, sample_radius=-1)],
 ])
-def test_samplers(dataset, num_samples: int, check_mode: Union[Literal['first'], Literal['any']], sampler: BaseDisentSampler):
+def test_samplers(dataset, num_samples: int, check_mode: Union[Literal['first'], Literal['any']], sampler: BaseS12045Sampler):
     # check dataset
-    wrapper = DisentDataset(dataset, sampler)
+    wrapper = S12045Dataset(dataset, sampler)
     assert len(wrapper) == len(dataset)
     assert sampler.num_samples == num_samples
     # check dataset init & samples

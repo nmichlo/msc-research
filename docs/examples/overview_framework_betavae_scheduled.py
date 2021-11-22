@@ -1,6 +1,6 @@
 import pytorch_lightning as pl
 from torch.utils.data import DataLoader
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import XYObjectData
 from s12045.frameworks.vae import BetaVae
 from s12045.model import AutoEncoder
@@ -11,7 +11,7 @@ from s12045.util import is_test_run  # you can ignore and remove this
 
 # prepare the data
 data = XYObjectData()
-dataset = DisentDataset(data, transform=ToImgTensorF32())
+dataset = S12045Dataset(data, transform=ToImgTensorF32())
 dataloader = DataLoader(dataset=dataset, batch_size=4, shuffle=True)
 
 # create the pytorch lightning system
@@ -23,7 +23,7 @@ module: pl.LightningModule = BetaVae(
     cfg=BetaVae.cfg(optimizer='adam', optimizer_kwargs=dict(lr=1e-3), loss_reduction='mean_sum', beta=4)
 )
 
-# register the scheduler with the DisentFramework
+# register the scheduler with the S12045Framework
 # - cyclic scheduler from: https://arxiv.org/abs/1903.10145
 module.register_schedule('beta', CyclicSchedule(
     period=1024,  # repeat every: trainer.global_step % period

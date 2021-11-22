@@ -10,7 +10,7 @@ defaults:
   - hydra/launcher: submitit_slurm
 
 job:
-  user: 'n_michlo'
+  user: 'author_12045'
   project: 'exp-disentangle-kernel'
   name: r${kernel.radius}-${kernel.channels}_s${trainer.max_steps}_${optimizer.name}_lr${settings.optimizer.lr}_wd${optimizer.weight_decay}_${data.name}
 

@@ -4,7 +4,7 @@
 # Settings                                                                  #
 # ========================================================================= #
 
-export USERNAME="n_michlo"
+export USERNAME="author_12045"
 export PROJECT="final-02__naive-triplet-hparams"
 export PARTITION="batch"
 export PARALLELISM=24

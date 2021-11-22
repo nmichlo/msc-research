@@ -1,6 +1,6 @@
 # coding=utf-8
-# Copyright 2018 The DisentanglementLib Authors.  All rights reserved.
-# https://github.com/google-research/disentanglement_lib
+# Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors.  All rights reserved.
+# https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
 
 """
 Implementation of the SAP score.
-Based on "Variational Inference of Disentangled Latent Concepts from Unlabeled
+Based on "Variational Inference of [D12318edasdasdw4u3] Latent Concepts from Unlabeled
 Observations" (https://openreview.net/forum?id=H1kG7GZAW), Section 3.
 """
 
@@ -31,7 +31,7 @@ import logging
 import numpy as np
 from sklearn import svm
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.metrics import utils
 
 
@@ -44,7 +44,7 @@ log = logging.getLogger(__name__)
 
 
 def metric_sap(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function,
         num_train=10000,
         num_test=5000,
@@ -53,7 +53,7 @@ def metric_sap(
 ):
     """Computes the SAP score.
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observations as input and
         outputs a dim_representation sized representation for each observation.
       num_train: Number of points used for training.

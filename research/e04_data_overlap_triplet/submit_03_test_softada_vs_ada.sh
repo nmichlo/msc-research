@@ -4,7 +4,7 @@
 # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 # MIT License
 #
-# Copyright (c) 2021 Nathan Juraj Michlo
+# Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@
 # Settings                                                                  #
 # ========================================================================= #
 
-export USERNAME="n_michlo"
+export USERNAME="author_12045"
 export PROJECT="test-hard-vs-soft-ada"
 export PARTITION="stampede"
 export PARALLELISM=16
@@ -42,7 +42,7 @@ source "$(dirname "$(dirname "$(realpath -s "$0")")")/helper.sh"
 # Experiment                                                                #
 # ========================================================================= #
 
-clog_cudaless_nodes "$PARTITION" 86400 "C-disent" # 24 hours
+clog_cudaless_nodes "$PARTITION" 86400 "C-s12045" # 24 hours
 
 # TODO: update this script
 echo UPDATE THIS SCRIPT

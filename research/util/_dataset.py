@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,7 @@ import numpy as np
 import torch
 import torch.utils.data
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import Cars3dData
 from s12045.dataset.data import DSpritesData
 from s12045.dataset.data import DSpritesImagenetData
@@ -47,7 +47,7 @@ from s12045.dataset.data import XColumnsData
 from s12045.dataset.data import XYBlocksData
 from s12045.dataset.data import XYObjectData
 from s12045.dataset.data import XYSquaresData
-from s12045.dataset.sampling import BaseDisentSampler
+from s12045.dataset.sampling import BaseS12045Sampler
 from s12045.dataset.sampling import GroundTruthSingleSampler
 from s12045.dataset.transform import Noop
 from s12045.dataset.transform import ToImgTensorF32
@@ -210,8 +210,8 @@ def make_dataset(
     load_into_memory: bool = False,
     load_memory_dtype: torch.dtype = torch.float16,
     transform_mode: TransformTypeHint = 'float32',
-    sampler: BaseDisentSampler = None,
-) -> DisentDataset:
+    sampler: BaseS12045Sampler = None,
+) -> S12045Dataset:
     data = make_data(
         name=name,
         factors=factors,
@@ -221,7 +221,7 @@ def make_dataset(
         load_memory_dtype=load_memory_dtype,
         transform_mode=transform_mode,
     )
-    return DisentDataset(
+    return S12045Dataset(
         data,
         sampler=GroundTruthSingleSampler() if (sampler is None) else sampler,
         return_indices=True
@@ -262,7 +262,7 @@ def sample_factors(gt_data: GroundTruthData, num_obs: int = 1024, factor_mode: s
 
 
 # TODO: move into dataset class
-def sample_batch_and_factors(dataset: DisentDataset, num_samples: int, factor_mode: str = 'sample_random', factor: Union[int, str] = None, device=None):
+def sample_batch_and_factors(dataset: S12045Dataset, num_samples: int, factor_mode: str = 'sample_random', factor: Union[int, str] = None, device=None):
     factors = sample_factors(dataset.gt_data, num_obs=num_samples, factor_mode=factor_mode, factor=factor)
     batch = dataset.dataset_batch_from_factors(factors, mode='target').to(device=device)
     factors = torch.from_numpy(factors).to(dtype=torch.float32, device=device)

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -47,7 +47,7 @@ class XYSquaresMinimalData(GroundTruthData):
     squares placed on a square grid. This dataset is designed to not overlap
     in the reconstruction loss space.
 
-    If you use this in your work, please cite: https://github.com/nmichlo/disent
+    If you use this in your work, please cite: https://github.com/author12045/s12045
 
     NOTE: Unlike XYSquaresData, XYSquaresMinimalData is the bare-minimum class
           to generate the same results as the default values for XYSquaresData,
@@ -95,7 +95,7 @@ class XYSquaresData(GroundTruthData):
     squares placed on a square grid. This dataset is designed to not overlap
     in the reconstruction loss space. (if the spacing is set correctly.)
 
-    If you use this in your work, please cite: https://github.com/nmichlo/disent
+    If you use this in your work, please cite: https://github.com/author12045/s12045
 
     NOTE: Unlike XYSquaresMinimalData, XYSquaresData allows adjusting various aspects
           of the data that is generated, but the generation process is slower (~1.25x).

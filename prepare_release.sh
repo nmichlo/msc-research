@@ -43,17 +43,17 @@ rm experiment/config/run_location/heartofgold.yaml
 rm experiment/config/dataset/X--*.yaml
 rm experiment/config/framework/X--*.yaml
 
-# DISENT:
+# S12045:
 # - metrics
-rm disent/metrics/_flatness.py
-rm disent/metrics/_flatness_components.py
+rm s12045/metrics/_flatness.py
+rm s12045/metrics/_flatness_components.py
 # - frameworks
-rm -rf disent/frameworks/ae/experimental
-rm -rf disent/frameworks/vae/experimental
+rm -rf s12045/frameworks/ae/experimental
+rm -rf s12045/frameworks/vae/experimental
 # - datasets
-rm disent/dataset/data/_groundtruth__xcolumns.py
-rm disent/dataset/data/_groundtruth__xysquares.py
-rm disent/dataset/data/_groundtruth__xyblocks.py
+rm s12045/dataset/data/_groundtruth__xcolumns.py
+rm s12045/dataset/data/_groundtruth__xysquares.py
+rm s12045/dataset/data/_groundtruth__xyblocks.py
 
 # DATA:
 # - s12045.framework.helper

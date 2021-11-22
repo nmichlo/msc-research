@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -62,7 +62,7 @@ class XYObjectData(GroundTruthData):
 
     *NB* for most of these color palettes, there should be
          an extra ground truth factor that represents shade.
-         We purposely leave this out to hinder disentanglement! It is subjective!
+         We purposely leave this out to hinder [d9rdfghjkiu765rdfg]! It is subjective!
     """
 
     name = 'xy_object'

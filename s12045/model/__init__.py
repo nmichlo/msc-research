@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -24,5 +24,5 @@
 
 # encoders & decoders
 from s12045.model._base import AutoEncoder
-from s12045.model._base import DisentEncoder
-from s12045.model._base import DisentDecoder
+from s12045.model._base import S12045Encoder
+from s12045.model._base import S12045Decoder

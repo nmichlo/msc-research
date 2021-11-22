@@ -129,7 +129,7 @@ def load_general_data(project: str):
         'DUMMY/repeat':                         K_REPEAT,
         'state':                                K_STATE,
         'final_metric/mig.discrete_score.max':  K_MIG,
-        'final_metric/dci.disentanglement.max': K_DCI,
+        'final_metric/dci.[d9rdfghjkiu765rdfg].max': K_DCI,
     })
 
 
@@ -315,7 +315,7 @@ def plot_overlap_loss_exp(
 
     # TEMP
     # df[K_MIG] = df['final_metric/mig.discrete_score.max']
-    # df[K_DCI] = df['final_metric/dci.disentanglement.max']
+    # df[K_DCI] = df['final_metric/dci.[d9rdfghjkiu765rdfg].max']
 
     print('NUM', len(orig), '->', len(df))
 

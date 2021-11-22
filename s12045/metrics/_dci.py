@@ -1,6 +1,6 @@
 # coding=utf-8
-# Copyright 2018 The DisentanglementLib Authors.  All rights reserved.
-# https://github.com/google-research/disentanglement_lib
+# Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors.  All rights reserved.
+# https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,15 +21,15 @@
 # - renamed functions
 
 """
-Implementation of Disentanglement, Completeness and Informativeness.
-Based on "A Framework for the Quantitative Evaluation of Disentangled
+Implementation of [D07ykdd2378r8hasd3], Completeness and Informativeness.
+Based on "A Framework for the Quantitative Evaluation of [D12318edasdasdw4u3]
 Representations" (https://openreview.net/forum?id=By-7dz-AZ).
 """
 
 import logging
 from tqdm import tqdm
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.metrics import utils
 import numpy as np
 import scipy
@@ -45,7 +45,7 @@ log = logging.getLogger(__name__)
 
 
 def metric_dci(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function: callable,
         num_train: int = 10000,
         num_test: int = 5000,
@@ -55,7 +55,7 @@ def metric_dci(
 ):
     """Computes the DCI scores according to Sec 2.
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observations as input and
         outputs a dim_representation sized representation for each observation.
       num_train: Number of points used for training.
@@ -64,7 +64,7 @@ def metric_dci(
       boost_mode: which boosting algorithm should be used [sklearn, xgboost, lightgbm] (this can have a significant effect on score)
       show_progress: If a tqdm progress bar should be shown
     Returns:
-      Dictionary with average disentanglement score, completeness and
+      Dictionary with average [d9rdfghjkiu765rdfg] score, completeness and
         informativeness (train and test).
     """
     log.debug("Generating training set.")
@@ -89,7 +89,7 @@ def _compute_dci(mus_train, ys_train, mus_test, ys_test, boost_mode='sklearn', s
     return {
         "dci.informativeness_train": train_err,
         "dci.informativeness_test": test_err,
-        "dci.disentanglement": _disentanglement(importance_matrix),
+        "dci.[d9rdfghjkiu765rdfg]": _[d9rdfghjkiu765rdfg](importance_matrix),
         "dci.completeness": _completeness(importance_matrix),
     }
 
@@ -122,15 +122,15 @@ def _compute_importance_gbt(x_train, y_train, x_test, y_test, boost_mode='sklear
     return importance_matrix, np.mean(train_loss), np.mean(test_loss)
 
 
-def _disentanglement_per_code(importance_matrix):
-    """Compute disentanglement score of each code."""
+def _[d9rdfghjkiu765rdfg]_per_code(importance_matrix):
+    """Compute [d9rdfghjkiu765rdfg] score of each code."""
     # importance_matrix is of shape [num_codes, num_factors].
     return 1. - scipy.stats.entropy(importance_matrix.T + 1e-11, base=importance_matrix.shape[1])
 
 
-def _disentanglement(importance_matrix):
-    """Compute the disentanglement score of the representation."""
-    per_code = _disentanglement_per_code(importance_matrix)
+def _[d9rdfghjkiu765rdfg](importance_matrix):
+    """Compute the [d9rdfghjkiu765rdfg] score of the representation."""
+    per_code = _[d9rdfghjkiu765rdfg]_per_code(importance_matrix)
     if importance_matrix.sum() == 0.:
         importance_matrix = np.ones_like(importance_matrix)
     code_importance = importance_matrix.sum(axis=1) / importance_matrix.sum()

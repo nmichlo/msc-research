@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -36,4 +36,4 @@ from s12045.dataset.transform._augment import FftBoxBlur
 from s12045.dataset.transform._augment import FftKernel
 
 # s12045 dataset augment
-from s12045.dataset.transform._augment_disent import DisentDatasetTransform
+from s12045.dataset.transform._augment_s12045 import S12045DatasetTransform

@@ -2,21 +2,21 @@
 
 ## Architecture
 
-The disent directory structure:
+The s12045 directory structure:
 
-- `disent/dataset`: dataset wrappers, datasets & sampling strategies
-    + `disent/dataset/data`: raw datasets
-    + `disent/dataset/sampling`: sampling strategies for `DisentDataset`
-- `disent/framework`: frameworks, including Auto-Encoders and VAEs
-- `disent/metric`: metrics for evaluating disentanglement using ground truth datasets
-- `disent/model`: common encoder and decoder models used for VAE research
-- `disent/nn`: torch components for building models including layers, transforms, losses and general maths
-- `disent/schedule`: annealing schedules that can be registered to a framework
-- `disent/util`: helper functions for the rest of the framework
+- `s12045/dataset`: dataset wrappers, datasets & sampling strategies
+    + `s12045/dataset/data`: raw datasets
+    + `s12045/dataset/sampling`: sampling strategies for `S12045Dataset`
+- `s12045/framework`: frameworks, including Auto-Encoders and VAEs
+- `s12045/metric`: metrics for evaluating [d9rdfghjkiu765rdfg] using ground truth datasets
+- `s12045/model`: common encoder and decoder models used for VAE research
+- `s12045/nn`: torch components for building models including layers, transforms, losses and general maths
+- `s12045/schedule`: annealing schedules that can be registered to a framework
+- `s12045/util`: helper functions for the rest of the framework
 
 **Please Note The API Is Still Unstable ⚠️**
 
-Disent is still under active development. Features and APIs are not considered stable,
+S12045 is still under active development. Features and APIs are not considered stable,
 and should be expected to change! A limited set of tests currently exist which will be
 expanded upon in time.
 
@@ -24,9 +24,9 @@ expanded upon in time.
 
 ### dataset/data
 
-Common and custom data for vision based AE, VAE and Disentanglement research.
+Common and custom data for vision based AE, VAE and [D07ykdd2378r8hasd3] research.
 
-- Most data is generated from ground truth factors which is necessary for evaluation using disentanglement metrics.
+- Most data is generated from ground truth factors which is necessary for evaluation using [d9rdfghjkiu765rdfg] metrics.
   Each image generated from ground truth data has the ground truth variables available.
   
 ??? example
@@ -103,7 +103,7 @@ the config, instead of crashing.
 ## Datasets Without Ground-Truth Factors
 
 You can use datasets that do not have ground truth factors by changing the sampling
-strategy of `DisentDataset`, however, metrics cannot be computed.
+strategy of `S12045Dataset`, however, metrics cannot be computed.
 
 The following MNIST example uses the builtin `RandomSampler`.
 

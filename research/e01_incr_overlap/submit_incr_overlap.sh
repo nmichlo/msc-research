@@ -7,12 +7,12 @@
 
 
 # OUTCOMES:
-# - increasing overlap improves disentanglement & ability for the
+# - increasing overlap improves [d9rdfghjkiu765rdfg] & ability for the
 #   neural network to learn values.
-# - decreasing overlap worsens disentanglement, but it also becomes
+# - decreasing overlap worsens [d9rdfghjkiu765rdfg], but it also becomes
 #    very hard for the neural net to learn specific values needed. The
 #    average image does not correspond well to individual samples.
-#    Disentanglement performance is also a result of this fact, as
+#    [D07ykdd2378r8hasd3] performance is also a result of this fact, as
 #    the network can't always learn the dataset effectively.
 
 
@@ -21,7 +21,7 @@
 # ========================================================================= #
 
 
-export USERNAME="n_michlo"
+export USERNAME="author_12045"
 export PROJECT="CVPR-01__incr_overlap"
 export PARTITION="stampede"
 export PARALLELISM=28
@@ -35,7 +35,7 @@ source "$(dirname "$(dirname "$(realpath -s "$0")")")/helper.sh"
 # ========================================================================= #
 
 
-clog_cudaless_nodes "$PARTITION" 86400 "C-disent" # 24 hours
+clog_cudaless_nodes "$PARTITION" 86400 "C-s12045" # 24 hours
 
 
 # background launch various xysquares

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,7 @@ import torch
 from scipy.stats import gmean
 from scipy.stats import hmean
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import XYObjectData
 from s12045.dataset.sampling import RandomSampler
 from s12045.nn.functional import torch_conv2d_channel_wise
@@ -132,7 +132,7 @@ def test_dct():
 
 def test_fft_conv2d():
     data = XYObjectData()
-    dataset = DisentDataset(data, RandomSampler(), transform=ToImgTensorF32(), augment=None)
+    dataset = S12045Dataset(data, RandomSampler(), transform=ToImgTensorF32(), augment=None)
     # sample data
     factors = dataset.gt_data.sample_random_factor_traversal(f_idx=2)
     batch = dataset.dataset_batch_from_factors(factors=factors, mode="input")

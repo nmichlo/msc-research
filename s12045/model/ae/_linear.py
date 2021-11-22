@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -26,8 +26,8 @@ import numpy as np
 from torch import nn
 from torch import Tensor
 
-from s12045.model import DisentDecoder
-from s12045.model import DisentEncoder
+from s12045.model import S12045Decoder
+from s12045.model import S12045Encoder
 
 
 # ========================================================================= #
@@ -35,7 +35,7 @@ from s12045.model import DisentEncoder
 # ========================================================================= #
 
 
-class EncoderLinear(DisentEncoder):
+class EncoderLinear(S12045Encoder):
 
     def __init__(self, x_shape=(3, 64, 64), z_size=6, z_multiplier=1):
         super().__init__(x_shape=x_shape, z_size=z_size, z_multiplier=z_multiplier)
@@ -49,7 +49,7 @@ class EncoderLinear(DisentEncoder):
         return self.model(x)
 
 
-class DecoderLinear(DisentDecoder):
+class DecoderLinear(S12045Decoder):
 
     def __init__(self, x_shape=(3, 64, 64), z_size=6, z_multiplier=1):
         super().__init__(x_shape=x_shape, z_size=z_size, z_multiplier=z_multiplier)

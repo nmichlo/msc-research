@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -30,20 +30,20 @@ import torch.utils.data
 import pytorch_lightning as pl
 from omegaconf import DictConfig
 
-from s12045.dataset import DisentDataset
-from s12045.dataset.transform import DisentDatasetTransform
+from s12045.dataset import S12045Dataset
+from s12045.dataset.transform import S12045DatasetTransform
 
 
 log = logging.getLogger(__name__)
 
 
 # ========================================================================= #
-# DISENT DATASET MODULE                                                     #
+# S12045 DATASET MODULE                                                     #
 # TODO: possible implementation outline for s12045                          #
 # ========================================================================= #
 
 
-# class DisentDatasetModule(pl.LightningDataModule):
+# class S12045DatasetModule(pl.LightningDataModule):
 #
 #     def prepare_data(self, *args, **kwargs):
 #         raise NotImplementedError
@@ -54,7 +54,7 @@ log = logging.getLogger(__name__)
 #     # DATASET HANDLING
 #
 #     @property
-#     def dataset_train(self) -> DisentDataset:
+#     def dataset_train(self) -> S12045Dataset:
 #         # this property should check `framework_applies_augment` to return the
 #         # dataset with the correct transforms/augments applied.
 #         # - train_dataloader() should create the DataLoader from this dataset object
@@ -99,13 +99,13 @@ class HydraDataModule(pl.LightningDataModule):
         # - corresponds to below in train_dataloader()
         if self.hparams.dsettings.dataset.gpu_augment:
             # TODO: this is outdated!
-            self.batch_augment = DisentDatasetTransform(transform=self.input_transform)
+            self.batch_augment = S12045DatasetTransform(transform=self.input_transform)
             warnings.warn('`gpu_augment=True` is outdated and may no longer be equivalent to `gpu_augment=False`')
         else:
             self.batch_augment = None
         # datasets initialised in setup()
-        self.dataset_train_noaug: DisentDataset = None
-        self.dataset_train_aug: DisentDataset = None
+        self.dataset_train_noaug: S12045Dataset = None
+        self.dataset_train_aug: S12045Dataset = None
 
     def prepare_data(self) -> None:
         # *NB* Do not set model parameters here.
@@ -127,8 +127,8 @@ class HydraDataModule(pl.LightningDataModule):
         data = hydra.utils.instantiate(self.hparams.dataset.data)
         # Wrap the data for the framework some datasets need triplets, pairs, etc.
         # Augmentation is done inside the frameworks so that it can be done on the GPU, otherwise things are very slow.
-        self.dataset_train_noaug = DisentDataset(data, hydra.utils.instantiate(self.hparams.sampling._sampler_.sampler_cls), transform=self.data_transform, augment=None)
-        self.dataset_train_aug = DisentDataset(data, hydra.utils.instantiate(self.hparams.sampling._sampler_.sampler_cls), transform=self.data_transform, augment=self.input_transform)
+        self.dataset_train_noaug = S12045Dataset(data, hydra.utils.instantiate(self.hparams.sampling._sampler_.sampler_cls), transform=self.data_transform, augment=None)
+        self.dataset_train_aug = S12045Dataset(data, hydra.utils.instantiate(self.hparams.sampling._sampler_.sampler_cls), transform=self.data_transform, augment=self.input_transform)
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
     # Training Dataset:

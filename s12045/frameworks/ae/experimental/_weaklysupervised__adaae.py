@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,7 @@ from s12045.frameworks.vae._weaklysupervised__adavae import AdaVae
 class AdaAe(Ae):
     """
     Custom implementation, removing Variational Auto-Encoder components of:
-    Weakly Supervised Disentanglement Learning Without Compromises: https://arxiv.org/abs/2002.02886
+    Weakly Supervised [D07ykdd2378r8hasd3] Learning Without Compromises: https://arxiv.org/abs/2002.02886
 
     MODIFICATION:
     - L1 distance for deltas instead of KL divergence

@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -47,12 +47,12 @@ from torch.utils.data import DataLoader
 
 import research.util as H
 from s12045 import registry
-from s12045.dataset import DisentDataset
-from s12045.dataset.sampling import BaseDisentSampler
+from s12045.dataset import S12045Dataset
+from s12045.dataset.sampling import BaseS12045Sampler
 from s12045.dataset.util.hdf5 import H5Builder
 from s12045.model import AutoEncoder
 from s12045.nn.activations import Swish
-from s12045.nn.modules import DisentModule
+from s12045.nn.modules import S12045Module
 from s12045.nn.weights import init_model_weights
 from s12045.util import to_numpy
 from s12045.util.function import wrapped_partial
@@ -84,13 +84,13 @@ log = logging.getLogger(__name__)
 # ========================================================================= #
 
 @torch.no_grad()
-def _sample_stacked_batch(dataset: DisentDataset) -> torch.Tensor:
+def _sample_stacked_batch(dataset: S12045Dataset) -> torch.Tensor:
     batch = next(iter(DataLoader(dataset, batch_size=1024, num_workers=0, shuffle=True)))
     batch = torch.cat(batch['x_targ'], dim=0)
     return batch
 
 @torch.no_grad()
-def gen_approx_dataset_mask(dataset: DisentDataset, model_mask_mode: Optional[str]) -> Optional[torch.Tensor]:
+def gen_approx_dataset_mask(dataset: S12045Dataset, model_mask_mode: Optional[str]) -> Optional[torch.Tensor]:
     if model_mask_mode in ('none', None):
         mask = None
     elif model_mask_mode == 'diff':
@@ -138,7 +138,7 @@ def make_delta_model(model_type: str, x_shape: Tuple[int, ...]):
         raise KeyError(f'invalid model type: {repr(model_type)}')
 
 
-class AdversarialAugmentModel(DisentModule):
+class AdversarialAugmentModel(S12045Module):
 
     def __init__(self, model_type: str, x_shape=(3, 64, 64), mask=None, meta: dict = None):
         super().__init__()
@@ -207,9 +207,9 @@ class AdversarialModel(pl.LightningModule):
         # save hparams
         self.save_hyperparameters()
         # variables
-        self.dataset: DisentDataset = None
-        self.sampler: BaseDisentSampler = None
-        self.model: DisentModule = None
+        self.dataset: S12045Dataset = None
+        self.sampler: BaseS12045Sampler = None
+        self.model: S12045Module = None
 
     # ================================== #
     # setup                              #

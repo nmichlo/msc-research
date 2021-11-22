@@ -4,7 +4,7 @@
 # Settings                                                                  #
 # ========================================================================= #
 
-export USERNAME="n_michlo"
+export USERNAME="author_12045"
 export PROJECT="final-08__autoencoder-versions"
 export PARTITION="stampede"
 export PARALLELISM=32
@@ -16,7 +16,7 @@ source "$(dirname "$(dirname "$(realpath -s "$0")")")/helper.sh"
 # Experiment                                                                #
 # ========================================================================= #
 
-clog_cudaless_nodes "$PARTITION" 86400 "C-disent" # 24 hours
+clog_cudaless_nodes "$PARTITION" 86400 "C-s12045" # 24 hours
 
 # 1 * (2*2*3*3*8) == 288
 submit_sweep \

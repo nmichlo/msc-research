@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ import pytest
 import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import XYObjectData
 from s12045.dataset.sampling import GroundTruthSingleSampler
 from s12045.dataset.sampling import GroundTruthPairSampler
@@ -108,7 +108,7 @@ def test_frameworks(Framework, cfg_kwargs, Data):
     }[Framework.REQUIRED_OBS]
 
     data = XYObjectData() if (Data is None) else Data()
-    dataset = DisentDataset(data, DataSampler(), transform=ToImgTensorF32())
+    dataset = S12045Dataset(data, DataSampler(), transform=ToImgTensorF32())
     dataloader = DataLoader(dataset=dataset, batch_size=4, shuffle=True)
 
     framework = Framework(

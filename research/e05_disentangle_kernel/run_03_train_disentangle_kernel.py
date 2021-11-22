@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -41,8 +41,8 @@ import s12045.util.seeds
 import research.util as H
 from s12045.nn.functional import torch_conv2d_channel_wise_fft
 from s12045.nn.loss.softsort import spearman_rank_loss
-from s12045.nn.modules import DisentLightningModule
-from s12045.nn.modules import DisentModule
+from s12045.nn.modules import S12045LightningModule
+from s12045.nn.modules import S12045Module
 from s12045.util.lightning.callbacks import BaseCallbackPeriodic
 from s12045.util.lightning.logger_util import wb_log_metrics
 from s12045.util.seeds import seed
@@ -86,7 +86,7 @@ def disentangle_loss(
     return loss
 
 
-class DisentangleModule(DisentLightningModule):
+class DisentangleModule(S12045LightningModule):
 
     def __init__(
         self,
@@ -135,7 +135,7 @@ class DisentangleModule(DisentLightningModule):
 # ========================================================================= #
 
 
-class Kernel(DisentModule):
+class Kernel(S12045Module):
     def __init__(self, radius: int = 33, channels: int = 1, offset: float = 0.0, scale: float = 0.001, train_symmetric_regularise: bool = True, train_norm_regularise: bool = True, train_nonneg_regularise: bool = True):
         super().__init__()
         assert channels in (1, 3)
@@ -176,7 +176,7 @@ class Kernel(DisentModule):
                 })
         return ImShowCallback(every_n_steps=cfg.exp.show_every_n_steps, begin_first_step=True)
 
-    def augment_loss(self, framework: DisentLightningModule):
+    def augment_loss(self, framework: S12045LightningModule):
         augment_loss = 0
         # symmetric loss
         if self._train_symmetric_regularise:

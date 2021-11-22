@@ -1,6 +1,6 @@
-site_name: 🧶  Disent Docs
-repo_url: https://github.com/nmichlo/s12045
-repo_name: nmichlo/s12045
+site_name: 🧶  S12045 Docs
+repo_url: https://github.com/author12045/s12045
+repo_name: author12045/s12045
 theme:
   name: material
   palette:

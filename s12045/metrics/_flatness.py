@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 
 """
 Flatness Metric
-- Nathan Michlo 2021 (Unpublished)
+- CVPR-2022 Submission 12045 Authors (Unpublished)
 - Cite s12045
 """
 
@@ -37,7 +37,7 @@ import torch
 from s12045.util.deprecate import deprecated
 from torch.utils.data.dataloader import default_collate
 
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.util.iters import iter_chunks
 
 
@@ -51,7 +51,7 @@ log = logging.getLogger(__name__)
 
 @deprecated('flatness metric is deprecated in favour of flatness_components, this metric still gives useful alternative info however.')
 def metric_flatness(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function: callable,
         factor_repeats: int = 1024,
         batch_size: int = 64,
@@ -71,13 +71,13 @@ def metric_flatness(
       - 1024 is accurate to about +- 0.001
 
     Args:
-      dataset: DisentDataset to be sampled from.
+      dataset: S12045Dataset to be sampled from.
       representation_function: Function that takes observations as input and outputs a dim_representation sized representation for each observation.
       factor_repeats: how many times to repeat a traversal along each factors, these are then averaged together.
       batch_size: Batch size to process at any time while generating representations, should not effect metric results.
       p: how to calculate distances in the latent space, see torch.norm
     Returns:
-      Dictionary with average disentanglement score, completeness and
+      Dictionary with average [d9rdfghjkiu765rdfg] score, completeness and
         informativeness (train and test).
     """
     p_fs_measures = aggregate_measure_distances_along_all_factors(dataset, representation_function, repeats=factor_repeats, batch_size=batch_size, ps=(1, 2))
@@ -123,7 +123,7 @@ def filter_inactive_factors(tensor, factor_sizes):
 
 
 def aggregate_measure_distances_along_all_factors(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function,
         repeats: int,
         batch_size: int,
@@ -154,7 +154,7 @@ def aggregate_measure_distances_along_all_factors(
 
 
 def aggregate_measure_distances_along_factor(
-        dataset: DisentDataset,
+        dataset: S12045Dataset,
         representation_function,
         f_idx: int,
         repeats: int,
@@ -217,7 +217,7 @@ def aggregate_measure_distances_along_factor(
 # ========================================================================= #
 
 
-def encode_all_along_factor(dataset: DisentDataset, representation_function, f_idx: int, batch_size: int):
+def encode_all_along_factor(dataset: S12045Dataset, representation_function, f_idx: int, batch_size: int):
     # generate repeated factors, varying one factor over a range (f_size, f_dims)
     factors = dataset.gt_data.sample_random_factor_traversal(f_idx=f_idx)
     # get the representations of all the factors (f_size, z_size)
@@ -225,7 +225,7 @@ def encode_all_along_factor(dataset: DisentDataset, representation_function, f_i
     return sequential_zs
 
 
-def encode_all_factors(dataset: DisentDataset, representation_function, factors, batch_size: int) -> torch.Tensor:
+def encode_all_factors(dataset: S12045Dataset, representation_function, factors, batch_size: int) -> torch.Tensor:
     zs = []
     with torch.no_grad():
         for batch_factors in iter_chunks(factors, chunk_size=batch_size):
@@ -235,7 +235,7 @@ def encode_all_factors(dataset: DisentDataset, representation_function, factors,
     return torch.cat(zs, dim=0)
 
 
-def get_device(dataset: DisentDataset, representation_function):
+def get_device(dataset: S12045Dataset, representation_function):
     # this is a hack...
     return representation_function(dataset.dataset_sample_batch(1, mode='input')).device
 

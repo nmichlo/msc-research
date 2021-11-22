@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -40,7 +40,7 @@ import torch
 
 from s12045 import registry
 from s12045.schedule import Schedule
-from s12045.nn.modules import DisentLightningModule
+from s12045.nn.modules import S12045LightningModule
 
 
 log = logging.getLogger(__name__)
@@ -51,7 +51,7 @@ log = logging.getLogger(__name__)
 # ========================================================================= #
 
 
-class DisentConfigurable(object):
+class S12045Configurable(object):
 
     @dataclass
     class cfg(object):
@@ -78,10 +78,10 @@ class DisentConfigurable(object):
 # ========================================================================= #
 
 
-class DisentFramework(DisentConfigurable, DisentLightningModule):
+class S12045Framework(S12045Configurable, S12045LightningModule):
 
     @dataclass
-    class cfg(DisentConfigurable.cfg):
+    class cfg(S12045Configurable.cfg):
         # optimizer config
         optimizer: Union[str, Type[torch.optim.Optimizer]] = 'adam'
         optimizer_kwargs: Optional[Dict[str, Union[str, float, int]]] = None

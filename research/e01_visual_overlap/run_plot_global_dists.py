@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,7 @@ from matplotlib.ticker import MultipleLocator
 from tqdm import tqdm
 
 import research.util as H
-from s12045.dataset import DisentDataset
+from s12045.dataset import S12045Dataset
 from s12045.dataset.data import Cars3dData
 from s12045.dataset.data import DSpritesData
 from s12045.dataset.data import Shapes3dData
@@ -75,7 +75,7 @@ def plot_overlap(a, b, mode='abs'):
 # ========================================================================= #
 
 
-def generate_data(dataset: DisentDataset, data_name: str, batch_size=64, samples=100_000, plot_diffs=False, load_cache=True, save_cache=True, overlap_loss: str = 'mse'):
+def generate_data(dataset: S12045Dataset, data_name: str, batch_size=64, samples=100_000, plot_diffs=False, load_cache=True, save_cache=True, overlap_loss: str = 'mse'):
     # cache
     file_path = os.path.join(os.path.dirname(__file__), f'cache/{data_name}_{samples}.pkl')
     if load_cache:
@@ -216,7 +216,7 @@ def plot_all(exp_name: str, gt_data_classes, tick_sizes: dict, samples: int, loa
     dfs = {}
     for data_name, data_cls in gt_data_classes.items():
         df = generate_data(
-            DisentDataset(data_cls(), transform=ToImgTensorF32()),
+            S12045Dataset(data_cls(), transform=ToImgTensorF32()),
             data_name,
             batch_size=64,
             samples=samples,

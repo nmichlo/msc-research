@@ -4,7 +4,7 @@
 # Settings                                                                  #
 # ========================================================================= #
 
-export USERNAME="n_michlo"
+export USERNAME="author_12045"
 export PROJECT="final-03__kernel-disentangle-xy"
 export PARTITION="stampede"
 export PARALLELISM=32
@@ -21,7 +21,7 @@ source "$(dirname "$(dirname "$(realpath -s "$0")")")/helper.sh"
 echo UPDATE THIS SCRIPT
 exit 1
 
-clog_cudaless_nodes "$PARTITION" 86400 "C-disent" # 24 hours
+clog_cudaless_nodes "$PARTITION" 86400 "C-s12045" # 24 hours
 
 # 1 * (2*8*4) == 64
 submit_sweep \

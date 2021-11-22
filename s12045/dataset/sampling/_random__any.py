@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,7 @@
 from typing import Tuple
 
 import numpy as np
-from s12045.dataset.sampling._base import BaseDisentSampler
+from s12045.dataset.sampling._base import BaseS12045Sampler
 
 
 # ========================================================================= #
@@ -33,7 +33,7 @@ from s12045.dataset.sampling._base import BaseDisentSampler
 # ========================================================================= #
 
 
-class RandomSampler(BaseDisentSampler):
+class RandomSampler(BaseS12045Sampler):
 
     def uninit_copy(self) -> 'RandomSampler':
         return RandomSampler(num_samples=self.num_samples)

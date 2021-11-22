@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 
 import torch
-from s12045.nn.modules import DisentModule
+from s12045.nn.modules import S12045Module
 
 
 # ========================================================================= #
@@ -57,7 +57,7 @@ def swish(tensor: torch.Tensor):
     return _SwishFunction.apply(tensor)
 
 
-class Swish(DisentModule):
+class Swish(S12045Module):
     def forward(self, tensor: torch.Tensor):
         return _SwishFunction.apply(tensor)
 

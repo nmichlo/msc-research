@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -102,7 +102,7 @@ class Cars3dData(NumpyFileGroundTruthData):
     - Deep Visual Analogy-Making (https://papers.nips.cc/paper/5845-deep-visual-analogy-making)
       http://www.scottreed.info
 
-    # reference implementation: https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/data/ground_truth/cars3d.py
+    # reference implementation: https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/data/ground_truth/cars3d.py
     """
 
     name = 'cars3d'

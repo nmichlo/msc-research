@@ -1,7 +1,7 @@
 #  ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 #  MIT License
 #
-#  Copyright (c) 2021 Nathan Juraj Michlo
+#  Copyright (c) CVPR-2022 Submission 12045 Authors
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -45,7 +45,7 @@ class DSpritesData(Hdf5GroundTruthData):
         - direct hdf5: https://raw.githubusercontent.com/deepmind/dsprites-dataset/master/dsprites_ndarray_co1sh3sc6or40x32y32_64x64.hdf5
                        default chunk size is (23040, 2, 4), dataset is (737280, 64, 64) uint8.
 
-    # reference implementation: https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/data/ground_truth/dsprites.py
+    # reference implementation: https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/data/ground_truth/dsprites.py
     """
 
     name = 'dsprites'

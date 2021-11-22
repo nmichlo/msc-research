@@ -15,7 +15,7 @@
 # Settings                                                                  #
 # ========================================================================= #
 
-export USERNAME="n_michlo"
+export USERNAME="author_12045"
 export PROJECT="CVPR-00__basic-hparam-tuning"
 export PARTITION="stampede"
 export PARALLELISM=28
@@ -27,7 +27,7 @@ source "$(dirname "$(dirname "$(realpath -s "$0")")")/helper.sh"
 # Experiment                                                                #
 # ========================================================================= #
 
-clog_cudaless_nodes "$PARTITION" 129600 "C-disent" # 36 hours
+clog_cudaless_nodes "$PARTITION" 129600 "C-s12045" # 36 hours
 
 # RUN SWEEP FOR GOOD BETA VALUES
 # - beta: 0.01, 0.0316 seem good, 0.1 starts getting too strong, 0.00316 is a bit weak

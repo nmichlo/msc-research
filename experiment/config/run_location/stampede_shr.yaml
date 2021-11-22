@@ -13,7 +13,7 @@ dsettings:
   launcher:
     partition: stampede
     array_parallelism: 16
-    exclude: "mscluster93,mscluster94,mscluster97,mscluster99"
+    exclude: "redacted93,redacted94,redacted97,redacted99"
 
 trainer:
   prepare_data_per_node: TRUE

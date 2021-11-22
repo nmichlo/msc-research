@@ -65,8 +65,8 @@ datasets from various papers. Please note that items marked
   + [InfoVAE](https://arxiv.org/abs/1706.02262)
   + [BetaTCVAE](https://arxiv.org/abs/1802.04942)
 - **Weakly Supervised**:
-  + [Ada-GVAE](https://arxiv.org/abs/2002.02886) *`AdaVae(..., average_mode='gvae')`* Usually better than the Ada-ML-VAE
-  + [Ada-ML-VAE](https://arxiv.org/abs/2002.02886) *`AdaVae(..., average_mode='ml-vae')`*
+  + [Ada-GVAE](https://arxiv.org/abs/2002.02886) *`AdaVae.cfg(..., average_mode='gvae')`* Usually better than the Ada-ML-VAE
+  + [Ada-ML-VAE](https://arxiv.org/abs/2002.02886) *`AdaVae.cfg(..., average_mode='ml-vae')`*
 - **Supervised**:
   + [TVAE](https://arxiv.org/abs/1802.04403)
 

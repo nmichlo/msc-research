@@ -40,6 +40,7 @@ from s12045.dataset import S12045Dataset
 from s12045.dataset.data import Cars3dData
 from s12045.dataset.data import DSpritesData
 from s12045.dataset.data import Shapes3dData
+from s12045.dataset.data import SmallNorbData
 from s12045.dataset.data import XYSquaresData
 from s12045.dataset.transform import ToImgTensorF32
 from s12045.util import to_numpy
@@ -281,7 +282,7 @@ def plot_dfs_stacked(dfs, title: str, save_name: str = None, show_plt=True, tick
     ax.set_title(title)
     # plot
     # sns.kdeplot(ax=ax, data=df, x="overlap", hue="data", bw_adjust=2)
-    sns.ecdfplot(ax=ax, data=df, x="overlap", hue="data")
+    sns.ecdfplot(ax=ax, data=df, x="distance", hue="data")
     # edit settins
     # ax.set_ylim(-0.025, 1.025)
     ax.set_xlabel('Overlap')
@@ -305,7 +306,7 @@ def plot_dfs_stacked(dfs, title: str, save_name: str = None, show_plt=True, tick
 def plot_unique_count(dfs, save_name: str = None, show_plt: bool = True, fig_l_pad=1, fig_w=1.5*7, fig_h=13):
     df_uniques = pd.DataFrame({
         'Grid Spacing': ['/'.join(data_name.split('-')[1:]) for data_name, df in dfs.items()],
-        'Unique Overlap Values': [len(np.unique(df['overlap'].values, return_counts=True)[1]) for data_name, df in dfs.items()]
+        'Unique Overlap Values': [len(np.unique(df['distance'].values, return_counts=True)[1]) for data_name, df in dfs.items()]
     })
     # make plot
     cm = 1 / 2.54
@@ -385,10 +386,10 @@ if __name__ == '__main__':
           # 'XYObject':  wrapped_partial(XYObjectData),
           # 'XYBlocks':  wrapped_partial(XYBlocksData),
             'XYSquares': wrapped_partial(XYSquaresData),
-            'DSprites':  wrapped_partial(DSpritesData),
             'Shapes3d':  wrapped_partial(Shapes3dData),
             'Cars3d':    wrapped_partial(Cars3dData),
-          # 'SmallNorb': wrapped_partial(SmallNorbData),
+            'DSprites':  wrapped_partial(DSpritesData),
+            'SmallNorb': wrapped_partial(SmallNorbData),
           # 'Mpi3d':     wrapped_partial(Mpi3dData),
         },
         hide_extra_legends=False,
@@ -418,14 +419,14 @@ if __name__ == '__main__':
         save_name='increasing-overlap/xysquares-increasing-overlap-counts.png',
     )
 
-    plot_dfs_stacked(
-        dfs=dfs,
-        title='Increasing Overlap',
-        exp_name='increasing-overlap',
-        save_name='increasing-overlap/xysquares-increasing-overlap.png',
-        tick_size=0.01,
-        fig_w=13
-    )
+    # plot_dfs_stacked(
+    #     dfs=dfs,
+    #     title='Increasing Overlap',
+    #     exp_name='increasing-overlap',
+    #     save_name='increasing-overlap/xysquares-increasing-overlap.png',
+    #     tick_size=0.01,
+    #     fig_w=13
+    # )
 
     # EXPERIMENT 2 -- increasing visual overlap fixed dim size
 
@@ -450,14 +451,14 @@ if __name__ == '__main__':
         save_name='increasing-overlap-fixed/xysquares-increasing-overlap-fixed-counts.png',
     )
 
-    plot_dfs_stacked(
-        dfs=dfs,
-        title='Increasing Overlap',
-        exp_name='increasing-overlap-fixed',
-        save_name='increasing-overlap-fixed/xysquares-increasing-overlap-fixed.png',
-        tick_size=0.01,
-        fig_w=13
-    )
+    # plot_dfs_stacked(
+    #     dfs=dfs,
+    #     title='Increasing Overlap',
+    #     exp_name='increasing-overlap-fixed',
+    #     save_name='increasing-overlap-fixed/xysquares-increasing-overlap-fixed.png',
+    #     tick_size=0.01,
+    #     fig_w=13
+    # )
 
 
 # ========================================================================= #

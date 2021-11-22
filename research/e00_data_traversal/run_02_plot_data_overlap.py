@@ -169,7 +169,7 @@ if __name__ == '__main__':
         (wrapped_partial(XYSquaresData, grid_spacing=4, grid_size=8, no_warnings=True), f'xy-squares-spacing4'),
         (wrapped_partial(XYSquaresData, grid_spacing=8, grid_size=8, no_warnings=True), f'xy-squares-spacing8'),
     ]:
-        plot_dataset_overlap(gt_data_cls(), rel_path=f'plots/overlap__{name}', obs_max=3, obs_spacing=4, seed=seed-40)
+        plot_dataset_overlap(gt_data_cls(), rel_path=f'plots/overlap/overlap__{name}', obs_max=3, obs_spacing=4, seed=seed-40)
 
     for gt_data_cls, name in [
         (DSpritesData,    f'dsprites'),
@@ -177,9 +177,9 @@ if __name__ == '__main__':
         (Cars3dData,      f'cars3d'),
         (SmallNorbData,   f'smallnorb'),
     ]:
-        gt_data = gt_data_cls()
+        gt_data = gt_data_cls(prepare=True)
         for f_idx, f_name in enumerate(gt_data.factor_names):
-            plot_dataset_overlap(gt_data, rel_path=f'plots/overlap__{name}__f{f_idx}-{f_name}', obs_max=3, obs_spacing=4, f_idxs=f_idx, seed=seed)
+            plot_dataset_overlap(gt_data, rel_path=f'plots/overlap/overlap__{name}__f{f_idx}-{f_name}', obs_max=3, obs_spacing=4, f_idxs=f_idx, seed=seed)
 
 
 # ========================================================================= #

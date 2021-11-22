@@ -18,7 +18,7 @@ from s12045.util.function import wrapped_partial
 # ========================================================================= #
 
 
-cachier = wrapped_partial(_cachier, cache_dir='./cache')
+cachier = wrapped_partial(_cachier, cache_dir=os.path.join(os.path.dirname(__file__), 'cache'))
 DF = pd.DataFrame
 
 
@@ -361,9 +361,9 @@ if __name__ == '__main__':
     # clear_cache()
 
     def main():
-        # plot_hparams_exp(rel_path='plots/exp_hparams-exp', show=True)
+        plot_hparams_exp(rel_path='plots/exp_hparams-exp', show=True)
         plot_overlap_loss_exp(rel_path='plots/exp_overlap-loss', show=True)
-        # plot_incr_overlap_exp(rel_path='plots/exp_incr-overlap', show=True)
+        plot_incr_overlap_exp(rel_path='plots/exp_incr-overlap', show=True)
 
     main()
 

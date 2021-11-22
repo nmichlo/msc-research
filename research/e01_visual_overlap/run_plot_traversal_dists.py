@@ -544,7 +544,7 @@ def main_plotting(plot_all=False, print_mean_std=False):
     def sp(name):
         prefix = 'CIRCULAR_' if CIRCULAR else 'DIST_'
         prefix = prefix + ('FREQ_' if PLOT_FREQ else 'NO-FREQ_')
-        return os.path.join(os.path.dirname(__file__), 'plots', f'{prefix}{name}.png')
+        return os.path.join(os.path.dirname(__file__), 'plots/dists', f'{prefix}{name}.png')
 
     # plot xysquares with increasing overlap
     for s in [1, 2, 3, 4, 5, 6, 7, 8]:
@@ -600,7 +600,7 @@ if __name__ == '__main__':
     # matplotlib style
     plt.style.use(os.path.join(os.path.dirname(__file__), '../gadfly.mplstyle'))
     # run!
-    # main_plotting()
+    main_plotting()
     main_compute_dists()
 
 

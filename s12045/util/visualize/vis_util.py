@@ -173,7 +173,7 @@ def get_idx_traversal(factor_size, num_frames, mode='interval'):
 
 
 # ========================================================================= #
-# Cycle Generators | FROM: [d9rdfghjkiu765rdfg]_lib                              #
+# Cycle Generators | FROM: d9rdfghjkiu765rdfg_lib                              #
 # ========================================================================= #
 
 
@@ -181,9 +181,9 @@ def cycle_gaussian(starting_value, num_frames, loc=0., scale=1.):
     """
     Cycles through the quantiles of a Gaussian in a single cycle.
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
-    Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors. All rights reserved.
+    Copyright 2018 The D07ykdd2378r8hasd3Lib Authors. All rights reserved.
     Licensed under the Apache License, Version 2.0
-    https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
+    https://github.com/google-research/d9rdfghjkiu765rdfg_lib
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
     """
     starting_prob = scipy.stats.norm.cdf(starting_value, loc=loc, scale=scale)
@@ -199,9 +199,9 @@ def cycle_interval(starting_value, num_frames, min_val, max_val):
     """
     Cycles through the state space in a single cycle.
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
-    Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors. All rights reserved.
+    Copyright 2018 The D07ykdd2378r8hasd3Lib Authors. All rights reserved.
     Licensed under the Apache License, Version 2.0
-    https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
+    https://github.com/google-research/d9rdfghjkiu765rdfg_lib
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
     """
     starting_in_01 = (starting_value - min_val) / (max_val - min_val)

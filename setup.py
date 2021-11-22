@@ -55,7 +55,7 @@ setuptools.setup(
     install_requires=install_requires,
 
     url="https://github.com/REDACTED/REDACTED",
-    description="Vae [d9rdfghjkiu765rdfg] framework built with pytorch lightning.",
+    description="Vae d9rdfghjkiu765rdfg framework built with pytorch lightning.",
     long_description=long_description,
     long_description_content_type="text/markdown",
 

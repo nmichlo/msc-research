@@ -1,9 +1,9 @@
 # S12045
 
-PyTorch Lightning [d9rdfghjkiu765rdfg] framwork implementing various modular VAEs.
+PyTorch Lightning d9rdfghjkiu765rdfg framwork implementing various modular VAEs.
 
 Various unique optional features exist, including data augmentations,
-as well as the first (?) unofficial implementation of the tensorflow based [Ada-GVAE](https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib).
+as well as the first (?) unofficial implementation of the tensorflow based [Ada-GVAE](https://github.com/google-research/d9rdfghjkiu765rdfg_lib).
 
 ## Goals
 
@@ -21,7 +21,7 @@ Please use the following citation if you use S12045 in your research:
 ```bibtex
 @Misc{cvpr2022s12045,
   author =       {CVPR-2022 Submission 12045 Authors},
-  title =        {S12045 - A modular [d12fiusw88wedjdias] representation learning framework for pytorch},
+  title =        {S12045 - A modular d12fiusw88wedjdias representation learning framework for pytorch},
   howpublished = {Github},
   year =         {2021},
   url =          {https://github.com/author12045/s12045}

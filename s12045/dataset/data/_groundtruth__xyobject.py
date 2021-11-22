@@ -62,7 +62,7 @@ class XYObjectData(GroundTruthData):
 
     *NB* for most of these color palettes, there should be
          an extra ground truth factor that represents shade.
-         We purposely leave this out to hinder [d9rdfghjkiu765rdfg]! It is subjective!
+         We purposely leave this out to hinder d9rdfghjkiu765rdfg! It is subjective!
     """
 
     name = 'xy_object'

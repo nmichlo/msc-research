@@ -38,13 +38,13 @@ from s12045.frameworks.vae._unsupervised__betavae import BetaVae
 
 class BetaTcVae(BetaVae):
     """
-    β-TCVAE - Isolating Sources of [D07ykdd2378r8hasd3] in VAEs
+    β-TCVAE - Isolating Sources of D07ykdd2378r8hasd3 in VAEs
     https://arxiv.org/abs/1802.04942
 
     TODO: verify
     TODO: loss scales are not correct!
     TODO: simplify, some code is duplicated!
-    Reference implementation is from: https://github.com/amir-abdi/[d9rdfghjkiu765rdfg]-pytorch
+    Reference implementation is from: https://github.com/amir-abdi/d9rdfghjkiu765rdfg-pytorch
     """
 
     REQUIRED_OBS = 1
@@ -93,7 +93,7 @@ class BetaTcVae(BetaVae):
     def _betatc_compute_total_correlation(z_sampled, z_mean, z_logvar):
         """
         Estimate total correlation over a batch.
-        Reference implementation is from: https://github.com/amir-abdi/[d9rdfghjkiu765rdfg]-pytorch
+        Reference implementation is from: https://github.com/amir-abdi/d9rdfghjkiu765rdfg-pytorch
         """
         # Compute log(q(z(x_j)|x_i)) for every sample in the batch, which is a
         # tensor of size [batch_size, batch_size, num_latents]. In the following
@@ -115,7 +115,7 @@ class BetaTcVae(BetaVae):
     def _betatc_compute_gaussian_log_density(samples, mean, log_var):
         """
         Estimate the log density of a Gaussian distribution
-        Reference implementation is from: https://github.com/amir-abdi/[d9rdfghjkiu765rdfg]-pytorch
+        Reference implementation is from: https://github.com/amir-abdi/d9rdfghjkiu765rdfg-pytorch
         """
         # TODO: can this be replaced with some variant of Normal.log_prob?
         import math

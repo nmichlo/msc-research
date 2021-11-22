@@ -181,10 +181,10 @@ class ReconLossHandlerBce(ReconLossHandler):
         """
         Computes the Bernoulli loss for the sigmoid activation function
         REFERENCE:
-            https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/76f41e39cdeff8517f7fba9d57b09f35703efca9/[d9rdfghjkiu765rdfg]_lib/methods/shared/losses.py
+            https://github.com/google-research/d9rdfghjkiu765rdfg_lib/blob/76f41e39cdeff8517f7fba9d57b09f35703efca9/d9rdfghjkiu765rdfg_lib/methods/shared/losses.py
             - the same when reduction=='mean_sum' for super().training_compute_loss()
         REFERENCE ALT:
-            https://github.com/YannDubs/[d09asdaweqw8a8jsaa]-vae/blob/master/disvae/models/losses.py
+            https://github.com/YannDubs/d09asdaweqw8a8jsaa-vae/blob/master/disvae/models/losses.py
         """
         return F.binary_cross_entropy_with_logits(x_partial_recon, x_targ, reduction='none')
 

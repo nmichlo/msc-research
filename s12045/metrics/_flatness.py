@@ -77,7 +77,7 @@ def metric_flatness(
       batch_size: Batch size to process at any time while generating representations, should not effect metric results.
       p: how to calculate distances in the latent space, see torch.norm
     Returns:
-      Dictionary with average [d9rdfghjkiu765rdfg] score, completeness and
+      Dictionary with average d9rdfghjkiu765rdfg score, completeness and
         informativeness (train and test).
     """
     p_fs_measures = aggregate_measure_distances_along_all_factors(dataset, representation_function, repeats=factor_repeats, batch_size=batch_size, ps=(1, 2))

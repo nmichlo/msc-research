@@ -39,15 +39,15 @@ log = logging.getLogger(__name__)
 class Mpi3dData(NumpyFileGroundTruthData):
     """
     MPI3D Dataset
-    - https://github.com/rr-learning/[d9rdfghjkiu765rdfg]_dataset
+    - https://github.com/rr-learning/d9rdfghjkiu765rdfg_dataset
 
-    reference implementation: https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib/blob/master/[d9rdfghjkiu765rdfg]_lib/data/ground_truth/mpi3d.py
+    reference implementation: https://github.com/google-research/d9rdfghjkiu765rdfg_lib/blob/master/d9rdfghjkiu765rdfg_lib/data/ground_truth/mpi3d.py
     """
 
     MPI3D_DATASETS = {
-        'toy':        DataFileHashedDl(uri='https://storage.googleapis.com/[d9rdfghjkiu765rdfg]_dataset/Final_Dataset/mpi3d_toy.npz',       uri_hash={'fast': '146138e36ff495e77ceacdc8cf14c37e', 'full': '55889cb7c7dfc655d6e0277beee88868'}),
-        'realistic':  DataFileHashedDl(uri='https://storage.googleapis.com/[d9rdfghjkiu765rdfg]_dataset/Final_Dataset/mpi3d_realistic.npz', uri_hash={'fast': '96c8ff1155dd61f79d3493edef9f19e9', 'full': '59a6225b88b635365f70c91b3e52f70f'}),
-        'real':       DataFileHashedDl(uri='https://storage.googleapis.com/[d9rdfghjkiu765rdfg]_dataset/Final_Dataset/mpi3d_real.npz',      uri_hash={'fast': 'e2941bba6f4a2b130edc5f364637b39e', 'full': '0f33f609918fb5c97996692f91129802'}),
+        'toy':        DataFileHashedDl(uri='https://storage.googleapis.com/d9rdfghjkiu765rdfg_dataset/Final_Dataset/mpi3d_toy.npz',       uri_hash={'fast': '146138e36ff495e77ceacdc8cf14c37e', 'full': '55889cb7c7dfc655d6e0277beee88868'}),
+        'realistic':  DataFileHashedDl(uri='https://storage.googleapis.com/d9rdfghjkiu765rdfg_dataset/Final_Dataset/mpi3d_realistic.npz', uri_hash={'fast': '96c8ff1155dd61f79d3493edef9f19e9', 'full': '59a6225b88b635365f70c91b3e52f70f'}),
+        'real':       DataFileHashedDl(uri='https://storage.googleapis.com/d9rdfghjkiu765rdfg_dataset/Final_Dataset/mpi3d_real.npz',      uri_hash={'fast': 'e2941bba6f4a2b130edc5f364637b39e', 'full': '0f33f609918fb5c97996692f91129802'}),
     }
 
     factor_names = ('object_color', 'object_shape', 'object_size', 'camera_height', 'background_color', 'first_dof', 'second_dof')

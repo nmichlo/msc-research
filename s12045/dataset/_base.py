@@ -151,7 +151,7 @@ class S12045Dataset(Dataset, LengthIter):
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
     # Wrapped Dataset                                                       #
     # -- TODO: this is a bit hacky                                          #
-    # -- Allows us to compute [d9rdfghjkiu765rdfg] metrics over datasets         #
+    # -- Allows us to compute d9rdfghjkiu765rdfg metrics over datasets         #
     #    derived from ground truth data                                     #
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 

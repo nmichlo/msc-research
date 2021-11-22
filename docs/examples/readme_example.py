@@ -53,7 +53,7 @@ trainer = pl.Trainer(
 )
 trainer.fit(module, dataloader)
 
-# compute [d9rdfghjkiu765rdfg] metrics
+# compute d9rdfghjkiu765rdfg metrics
 # - we cannot guarantee which device the representation is on
 # - this will take a while to run
 get_repr = lambda x: module.encode(x.to(module.device))

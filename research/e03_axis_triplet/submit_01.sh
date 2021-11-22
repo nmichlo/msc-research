@@ -53,7 +53,7 @@ submit_sweep \
 # [X] triplet
 #
 # [-] triplet_soft_ave [NOTE: OK, but just worse than, triplet_all_soft_ave]
-# triplet_soft_neg_ave [NOTE: better [d9rdfghjkiu765rdfg] than triplet_all_soft_ave, but worse axis align]
+# triplet_soft_neg_ave [NOTE: better d9rdfghjkiu765rdfg than triplet_all_soft_ave, but worse axis align]
 # triplet_all_soft_ave
 #
 # triplet_hard_neg_ave

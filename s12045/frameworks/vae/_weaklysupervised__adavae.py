@@ -43,7 +43,7 @@ from s12045.frameworks.vae._unsupervised__betavae import BetaVae
 
 class AdaVae(BetaVae):
     """
-    Weakly Supervised [D07ykdd2378r8hasd3] Learning Without Compromises: https://arxiv.org/abs/2002.02886
+    Weakly Supervised D07ykdd2378r8hasd3 Learning Without Compromises: https://arxiv.org/abs/2002.02886
     - pretty much a beta-vae with averaging between decoder outputs to form weak supervision signal.
     - GAdaVAE:   Averaging from https://arxiv.org/abs/1809.02383
     - ML-AdaVAE: Averaging from https://arxiv.org/abs/1705.08841
@@ -75,7 +75,7 @@ class AdaVae(BetaVae):
         4. average together elements that should be considered shared
 
         (✓) Visual inspection against reference implementation:
-            https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib (aggregate_argmax)
+            https://github.com/google-research/d9rdfghjkiu765rdfg_lib (aggregate_argmax)
         """
         d0_posterior, d1_posterior = ds_posterior
         # shared elements that need to be averaged, computed per pair in the batch.
@@ -95,7 +95,7 @@ class AdaVae(BetaVae):
     def compute_deltas_from_posteriors(cls, d0_posterior: Distribution, d1_posterior: Distribution, thresh_mode: str):
         """
         (✓) Visual inspection against reference implementation
-        https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib (compute_kl)
+        https://github.com/google-research/d9rdfghjkiu765rdfg_lib (compute_kl)
         - difference is that they don't multiply by 0.5 to get true kl, but that's not needed
 
         TODO: this might be numerically unstable with f32 passed to distributions
@@ -169,7 +169,7 @@ class AdaVae(BetaVae):
           this is equivalent to the original implementation.
 
         (✓) Visual inspection against reference implementation:
-            https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib (aggregate_argmax)
+            https://github.com/google-research/d9rdfghjkiu765rdfg_lib (aggregate_argmax)
             - Implementation conversion is non-trivial, items are histogram binned.
               If we are in the second histogram bin, ie. 1, then kl_deltas <= kl_threshs
             - TODO: (aggregate_labels) An alternative mode exists where you can bind the
@@ -229,7 +229,7 @@ def compute_average_gvae(d0_posterior: Normal, d1_posterior: Normal) -> Normal:
     - Ada-GVAE Averaging function
 
     (✓) Visual inspection against reference implementation:
-        https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib (GroupVAEBase.model_fn)
+        https://github.com/google-research/d9rdfghjkiu765rdfg_lib (GroupVAEBase.model_fn)
     """
     assert isinstance(d0_posterior, Normal), f'posterior distributions must be {Normal.__name__} distributions, got: {type(d0_posterior)}'
     assert isinstance(d1_posterior, Normal), f'posterior distributions must be {Normal.__name__} distributions, got: {type(d1_posterior)}'
@@ -246,7 +246,7 @@ def compute_average_ml_vae(d0_posterior: Normal, d1_posterior: Normal) -> Normal
     - Ada-ML-VAE Averaging function
 
     (✓) Visual inspection against reference implementation:
-        https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib (MLVae.model_fn)
+        https://github.com/google-research/d9rdfghjkiu765rdfg_lib (MLVae.model_fn)
 
     # TODO: recheck
     """
@@ -256,10 +256,10 @@ def compute_average_ml_vae(d0_posterior: Normal, d1_posterior: Normal) -> Normal
     # https://proofwiki.org/wiki/Inverse_of_Diagonal_Matrix
     z0_invvar, z1_invvar = d0_posterior.variance.reciprocal(), d1_posterior.variance.reciprocal()
     # average var: E^-1 = E1^-1 + E2^-1
-    # [d9rdfghjkiu765rdfg]_lib: ave_var = 2 * z0_var * z1_var / (z0_var + z1_var)
+    # d9rdfghjkiu765rdfg_lib: ave_var = 2 * z0_var * z1_var / (z0_var + z1_var)
     ave_var = 2 * (z0_invvar + z1_invvar).reciprocal()
     # average mean: u^T = (u1^T E1^-1 + u2^T E2^-1) E
-    # [d9rdfghjkiu765rdfg]_lib: ave_mean = (z0_mean/z0_var + z1_mean/z1_var) * ave_var * 0.5
+    # d9rdfghjkiu765rdfg_lib: ave_mean = (z0_mean/z0_var + z1_mean/z1_var) * ave_var * 0.5
     ave_mean = (d0_posterior.mean*z0_invvar + d1_posterior.mean*z1_invvar) * ave_var * 0.5
     # done!
     return Normal(loc=ave_mean, scale=torch.sqrt(ave_var))
@@ -300,7 +300,7 @@ class AdaGVaeMinimal(BetaVae):
             4. average together elements that are marked as shared
 
         (x) Visual inspection against reference implementation:
-            https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib (aggregate_argmax)
+            https://github.com/google-research/d9rdfghjkiu765rdfg_lib (aggregate_argmax)
         """
         d0_posterior, d1_posterior = ds_posterior
         assert isinstance(d0_posterior, Normal), f'posterior distributions must be {Normal.__name__} distributions, got: {type(d0_posterior)}'

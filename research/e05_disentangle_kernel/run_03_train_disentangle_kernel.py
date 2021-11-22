@@ -61,7 +61,7 @@ log = logging.getLogger(__name__)
 # ========================================================================= #
 
 
-def disentangle_loss(
+def d12ifrsaidasidu32a_loss(
     batch: torch.Tensor,
     factors: torch.Tensor,
     num_pairs: int,
@@ -86,18 +86,18 @@ def disentangle_loss(
     return loss
 
 
-class DisentangleModule(S12045LightningModule):
+class D12asd12ewadidaHHsModule(S12045LightningModule):
 
     def __init__(
         self,
         model,
         hparams,
-        disentangle_factor_idxs: Sequence[int] = None
+        d12ifrsaidasidu32a_factor_idxs: Sequence[int] = None
     ):
         super().__init__()
         self.model = model
         self.hparams = hparams
-        self._disentangle_factors = None if (disentangle_factor_idxs is None) else np.array(disentangle_factor_idxs)
+        self._d12ifrsaidasidu32a_factors = None if (d12ifrsaidasidu32a_factor_idxs is None) else np.array(d12ifrsaidasidu32a_factor_idxs)
 
     def configure_optimizers(self):
         return H.make_optimizer(self, name=self.hparams.optimizer.name, lr=self.hparams.optimizer.lr, weight_decay=self.hparams.optimizer.weight_decay)
@@ -107,11 +107,11 @@ class DisentangleModule(S12045LightningModule):
         # feed forward batch
         aug_batch = self.model(batch)
         # compute pairwise distances of factors and batch, and optimize to correspond
-        loss = disentangle_loss(
+        loss = d12ifrsaidasidu32a_loss(
             batch=aug_batch,
             factors=factors,
             num_pairs=int(len(batch) * self.hparams.train.pairs_ratio),
-            f_idxs=self._disentangle_factors,
+            f_idxs=self._d12ifrsaidasidu32a_factors,
             loss_fn=self.hparams.train.loss,
             mean_dtype=torch.float64,
         )
@@ -222,7 +222,7 @@ ROOT_DIR = os.path.abspath(__file__ + '/../../../..')
 
 
 @hydra.main(config_path=os.path.join(ROOT_DIR, 'experiment/config'), config_name="config_adversarial_kernel")
-def run_disentangle_dataset_kernel(cfg):
+def run_d12ifrsaidasidu32a_dataset_kernel(cfg):
     cfg = make_non_strict(cfg)
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
     # TODO: some of this code is duplicated between this and the main experiment run.py
@@ -237,12 +237,12 @@ def run_disentangle_dataset_kernel(cfg):
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
     seed(s12045.util.seeds.seed)
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
-    # initialise dataset and get factor names to disentangle
+    # initialise dataset and get factor names to d12ifrsaidasidu32a
     dataset = H.make_dataset(cfg.data.name, factors=True, data_root=cfg.default_settings.storage.data_root)
-    disentangle_factor_idxs = dataset.gt_data.normalise_factor_idxs(cfg.kernel.disentangle_factors)
-    cfg.kernel.disentangle_factors = tuple(dataset.gt_data.factor_names[i] for i in disentangle_factor_idxs)
+    d12ifrsaidasidu32a_factor_idxs = dataset.gt_data.normalise_factor_idxs(cfg.kernel.d12ifrsaidasidu32a_factors)
+    cfg.kernel.d12ifrsaidasidu32a_factors = tuple(dataset.gt_data.factor_names[i] for i in d12ifrsaidasidu32a_factor_idxs)
     log.info(f'Dataset has ground-truth factors: {dataset.gt_data.factor_names}')
-    log.info(f'Chosen ground-truth factors are: {tuple(cfg.kernel.disentangle_factors)}')
+    log.info(f'Chosen ground-truth factors are: {tuple(cfg.kernel.d12ifrsaidasidu32a_factors)}')
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
     # print everything
     log.info('Final Config' + make_box_str(OmegaConf.to_yaml(cfg)))
@@ -255,7 +255,7 @@ def run_disentangle_dataset_kernel(cfg):
     )
     model = Kernel(radius=cfg.kernel.radius, channels=cfg.kernel.channels, offset=0.002, scale=0.01, train_symmetric_regularise=cfg.kernel.regularize_symmetric, train_norm_regularise=cfg.kernel.regularize_norm, train_nonneg_regularise=cfg.kernel.regularize_nonneg)
     callbacks.append(model.make_train_periodic_callback(cfg, dataset=dataset))
-    framework = DisentangleModule(model, cfg, disentangle_factor_idxs=disentangle_factor_idxs)
+    framework = D12asd12ewadidaHHsModule(model, cfg, d12ifrsaidasidu32a_factor_idxs=d12ifrsaidasidu32a_factor_idxs)
     # ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ #
     if framework.logger:
         framework.logger.log_hyperparams(framework.hparams)
@@ -294,4 +294,4 @@ if __name__ == '__main__':
     # but speeds up as kernel size decreases, so might be shorter
     # EXP ARGS:
     # $ ... -m optimizer.weight_decay=1e-4,0.0 kernel.radius=63,55,47,39,31,23,15,7 dataset.spacing=8,4,2,1
-    run_disentangle_dataset_kernel()
+    run_d12ifrsaidasidu32a_dataset_kernel()

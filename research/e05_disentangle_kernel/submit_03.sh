@@ -5,10 +5,10 @@
 # ========================================================================= #
 
 export USERNAME="author_12045"
-export PROJECT="final-03__kernel-disentangle-xy"
+export PROJECT="final-03__kernel-d12ifrsaidasidu32a-xy"
 export PARTITION="stampede"
 export PARALLELISM=32
-export PY_RUN_FILE='experiment/exp/05_adversarial_data/run_03_train_disentangle_kernel.py'
+export PY_RUN_FILE='experiment/exp/05_adversarial_data/run_03_train_d12ifrsaidasidu32a_kernel.py'
 
 # source the helper file
 source "$(dirname "$(dirname "$(realpath -s "$0")")")/helper.sh"

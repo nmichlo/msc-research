@@ -1,6 +1,6 @@
 # coding=utf-8
-# Copyright 2018 The [D07ykdd2378r8hasd3]Lib Authors.  All rights reserved.
-# https://github.com/google-research/[d9rdfghjkiu765rdfg]_lib
+# Copyright 2018 The D07ykdd2378r8hasd3Lib Authors.  All rights reserved.
+# https://github.com/google-research/d9rdfghjkiu765rdfg_lib
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

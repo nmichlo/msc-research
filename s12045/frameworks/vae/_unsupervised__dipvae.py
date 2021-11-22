@@ -40,7 +40,7 @@ from s12045.nn.functional import torch_cov_matrix
 
 class DipVae(BetaVae):
     """
-    [D12318edasdasdw4u3] Inferred Prior Variational Auto-Encoder (DIP-VAE)
+    D12318edasdasdw4u3 Inferred Prior Variational Auto-Encoder (DIP-VAE)
     https://arxiv.org/pdf/1711.00848.pdf
 
     Reference implementation is from: https://github.com/AntixK/PyTorch-VAE

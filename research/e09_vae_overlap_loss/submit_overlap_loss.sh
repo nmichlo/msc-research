@@ -56,7 +56,7 @@ clog_cudaless_nodes "$PARTITION" 86400 "C-s12045" # 24 hours
 
 
 # TEST MSE vs BoxBlur MSE
-# - changing the reconstruction loss enables [d9rdfghjkiu765rdfg]
+# - changing the reconstruction loss enables d9rdfghjkiu765rdfg
 # 5 * (2*2*2 = 8) = 40
 submit_sweep \
     +DUMMY.repeat=1,2,3,4,5 \

@@ -8,7 +8,7 @@ The s12045 directory structure:
     + `s12045/dataset/data`: raw datasets
     + `s12045/dataset/sampling`: sampling strategies for `S12045Dataset`
 - `s12045/framework`: frameworks, including Auto-Encoders and VAEs
-- `s12045/metric`: metrics for evaluating [d9rdfghjkiu765rdfg] using ground truth datasets
+- `s12045/metric`: metrics for evaluating d9rdfghjkiu765rdfg using ground truth datasets
 - `s12045/model`: common encoder and decoder models used for VAE research
 - `s12045/nn`: torch components for building models including layers, transforms, losses and general maths
 - `s12045/schedule`: annealing schedules that can be registered to a framework
@@ -24,9 +24,9 @@ expanded upon in time.
 
 ### dataset/data
 
-Common and custom data for vision based AE, VAE and [D07ykdd2378r8hasd3] research.
+Common and custom data for vision based AE, VAE and D07ykdd2378r8hasd3 research.
 
-- Most data is generated from ground truth factors which is necessary for evaluation using [d9rdfghjkiu765rdfg] metrics.
+- Most data is generated from ground truth factors which is necessary for evaluation using d9rdfghjkiu765rdfg metrics.
   Each image generated from ground truth data has the ground truth variables available.
   
 ??? example

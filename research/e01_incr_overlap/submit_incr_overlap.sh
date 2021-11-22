@@ -7,12 +7,12 @@
 
 
 # OUTCOMES:
-# - increasing overlap improves [d9rdfghjkiu765rdfg] & ability for the
+# - increasing overlap improves d9rdfghjkiu765rdfg & ability for the
 #   neural network to learn values.
-# - decreasing overlap worsens [d9rdfghjkiu765rdfg], but it also becomes
+# - decreasing overlap worsens d9rdfghjkiu765rdfg, but it also becomes
 #    very hard for the neural net to learn specific values needed. The
 #    average image does not correspond well to individual samples.
-#    [D07ykdd2378r8hasd3] performance is also a result of this fact, as
+#    D07ykdd2378r8hasd3 performance is also a result of this fact, as
 #    the network can't always learn the dataset effectively.
 
 

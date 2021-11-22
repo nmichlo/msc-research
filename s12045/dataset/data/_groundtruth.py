@@ -230,7 +230,7 @@ class _DiskDataMixin(object):
 
     @property
     def default_data_root(self):
-        return os.path.abspath(os.environ.get('DISENT_DATA_ROOT', 'data/dataset'))
+        return os.path.abspath(os.environ.get('SUB12045_DATA_ROOT', 'data/dataset'))
 
     @property
     def datafiles(self) -> Sequence[DataFile]:

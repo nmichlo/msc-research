@@ -193,7 +193,7 @@ print('metrics:', metrics)
 </p>
 </details>
 
-Visit the [docs](https://s12045.dontpanic.sh) for more examples!
+Visit the [docs](https://s12045.REDACTED.REDACTED) for more examples!
 
 
 ### Hydra Config Example

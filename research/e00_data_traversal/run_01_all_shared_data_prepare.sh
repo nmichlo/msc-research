@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is intended to prepare all shared data on the wits cluster
+# This script is intended to prepare all shared data on the institute_12045 cluster
 # you can probably modify it for your own purposes
 # - data is loaded and processed into ~/downloads/datasets which is a
 #   shared drive, instead of /tmp/<user>, which is a local drive.

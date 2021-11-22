@@ -83,11 +83,11 @@ class GroundTruthPairSampler(BaseS12045Sampler):
 
     def datapoint_sample_factors_pair(self, idx):
         """
-        Excerpt from Weakly-Supervised D07ykdd2378r8hasd3 Without Compromises:
+        Excerpt from Weakly-Supervised Disentanglement Without Compromises:
         [section 5. Experimental results]
 
         CREATE DATA SETS: with weak supervision from the existing
-        d9rdfghjkiu765rdfg data sets:
+        disentanglement data sets:
         1. we first sample from the discrete z according to the ground-truth generative model (1)–(2).
         2. Then, we sample k factors of variation that should not be shared by the two images and re-sample those coordinates to obtain z˜.
            This ensures that each image pair differs in at most k factors of variation.

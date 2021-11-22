@@ -11,7 +11,7 @@ defaults:
 
 job:
   user: 'author_12045'
-  project: 'exp-d12ifrsaidasidu32a-kernel'
+  project: 'exp-disentangle-kernel'
   name: r${kernel.radius}-${kernel.channels}_s${trainer.max_steps}_${optimizer.name}_lr${settings.optimizer.lr}_wd${optimizer.weight_decay}_${data.name}
 
 optimizer:
@@ -25,7 +25,7 @@ data:
 kernel:
   radius: 63
   channels: 1
-  d12ifrsaidasidu32a_factors: NULL
+  disentangle_factors: NULL
   # training
   regularize_symmetric: TRUE
   regularize_norm: FALSE    # these don't work

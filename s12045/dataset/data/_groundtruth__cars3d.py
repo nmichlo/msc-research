@@ -102,7 +102,7 @@ class Cars3dData(NumpyFileGroundTruthData):
     - Deep Visual Analogy-Making (https://papers.nips.cc/paper/5845-deep-visual-analogy-making)
       http://www.scottreed.info
 
-    # reference implementation: https://github.com/google-research/d9rdfghjkiu765rdfg_lib/blob/master/d9rdfghjkiu765rdfg_lib/data/ground_truth/cars3d.py
+    # reference implementation: https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/data/ground_truth/cars3d.py
     """
 
     name = 'cars3d'

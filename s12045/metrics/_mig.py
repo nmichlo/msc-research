@@ -1,6 +1,6 @@
 # coding=utf-8
-# Copyright 2018 The D07ykdd2378r8hasd3Lib Authors.  All rights reserved.
-# https://github.com/google-research/d9rdfghjkiu765rdfg_lib
+# Copyright 2018 The DisentanglementLib Authors.  All rights reserved.
+# https://github.com/google-research/disentanglement_lib
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
 
 """
 Mutual Information Gap from the beta-TC-VAE paper.
-Based on "Isolating Sources of D07ykdd2378r8hasd3 in Variational Autoencoders"
+Based on "Isolating Sources of Disentanglement in Variational Autoencoders"
 (https://arxiv.org/pdf/1802.04942.pdf).
 """
 

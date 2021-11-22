@@ -1,6 +1,6 @@
 # coding=utf-8
-# Copyright 2018 The D07ykdd2378r8hasd3Lib Authors.  All rights reserved.
-# https://github.com/google-research/d9rdfghjkiu765rdfg_lib
+# Copyright 2018 The DisentanglementLib Authors.  All rights reserved.
+# https://github.com/google-research/disentanglement_lib
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@
 # - renamed functions
 
 """
-Implementation of the d9rdfghjkiu765rdfg metric from the FactorVAE paper.
-Based on "D091239jasdai99asd by Factorising" (https://arxiv.org/abs/1802.05983).
+Implementation of the disentanglement metric from the FactorVAE paper.
+Based on "Disentangling by Factorising" (https://arxiv.org/abs/1802.05983).
 """
 
 import logging
@@ -53,7 +53,7 @@ def metric_factor_vae(
         show_progress=False,
 ):
     """
-    Computes the FactorVAE d9rdfghjkiu765rdfg metric.
+    Computes the FactorVAE disentanglement metric.
 
     Algorithm Description (Excerpt from paper):
     =====================
@@ -68,7 +68,7 @@ def metric_factor_vae(
        provide one training input/output example for the classifier (see bottom of Figure 2).
 
     # ---------------------------------------------------------------------- #
-    | Thus if the representation is perfectly d12fiusw88wedjdias, the empirical    |
+    | Thus if the representation is perfectly disentangled, the empirical    |
     | variance in the dimension corresponding to the fixed factor will be 0. |
     # ---------------------------------------------------------------------- #
 

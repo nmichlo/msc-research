@@ -1,6 +1,6 @@
 # coding=utf-8
-# Copyright 2018 The D07ykdd2378r8hasd3Lib Authors.  All rights reserved.
-# https://github.com/google-research/d9rdfghjkiu765rdfg_lib
+# Copyright 2018 The DisentanglementLib Authors.  All rights reserved.
+# https://github.com/google-research/disentanglement_lib
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
 
 """
 Implementation of the SAP score.
-Based on "Variational Inference of D12318edasdasdw4u3 Latent Concepts from Unlabeled
+Based on "Variational Inference of Disentangled Latent Concepts from Unlabeled
 Observations" (https://openreview.net/forum?id=H1kG7GZAW), Section 3.
 """
 

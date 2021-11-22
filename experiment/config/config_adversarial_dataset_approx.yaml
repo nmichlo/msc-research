@@ -48,7 +48,7 @@ adv_system:
   #     - same_k1_close:         best  [inversion well before 5 k]  (easier to implement)
   #   note: sampler_name (adversarial_mode=self)
   #     - close_p_random_n:      seems better based on plot of fdists vs overlap (converges better, but loss is higher which makes sense)
-  #     - same_k1_close:         seems worse based on plot of fdists vs overlap (seems to maintain original shape more, might hinder d9rdfghjkiu765rdfg? not actually tested)
+  #     - same_k1_close:         seems worse based on plot of fdists vs overlap (seems to maintain original shape more, might hinder disentanglement? not actually tested)
   sampler_name:      'close_p_random_n'      # [random_swap_manhattan, close_p_random_n, same_k1_close]
   samples_sort_mode: 'swap'                  # [none, swap, sort_inorder, sort_reverse]
   dataset_name:      'smallnorb'             # [cars3d, smallnorb, dsprites, shapes3d, xysquares_8x8_mini]
@@ -67,7 +67,7 @@ adv_system:
   data_load_into_memory: FALSE  # I don't think this is truly multi-threaded, possible lock on array access?
   # adversarial loss options
   adversarial_swapped: FALSE
-  adversarial_masking: FALSE  # can produce weird artefacts that look like they might go against the training process, eg. improve d9rdfghjkiu765rdfg on dsprites, not actually checked by trianing model on this.
+  adversarial_masking: FALSE  # can produce weird artefacts that look like they might go against the training process, eg. improve disentanglement on dsprites, not actually checked by trianing model on this.
   adversarial_top_k:   NULL   # NULL or range(1, batch_size)
   pixel_loss_mode:    'mse'
   # loss extras

@@ -42,7 +42,7 @@ from s12045.frameworks.vae._weaklysupervised__adavae import AdaVae
 class AdaAe(Ae):
     """
     Custom implementation, removing Variational Auto-Encoder components of:
-    Weakly Supervised D07ykdd2378r8hasd3 Learning Without Compromises: https://arxiv.org/abs/2002.02886
+    Weakly Supervised Disentanglement Learning Without Compromises: https://arxiv.org/abs/2002.02886
 
     MODIFICATION:
     - L1 distance for deltas instead of KL divergence

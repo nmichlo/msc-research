@@ -30,7 +30,7 @@ from s12045.model import S12045Encoder
 
 
 # ========================================================================= #
-# d9rdfghjkiu765rdfg_lib Conv models                                           #
+# disentanglement_lib Conv models                                           #
 # ========================================================================= #
 
 
@@ -42,7 +42,7 @@ class EncoderConv64(S12045Encoder):
     (https://openreview.net/forum?id=Sy2fzU9gl)
 
     Reference Implementation:
-        - https://github.com/google-research/d9rdfghjkiu765rdfg_lib/blob/master/d9rdfghjkiu765rdfg_lib/methods/shared/architectures.py
+        - https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/shared/architectures.py
         >>> def conv_encoder(input_tensor, num_latent):
         >>>     e1 = tf.layers.conv2d(inputs=input_tensor, filters=32, kernel_size=4, strides=2, activation=tf.nn.relu, padding="same", name="e1",)
         >>>     e2 = tf.layers.conv2d(inputs=e1,           filters=32, kernel_size=4, strides=2, activation=tf.nn.relu, padding="same", name="e2",)
@@ -83,7 +83,7 @@ class DecoderConv64(S12045Decoder):
     (https://openreview.net/forum?id=Sy2fzU9gl)
 
     Reference Implementation:
-        - https://github.com/google-research/d9rdfghjkiu765rdfg_lib/blob/master/d9rdfghjkiu765rdfg_lib/methods/shared/architectures.py
+        - https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/shared/architectures.py
         >>> def deconv_decoder(latent_tensor, output_shape):
         >>>     d1 = tf.layers.dense(latent_tensor,  256, activation=tf.nn.relu)
         >>>     d2 = tf.layers.dense(d1,            1024, activation=tf.nn.relu)

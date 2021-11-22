@@ -34,7 +34,7 @@ from s12045.nn.activations import Swish
 
 
 # ========================================================================= #
-# d9rdfghjkiu765rdfg_lib Conv models                                           #
+# disentanglement_lib Conv models                                           #
 # ========================================================================= #
 
 

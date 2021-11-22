@@ -31,7 +31,7 @@ from s12045.model import S12045Encoder
 
 
 # ========================================================================= #
-# d9rdfghjkiu765rdfg_lib FC models                                             #
+# disentanglement_lib FC models                                             #
 # ========================================================================= #
 
 
@@ -43,7 +43,7 @@ class EncoderFC(S12045Encoder):
     (https://openreview.net/forum?id=Sy2fzU9gl)
 
     Reference Implementation:
-        - https://github.com/google-research/d9rdfghjkiu765rdfg_lib/blob/master/d9rdfghjkiu765rdfg_lib/methods/shared/architectures.py
+        - https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/shared/architectures.py
         >>> def fc_encoder(input_tensor, num_latent):
         >>>     flattened = tf.layers.flatten(input_tensor)
         >>>     e1 = tf.layers.dense(flattened, 1200, activation=tf.nn.relu, name="e1")
@@ -75,7 +75,7 @@ class DecoderFC(S12045Decoder):
     (https://openreview.net/forum?id=Sy2fzU9gl)
 
     Reference Implementation:
-        - https://github.com/google-research/d9rdfghjkiu765rdfg_lib/blob/master/d9rdfghjkiu765rdfg_lib/methods/shared/architectures.py
+        - https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/methods/shared/architectures.py
         >>> def fc_decoder(latent_tensor, output_shape):
         >>>     d1 = tf.layers.dense(latent_tensor, 1200, activation=tf.nn.tanh)
         >>>     d2 = tf.layers.dense(d1,            1200, activation=tf.nn.tanh)

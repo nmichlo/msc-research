@@ -14,7 +14,7 @@ defaults:
 settings:
   job:
     user: 'author_12045'
-    project: 'DELETE'  # exp-d12ifrsaidasidu32a-dataset
+    project: 'DELETE'  # exp-disentangle-dataset
     name: 'no-name' # TEST-${framework.dataset_name}_${framework.adversarial_mode}_${framework.sampler_name}_s${trainer.max_steps}_${framework.optimizer_name}_lr${framework.optimizer_lr} # _wd${framework.optimizer_kwargs.weight_decay}
     seed: 777
   exp:
@@ -50,7 +50,7 @@ adv_system:
   # adversarial loss options
   # | adversarial_mode: 'invert_margin_0.005'  # [self, invert_margin_0.005] invert, invert_unbounded
   adversarial_swapped: FALSE
-  adversarial_masking: FALSE  # can produce weird artefacts that look like they might go against the training process, eg. improve d9rdfghjkiu765rdfg on dsprites, not actually checked by trianing model on this.
+  adversarial_masking: FALSE  # can produce weird artefacts that look like they might go against the training process, eg. improve disentanglement on dsprites, not actually checked by trianing model on this.
   adversarial_top_k: NULL  # NULL or range(1, batch_size)
   pixel_loss_mode: 'mse'
   # sampling config

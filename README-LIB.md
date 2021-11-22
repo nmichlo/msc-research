@@ -5,9 +5,9 @@
 
 ## Overview
 
-This library is a modular d12fiusw88wedjdias representation learning framework for auto-encoders,
+This library is a modular disentangled representation learning framework for auto-encoders,
 built upon PyTorch-Lightning. This framework consists of various composable components
-that can be used to build and benchmark various d9rdfghjkiu765rdfg vision tasks.
+that can be used to build and benchmark various disentanglement vision tasks.
 
 ### Goals
 
@@ -32,7 +32,7 @@ The s12045 module structure:
 - `s12045.frameworks`: frameworks, including Auto-Encoders and VAEs
     + `s12045.frameworks.ae`: Auto-Encoder based frameworks
     + `s12045.frameworks.vae`: Variational Auto-Encoder based frameworks
-- `s12045.metrics`: metrics for evaluating d9rdfghjkiu765rdfg using ground truth datasets
+- `s12045.metrics`: metrics for evaluating disentanglement using ground truth datasets
 - `s12045.model`: common encoder and decoder models used for VAE research
 - `s12045.nn`: torch components for building models including layers, transforms, losses and general maths
 - `s12045.schedule`: annealing schedules that can be registered to a framework
@@ -71,16 +71,16 @@ datasets from various papers. Please note that items marked
   + [TVAE](https://arxiv.org/abs/1802.04403)
 
 ### Metrics
-- **D07ykdd2378r8hasd3**:
+- **Disentanglement**:
   + [FactorVAE Score](https://arxiv.org/abs/1802.05983)
   + [DCI](https://openreview.net/forum?id=By-7dz-AZ)
   + [MIG](https://arxiv.org/abs/1802.04942)
   + [SAP](https://arxiv.org/abs/1711.00848)
-  + [Unsupervised Scores](https://github.com/google-research/d9rdfghjkiu765rdfg_lib)
+  + [Unsupervised Scores](https://github.com/google-research/disentanglement_lib)
 
 ### Datasets
 
-Various common datasets used in d9rdfghjkiu765rdfg research are included, with hash
+Various common datasets used in disentanglement research are included, with hash
 verification and automatic chunk-size optimization of underlying hdf5 formats for
 low-memory disk-based access.
 
@@ -176,7 +176,7 @@ trainer = pl.Trainer(
 )
 trainer.fit(module, dataloader)
 
-# compute d9rdfghjkiu765rdfg metrics
+# compute disentanglement metrics
 # - we cannot guarantee which device the representation is on
 # - this will take a while to run
 get_repr = lambda x: module.encode(x.to(module.device))

@@ -45,7 +45,7 @@ class DSpritesData(Hdf5GroundTruthData):
         - direct hdf5: https://raw.githubusercontent.com/deepmind/dsprites-dataset/master/dsprites_ndarray_co1sh3sc6or40x32y32_64x64.hdf5
                        default chunk size is (23040, 2, 4), dataset is (737280, 64, 64) uint8.
 
-    # reference implementation: https://github.com/google-research/d9rdfghjkiu765rdfg_lib/blob/master/d9rdfghjkiu765rdfg_lib/data/ground_truth/dsprites.py
+    # reference implementation: https://github.com/google-research/disentanglement_lib/blob/master/disentanglement_lib/data/ground_truth/dsprites.py
     """
 
     name = 'dsprites'

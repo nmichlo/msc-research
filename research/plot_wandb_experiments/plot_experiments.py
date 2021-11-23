@@ -157,7 +157,7 @@ def plot_incr_overlap_exp(
     # ~=~=~=~=~=~=~=~=~=~=~=~=~ #
     df = load_general_data(f'{os.environ["WANDB_USER"]}/CVPR-01__incr_overlap')
     # select run groups
-    df = df[df[K_GROUP].isin(['sweep_xy_squares_overlap', 'sweep_xy_squares_overlap_small_beta'])]
+    df = df[df[K_GROUP].isin(['sweep_xy_squares_overlap'])]  # 'sweep_xy_squares_overlap', 'sweep_xy_squares_overlap_small_beta'
     # print common key values
     print('K_GROUP:    ', list(df[K_GROUP].unique()))
     print('K_FRAMEWORK:', list(df[K_FRAMEWORK].unique()))
@@ -173,15 +173,17 @@ def plot_incr_overlap_exp(
     # ~=~=~=~=~=~=~=~=~=~=~=~=~ #
     orig = df
     # select runs
-    # df = df[df[K_STATE] == 'finished']
+    df = df[df[K_STATE] == 'finished']
     # df = df[df[K_REPEAT].isin([1, 2, 3])]
     # select adavae
-    adavae_selector = (df[K_FRAMEWORK] == 'adavae_os') & (df[K_BETA] == 0.001)  # 0.001, 0.0001
-    data_adavae = df[adavae_selector]
+    # adavae_selector = (df[K_FRAMEWORK] == 'adavae_os') & (df[K_BETA] == 0.001)  # 0.001, 0.0001
+    # data_adavae = df[adavae_selector]
+    data_adavae = df[(df[K_FRAMEWORK] == 'adavae_os')]
     # select
-    betavae_selector_a = (df[K_FRAMEWORK] == 'betavae')   & (df[K_BETA] == 0.001)   & (df[K_SPACING] >= 3)
-    betavae_selector_b = (df[K_FRAMEWORK] == 'betavae')   & (df[K_BETA] == 0.00316) & (df[K_SPACING] < 3)
-    data_betavae = df[betavae_selector_a | betavae_selector_b]
+    # betavae_selector_a = (df[K_FRAMEWORK] == 'betavae')   & (df[K_BETA] == 0.001)   & (df[K_SPACING] >= 3)
+    # betavae_selector_b = (df[K_FRAMEWORK] == 'betavae')   & (df[K_BETA] == 0.00316) & (df[K_SPACING] < 3)
+    # data_betavae = df[betavae_selector_a | betavae_selector_b]
+    data_betavae = df[(df[K_FRAMEWORK] == 'betavae')]
     # ~=~=~=~=~=~=~=~=~=~=~=~=~ #
 
     print('ADAGVAE', len(orig), '->', len(data_adavae))
@@ -286,7 +288,7 @@ def plot_overlap_loss_exp(
     # ~=~=~=~=~=~=~=~=~=~=~=~=~ #
     df = load_general_data(f'{os.environ["WANDB_USER"]}/CVPR-09__vae_overlap_loss')
     # select run groups
-    df = df[df[K_GROUP].isin(['sweep_overlap_boxblur_specific', 'sweep_overlap_boxblur'])]
+    df = df[df[K_GROUP].isin(['sweep_overlap_boxblur_specific'])]  # sweep_overlap_boxblur
     # print common key values
     print('K_GROUP:    ', list(df[K_GROUP].unique()))
     print()
@@ -327,7 +329,7 @@ def plot_overlap_loss_exp(
     df[K_LOSS].replace('mse', 'MSE', inplace=True)
     PALLETTE = {'Ada-GVAE': color_adavae, 'Beta-VAE': color_betavae, 'MSE': color_mse, 'MSE-boxblur': color_mse_overlap}
 
-    print(df)
+    # print(df)
 
     # ~=~=~=~=~=~=~=~=~=~=~=~=~ #
     fig, axs = plt.subplots(1, 2, figsize=(10, 4))
@@ -362,8 +364,8 @@ if __name__ == '__main__':
 
     def main():
         plot_hparams_exp(rel_path='plots/exp_hparams-exp', show=True)
-        plot_overlap_loss_exp(rel_path='plots/exp_overlap-loss', show=True)
         plot_incr_overlap_exp(rel_path='plots/exp_incr-overlap', show=True)
+        plot_overlap_loss_exp(rel_path='plots/exp_overlap-loss', show=True)
 
     main()
 

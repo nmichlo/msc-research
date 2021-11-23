@@ -80,29 +80,29 @@ submit_sweep \
     sampling=default__bb
 
 
-# TEST DISTANCES IN AEs VS VAEs
-# -- supplementary material
-# 3 * (1 * 2 = 2) = 6
-submit_sweep \
-    +DUMMY.repeat=1,2,3 \
-    +EXTRA.tags='sweep_overlap_boxblur_autoencoders' \
-    hydra.job.name="e_ovlp_loss" \
-    \
-    +VAR.recon_loss_weight=1.0 \
-    +VAR.kernel_loss_weight=3969.0 \
-    +VAR.kernel_radius=31 \
-    \
-    run_length=medium \
-    metrics=all \
-    \
-    dataset=X--xysquares \
-    \
-    framework=ae \
-    settings.framework.beta=0.0001 \
-    settings.model.z_size=25 \
-    settings.framework.recon_loss=mse,'mse_box_r${VAR.kernel_radius}_l${VAR.recon_loss_weight}_k${VAR.kernel_loss_weight}' \
-    \
-    sampling=default__bb
+## TEST DISTANCES IN AEs VS VAEs
+## -- supplementary material
+## 3 * (1 * 2 = 2) = 6
+#submit_sweep \
+#    +DUMMY.repeat=1,2,3 \
+#    +EXTRA.tags='sweep_overlap_boxblur_autoencoders' \
+#    hydra.job.name="e_ovlp_loss" \
+#    \
+#    +VAR.recon_loss_weight=1.0 \
+#    +VAR.kernel_loss_weight=3969.0 \
+#    +VAR.kernel_radius=31 \
+#    \
+#    run_length=medium \
+#    metrics=all \
+#    \
+#    dataset=X--xysquares \
+#    \
+#    framework=ae \
+#    settings.framework.beta=0.0001 \
+#    settings.model.z_size=25 \
+#    settings.framework.recon_loss=mse,'mse_box_r${VAR.kernel_radius}_l${VAR.recon_loss_weight}_k${VAR.kernel_loss_weight}' \
+#    \
+#    sampling=default__bb
 
 
 # HPARAM SWEEP -- TODO: update

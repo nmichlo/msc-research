@@ -360,9 +360,9 @@ if __name__ == '__main__':
     # matplotlib style
     plt.style.use(os.path.join(os.path.dirname(__file__), '../gadfly.mplstyle'))
 
-    # clear_cache()
-
-    def main():
+    def main(reset_cache: bool = False):
+        if reset_cache:
+            clear_cache()
         plot_hparams_exp(rel_path='plots/exp_hparams-exp', show=True)
         plot_incr_overlap_exp(rel_path='plots/exp_incr-overlap', show=True)
         plot_overlap_loss_exp(rel_path='plots/exp_overlap-loss', show=True)

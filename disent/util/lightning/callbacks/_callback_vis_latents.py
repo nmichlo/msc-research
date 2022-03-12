@@ -31,6 +31,7 @@ from typing import Union
 import numpy as np
 import pytorch_lightning as pl
 import torch
+import wandb
 
 from disent.dataset import DisentDataset
 from disent.frameworks.ae import Ae
@@ -105,6 +106,8 @@ def get_vis_min_max(
 # Latent Visualisation Callback                                             #
 # ========================================================================= #
 
+snaps = []
+
 
 class VaeLatentCycleLoggingCallback(BaseCallbackPeriodic):
 
@@ -154,26 +157,39 @@ class VaeLatentCycleLoggingCallback(BaseCallbackPeriodic):
             log.warning(f'skipping {self.__class__.__name__} neither `plt_show` or `log_wandb` is `True`!')
             return
 
-        # feed forward and visualise everything!
-        stills, animation, image = self.get_visualisations(trainer, pl_module)
 
-        # log video -- none, img, vid, both
-        # TODO: there might be a memory leak in making the video below? Or there could be one in the actual DSPRITES dataset? memory usage seems to be very high and increase on this dataset.
-        if self._log_wandb:
-            import wandb
-            wandb_items = {}
-            if self._wandb_mode in ('img', 'both'): wandb_items[f'{self._mode}_img'] = wandb.Image(image)
-            if self._wandb_mode in ('vid', 'both'): wandb_items[f'{self._mode}_vid'] = wandb.Video(np.transpose(animation, [0, 3, 1, 2]), fps=self._fps, format='mp4'),
-            wb_log_metrics(trainer.logger, wandb_items)
 
-        # log locally
-        if self._plt_show:
-            from matplotlib import pyplot as plt
-            fig, ax = plt.subplots(1, 1, figsize=(self._plt_block_size*stills.shape[1], self._plt_block_size*stills.shape[0]))
-            ax.imshow(image)
-            ax.axis('off')
-            fig.tight_layout()
-            plt.show()
+        # # feed forward and visualise everything!
+        # stills, animation, image = self.get_visualisations(trainer, pl_module)
+        #
+        # # log video -- none, img, vid, both
+        # # TODO: there might be a memory leak in making the video below? Or there could be one in the actual DSPRITES dataset? memory usage seems to be very high and increase on this dataset.
+        # if self._log_wandb:
+        #     import wandb
+        #     wandb_items = {}
+        #     if self._wandb_mode in ('img', 'both'): wandb_items[f'{self._mode}_img'] = wandb.Image(image)
+        #     if self._wandb_mode in ('vid', 'both'): wandb_items[f'{self._mode}_vid'] = wandb.Video(np.transpose(animation, [0, 3, 1, 2]), fps=self._fps, format='mp4'),
+        #     wb_log_metrics(trainer.logger, wandb_items)
+        #
+        # # log locally
+        # if self._plt_show:
+        #     from matplotlib import pyplot as plt
+        #     fig, ax = plt.subplots(1, 1, figsize=(self._plt_block_size*stills.shape[1], self._plt_block_size*stills.shape[0]))
+        #     ax.imshow(image)
+        #     ax.axis('off')
+        #     fig.tight_layout()
+        #     plt.show()
+
+        from disent.util.profiling import get_memory_usage
+        import tracemalloc
+        print()
+        print("---------------------------------------------------------")
+        snaps.append(tracemalloc.take_snapshot())
+        if len(snaps) > 1:
+            comp_stats = snaps[-1].compare_to(snaps[-2], "lineno")
+            for stat in comp_stats:
+                print(stat)
+        print("---------------------------------------------------------")
 
     def get_visualisations(
         self,
@@ -334,3 +350,55 @@ class VaeLatentCycleLoggingCallback(BaseCallbackPeriodic):
 # ========================================================================= #
 # END                                                                       #
 # ========================================================================= #
+
+
+if __name__ == '__main__':
+
+    def main():
+
+        import pytorch_lightning as pl
+        from torch.utils.data import DataLoader
+        from disent.dataset import DisentDataset
+        from disent.dataset.data import XYObjectData
+        from disent.frameworks.vae import BetaVae
+        from disent.model import AutoEncoder
+        from disent.model.ae import DecoderConv64, EncoderConv64
+        from disent.dataset.transform import ToImgTensorF32
+        from pytorch_lightning.loggers import WandbLogger
+        from disent.dataset.data import DSpritesData
+
+        import tracemalloc
+        tracemalloc.start()
+
+        # prepare the data
+        data = DSpritesData(in_memory=False)
+        dataset = DisentDataset(data, transform=ToImgTensorF32())
+        dataloader = DataLoader(dataset=dataset, batch_size=256, shuffle=True)
+
+        # create the pytorch lightning system
+        module: pl.LightningModule = BetaVae(
+            model=AutoEncoder(
+                encoder=EncoderConv64(x_shape=data.x_shape, z_size=9, z_multiplier=2),
+                decoder=DecoderConv64(x_shape=data.x_shape, z_size=9),
+            ),
+            cfg=BetaVae.cfg(optimizer='adam', optimizer_kwargs=dict(lr=1e-3), loss_reduction='mean', beta=0.01)
+        )
+
+        # train the model
+        trainer = pl.Trainer(
+            checkpoint_callback=False,
+            callbacks=VaeLatentCycleLoggingCallback(
+                every_n_steps=5,
+                log_wandb=True,
+            ),
+            logger=WandbLogger(
+                offline=True,
+                entity='n_michlo',
+                project='DELETE-mem-leak',
+                name='test-mem-leak',
+                settings=wandb.Settings(start_method="fork")  # fork: linux/macos, thread: google colab
+            ),
+        )
+        trainer.fit(module, dataloader)
+
+    main()

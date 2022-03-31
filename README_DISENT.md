@@ -1,39 +1,20 @@
-
 <p align="center">
-    <h1 align="center">🧶 Disent</h1>
+    <h1 align="center">🧶 Disent v0.4.0</h1>
     <p align="center">
         <i>A modular disentangled representation learning framework built with PyTorch Lightning</i>
+    </p>
+    <p align="center">
+        <u>This version of disent is frozen for archival purposes of my MSc research and corresponds to <a href="https://github.com/nmichlo/disent/releases/tag/v0.4.0">v0.4.0</a></u>
     </p>
 </p>
 
 <p align="center">
     <a href="https://choosealicense.com/licenses/mit/" target="_blank">
-        <img alt="license" src="https://img.shields.io/github/license/nmichlo/disent?style=flat-square&color=lightgrey"/>
+        <img alt="license" src="https://img.shields.io/github/license/nmichlo/msc-research?style=flat-square&color=lightgrey"/>
     </a>
-    <a href="https://pypi.org/project/disent" target="_blank">
-        <img alt="python versions" src="https://img.shields.io/pypi/pyversions/disent?style=flat-square"/>
+    <a href="https://github.com/nmichlo/msc-research/actions?query=workflow%3Atest">
+        <img alt="tests status" src="https://img.shields.io/github/workflow/status/nmichlo/msc-research/test?label=tests&style=flat-square"/>
     </a>
-    <a href="https://pypi.org/project/disent" target="_blank">
-        <img alt="pypi version" src="https://img.shields.io/pypi/v/disent?style=flat-square&color=blue"/>
-    </a>
-    <a href="https://github.com/nmichlo/disent/actions?query=workflow%3Atest">
-        <img alt="tests status" src="https://img.shields.io/github/workflow/status/nmichlo/disent/test?label=tests&style=flat-square"/>
-    </a>
-<!--     <a href="https://codecov.io/gh/nmichlo/disent/"> -->
-<!--         <img alt="code coverage" src="https://img.shields.io/codecov/c/gh/nmichlo/disent?token=86IZK3J038&style=flat-square"/> -->
-<!--     </a> -->
-<!--     <a href="https://github.com/nmichlo/disent"> -->
-<!--         <img alt="last commit" src="https://img.shields.io/github/last-commit/nmichlo/disent?style=flat-square&color=lightgrey"/> -->
-<!--     </a> -->
-</p>
-
-<p align="center">
-    <p align="center">
-        Visit the <a href="https://disent.dontpanic.sh/" target="_blank">docs</a> for more info, or browse the  <a href="https://github.com/nmichlo/disent/releases">releases</a>.
-    </p>
-    <p align="center">
-        <a href="https://github.com/nmichlo/disent/issues/new/choose">Contributions</a> are welcome!
-    </p>
 </p>
 
 ----------------------
